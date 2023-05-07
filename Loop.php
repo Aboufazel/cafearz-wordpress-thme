@@ -1,11 +1,11 @@
 
-<a href="<?php echo custom_permalink($post->ID); ?>" title="<?php the_title(); ?>"
+<a href="<?php echo custom_permalink($post->ID); ?>"
    target="<?php echo custom_permalink_target($post->ID); ?>"
    class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
 
     <div class="flex flex-col relative items-center">
         <img
-            src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+            src="<?php the_post_thumbnail_url('large'); ?>"
             alt="شرکت های فعال در مناورس"
             class="w-full lg:w-[100%] px-3 lg:px-0"
         />

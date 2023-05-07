@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <section id="newBlogPost">
+    <section>
         <div class="container relative lg:w-[1200px] mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
 
