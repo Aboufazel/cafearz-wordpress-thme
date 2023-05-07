@@ -2,9 +2,9 @@
 
 <div class="container">
 
-    <div style="padding: 100px 0;text-align: center;font-size: 20px;">
-        <h2 style="font-size: 50px;color: #555;text-align: center"> 404</h2>
-        <p style="color: #aaa;text-align: center">Page not found.
+    <div class="py-[100px] text-center">
+        <h2 class="text-[50px] text-[#555] text-center">404</h2>
+        <p class="text-[#aaa] font-bold text-[25px]">متاسفیم صفحه مورد نظر یافت نشد
         </p>
     </div>
 

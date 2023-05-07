@@ -14,7 +14,7 @@
                     </article>
 			<?php endwhile; ?>
         <?php else : ?>
-            <h2>Not Found</h2>
+            <h2>متاسفیم صفحه مورد نظر یافت نشد</h2>
         <?php endif; ?>
     </div> <!-- end contentWrap -->
 
