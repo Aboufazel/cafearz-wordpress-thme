@@ -226,7 +226,7 @@ function hot_posts($per=10){
 function dimox_breadcrumbs() {
 
     $delimiter = '&raquo;';
-    $home = 'Home '; // text for the 'Home' link
+    $home = 'وبلاگ'; // text for the 'Home' link
     $before = '<span>'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
     $homeLink = get_bloginfo('url');

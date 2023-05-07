@@ -1,49 +1,50 @@
 <?php get_header(); ?>
 
-<div  class="page_header_page "   >
-    <div   class="app-container">
-        <?php  dimox_breadcrumbs2(); ?>
-        <?php
-        if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
-        ?>
-    </div>
+
+<div
+    class="ArchiveTopBox font-black  text-[28px] lg:text-[40px] text-gold w-full mt-7 lg:mt-[25px] lg:mb-[40px]  flex items-center justify-center"
+>
+    <?php dimox_breadcrumbs2(); ?>
 </div>
 
-<div class="app-container    d-none d-md-block ">
-    <?php include 'menu.php'; ?>
-</div>
 
-<div class="app-container mt-5">
-
-    <div class="row">
-        <div class="col-lg-9 ">
-
-            <?php if ( have_posts() ) : ?>
-                <!-- the loop -->
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <?php include 'Loop.php'?>
-                <?php endwhile; ?>
-                <!-- end of the loop -->
-
-
-
+<div class="container lg:w-[1200px] mx-auto">
+    <section class="breadCrump hidden lg:block mb-[55px]">
+        <div class="div flex flex-row items-center justify-between">
+            <div class="flex flex-row gap-[5px] text-zeroBlack text-[14px] font-bold items-center">
                 <?php
-                custom_pagination($wp_query->max_num_pages,"",$paged);
+                if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
                 ?>
-
-
-                <?php wp_reset_postdata(); ?>
-
-            <?php else:  ?>
-                <p><?php _e( 'No content available' ); ?></p>
-            <?php endif; ?>
+            </div>
         </div>
+    </section>
 
-        <div id="afix" class="col-lg-3  xs-540">
-            <?php get_sidebar(); ?>
+    <section id="newBlogPost">
+        <div class="container relative lg:w-[1200px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
+
+                <?php if (have_posts()) : ?>
+                    <!-- the loop -->
+                    <?php while (have_posts()) : the_post(); ?>
+                        <?php include 'Loop.php' ?>
+                    <?php endwhile; ?>
+                    <!-- end of the loop -->
+
+
+                    <?php
+                    custom_pagination($wp_query->max_num_pages, "", $paged);
+                    ?>
+
+
+                    <?php wp_reset_postdata(); ?>
+
+                <?php else: ?>
+                    <p><?php _e('No content available'); ?></p>
+                <?php endif; ?>
+
+            </div>
         </div>
-    </div>
-
+    </section>
 </div>
 
 <?php get_footer(); ?>
