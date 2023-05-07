@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'bakh-regular';
+  font-weight: normal;
+  src: url("./fonts/bakh/YekanBakh-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bakh-light';
+  font-weight: 100;
+  src: url("./fonts/bakh/YekanBakh-light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bakh-bold';
+  font-weight: bold;
+  src: url("./fonts/bakh/YekanBakh-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bakh-black';
+  font-weight: 800;
+  src: url("./fonts/bakh/YekanBakh-Black.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bakh-extrablack';
+  font-weight: 900;
+  src: url("./fonts/bakh/YekanBakh-ExtraBlack.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bakh-extarbold';
+  font-weight: 700;
+  src: url("./fonts/bakh/YekanBakh-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+}

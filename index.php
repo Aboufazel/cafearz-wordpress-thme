@@ -1,12 +1,7 @@
 <?php get_header(); ?>
 
-<div class="fix-head"></div>
 
-<div style="margin-bottom: 15px;" class="app-container  d-none d-md-block ">
-    <br/>
 
-    <?php include 'menu.php'; ?>
-</div>
 <div class="app-container">
 
 <!--    <div class="search-sidebar hidden-lg hidden-md hidden-sm visible-xs">-->

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(./src/assets/fonts.css); /*!
+@import url(./assets/fonts.css); /*!
 Theme Name: Cafearz
 Theme URI: https://cafearz.com/
 Author: Cafearz
@@ -40,7 +40,7 @@ Text Domain: cafearz.com
 body {
     font-family: bakh-regular, bakh-light, bakh-bold, bakh-black, bakh-extrablack, bakh-extarbold;
     direction: rtl;
-    background-image: url(./src/assets/img/header-bg.png);
+    background-image: url(../assets/img/header-bg.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
@@ -98,7 +98,7 @@ body {
     color: var(--color-white);
     transform: translate3d(0, -5px, 2px);
 }
-h1,h2,h3,h4,h5,h6 {
+h1 {
     font-family: bakh-extarbold;
 }
 .left-rectangle {
@@ -250,7 +250,6 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: column !important;
 }
 .dropbtn {
-    /*background: #F4F7FE;*/
     transition: 0.23s;
 }
 .dropbtn:focus,
@@ -373,9 +372,3 @@ h1,h2,h3,h4,h5,h6 {
         height: 125px;
     }
 }
-
-
-
-
-
-
