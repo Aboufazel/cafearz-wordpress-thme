@@ -50,7 +50,7 @@
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
 
                 <div class="flex w-full items-center justify-center relative lg:px-0 px-3">
-                    <img width="656px" height="410px" src="<?php the_post_thumbnail_url('large'); ?>"
+                    <img width="656px" height="410px" class="rounded-[15px] shadow-xl" src="<?php the_post_thumbnail_url('large'); ?>"
                          alt="<?php the_title(); ?>"/>
                     <div id="shareSocial"
                          class="hidden lg:flex lg:flex-col transition items-center z-50 gap-[20px] absolute right-[-15px] top-[20px]">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-black mt-7 lg:mt-[46px] px-[13px]  mb-3 lg:mb-[30px] lg:text-[22px]">
+                    <h1 class="font-bold text-black mt-7 lg:mt-[46px] px-[13px]  mb-3 lg:mb-[30px] lg:text-[25px]">
                         <?php the_title(); ?>
                     </h1>
 
@@ -275,11 +275,11 @@
                             <div class="flex flex-col">
                                 <a href="<?php the_permalink() ?>"
                                    title="<?php the_title(); ?>"
-                                   class="flex flex-col relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-start">
+                                   class="flex flex-col relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
                                     <img
                                         src="<?php the_post_thumbnail_url('large'); ?>"
                                         alt="<?php the_title(); ?>"
-                                        class="w-full lg:w-[100%]"
+                                        class="w-full lg:h-[173px] rounded-[10px] shadow-xl"
                                     />
                                     <h3 class="text-[14px] px-1 overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis"><?php the_title(); ?></h3>
                                 </a>

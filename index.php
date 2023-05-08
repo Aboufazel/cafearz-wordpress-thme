@@ -79,6 +79,31 @@
 
 <section id="bestArticle" class="">
     <div class="container relative lg:w-[1200px] mx-auto">
+
+        <?php
+        $query = new WP_Query( array(
+            'cat' => 3,
+            'posts_per_page' => 5) );
+
+        if( $query->have_posts() ): ?>
+            <div class="recent-posts">
+                <?php while( $query->have_posts() ) : $query->the_post(); ?>
+
+                    <article class="post-item">
+                        <figure class="post-thumb">
+                            <a href="<?php the_permalink() ?>" class="thumbnail"><?php the_post_thumbnail(); ?></a>
+                        </figure>
+                        <h5><a href="<?php the_permalink() ?>"
+                               title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+                    </article>
+
+                <?php endwhile; ?>
+            </div>
+
+        <?php endif;
+        wp_reset_postdata();
+        ?>
+
         <a href="#bestArticle">
             <img
                 src="<?php echo get_template_directory_uri(); ?>/src/assets/img/arrowButton.png"
@@ -105,143 +130,46 @@
                     </p>
                 </div>
 
-                <div
+                <a href="<?php the_permalink()?>"
+                   target="_blank"
                     class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[12px] lg:text-[14px]"
                 >
                     مشاهده همه
-                </div>
+                </a>
             </div>
         </div>
 
         <div class="flex flex-row items-center mt-[70px]">
             <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto gap-[20px]">
 
-                <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+                <?php
+                $today = getdate();
+                $replywp_args = array(
+                    'post_type'=>'post',
+                    'posts_per_page'=>'10',
+                    'offset'=>0,
+                    'meta_key'=>'views','orderby'=>'meta_value_num',
+                    'order'=>'DESC','post_status'=>'publish',
+                    'date_query'=> array(
+                        array('column' =>'post_date_gmt',
+                            'after' => '3 day ago'
+                        )));
+                $the_query = new WP_Query( $replywp_args ); ?>
+                <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                    <div class="flex flex-col relative items-center">
-                        <img
-                            src="../assets/img/second-index-pic.png"
-                            alt="شرکت های فعال در مناورس"
-                            class="w-full lg:w-[100%] px-3"
-                        />
+                <?php endwhile; wp_reset_postdata(); else : ?>
+                    <?php _e( 'متاسفیم مطلبی برای نمایش وجود ندارد' ); ?>
+                <?php endif; ?>
 
-                        <div
-                            class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                        >
-                            رمزارزها
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                    >
-                        <h3 class="font-bold text-[14px] mt-[14px]">
-                            شرکت‌ های فعال در متاورس کدامند؟
-                        </h3>
-                        <p
-                            class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                        >
-                            مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                            محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                            طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                        </p>
-                        <div
-                            class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                        >
-                            <i class="fa-regular fa-calendar-days"></i>
-
-                            <p>16 بهمن 1401</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                    <div class="flex flex-col relative items-center">
-                        <img
-                            src="../assets/img/second-index-pic.png"
-                            alt="شرکت های فعال در مناورس"
-                            class="w-full lg:w-[100%] px-3"
-                        />
-
-                        <div
-                            class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                        >
-                            رمزارزها
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                    >
-                        <h3 class="font-bold text-[14px] mt-[14px]">
-                            شرکت‌ های فعال در متاورس کدامند؟
-                        </h3>
-                        <p
-                            class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                        >
-                            مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                            محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                            طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                        </p>
-                        <div
-                            class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                        >
-                            <i class="fa-regular fa-calendar-days"></i>
-
-                            <p>16 بهمن 1401</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                    <div class="flex flex-col relative items-center">
-                        <img
-                            src="../assets/img/second-index-pic.png"
-                            alt="شرکت های فعال در مناورس"
-                            class="w-full lg:w-[100%] px-3"
-                        />
-
-                        <div
-                            class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                        >
-                            رمزارزها
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                    >
-                        <h3 class="font-bold text-[14px] mt-[14px]">
-                            شرکت‌ های فعال در متاورس کدامند؟
-                        </h3>
-                        <p
-                            class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                        >
-                            مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                            محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                            طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                        </p>
-                        <div
-                            class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                        >
-                            <i class="fa-regular fa-calendar-days"></i>
-
-                            <p>16 بهمن 1401</p>
-                        </div>
-                    </div>
-                </a>
-
-                <div
-                    class="lg:flex lg:flex-col hidden relative text-right items-center"
+                <a href="https://www.instagram.com/cafearz_com"
+                   target="_blank"
+                   class="lg:flex lg:flex-col hidden relative text-right items-center"
                 >
                     <div
                         class="instagramCard text-white p-[25px] flex flex-col items-center lg:w-[287px] lg:h-[413px] h-[25px]"
                     >
                         <img
-                            src="../assets/img/instagram.png"
+                            src="<?php echo get_template_directory_uri(); ?>/src/assets/img/instagram.png"
                             class="mt-[30px]"
                             alt="اینستاگرام کافه ارز"
                         />
@@ -255,9 +183,9 @@
                     <div
                         class="relative top-[-80px] w-full flex flex-row justify-center bg-white items-center mt-[21px] font-bold text-[14px]"
                     >
-                        <button class="category-btn bg-white">کلیک کنید</button>
+                        <button href="https://www.instagram.com/cafearz_com" class="category-btn bg-white">کلیک کنید</button>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -287,7 +215,7 @@
                         #
                     </div>
                     <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
-                        برترین مطالب
+                        جدیدترین مطالب
                     </p>
                 </div>
 
@@ -301,361 +229,44 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-[70px]">
 
+            <?php
 
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
+            $custom_args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 8,
+                'paged' => $paged
+            );
 
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
+            $custom_query = new WP_Query( $custom_args ); ?>
 
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
+            <?php if ( $custom_query->have_posts() ) : ?>
 
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
+                <!-- the loop -->
+                <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+                    <?php include 'Loop.php'?>
 
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
+                <?php endwhile; ?>
+                <!-- end of the loop -->
 
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
+                <!-- pagination here -->
+                <?php
+                custom_pagination($custom_query->max_num_pages,"",$paged);
+                ?>
 
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
+                <?php wp_reset_postdata(); ?>
 
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
+            <?php else:  ?>
+                <p><?php _e( 'No content available' ); ?></p>
+            <?php endif; ?>
 
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="../assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
 
         </div>
     </div>
 </section>
 
 
-<div class="container hidden lg:flex lg:flex-row justify-center mt-[72px] mb-[45px]">
-    <nav aria-label="Page navigation example">
-        <ul class="inline-flex bg-dataBg rounded-[15px] gap-5 items-center -space-x-px">
-            <li>
-                <a href="#" class="block px-3 py-2 ml-0 leading-tight text-black font-semibold rounded-r-[15px] text-[14px]   hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                    <span class="sr-only">Previous</span>
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
 
-                </a>
-            </li>
-            <li>
-                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-            </li>
-            <li>
-                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-            </li>
-            <li>
-                <a href="#" aria-current="page" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">3</a>
-            </li>
-            <li>
-                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-            </li>
-            <li>
-                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-            </li>
-            <li>
-                <a href="#" class="block px-3 py-2 leading-tight border-gray-300 rounded-l-[15px]   hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                    <span class="sr-only">Next</span>
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
 <?php get_footer(); ?>
