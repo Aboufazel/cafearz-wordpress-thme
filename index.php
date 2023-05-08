@@ -5,7 +5,6 @@
 <section id="blog-banner">
     <div class="container lg:mt-[120px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
         <div class="left-rectangle z-0 hidden lg:flex"></div>
-
         <div class="grid grid-cols-1 lg:grid-cols-2 place-items-center">
 
             <div class="flex lg:hidden justify-start w-full z-10">
@@ -79,31 +78,6 @@
 
 <section id="bestArticle" class="">
     <div class="container relative lg:w-[1200px] mx-auto">
-
-        <?php
-        $query = new WP_Query( array(
-            'cat' => 3,
-            'posts_per_page' => 5) );
-
-        if( $query->have_posts() ): ?>
-            <div class="recent-posts">
-                <?php while( $query->have_posts() ) : $query->the_post(); ?>
-
-                    <article class="post-item">
-                        <figure class="post-thumb">
-                            <a href="<?php the_permalink() ?>" class="thumbnail"><?php the_post_thumbnail(); ?></a>
-                        </figure>
-                        <h5><a href="<?php the_permalink() ?>"
-                               title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-                    </article>
-
-                <?php endwhile; ?>
-            </div>
-
-        <?php endif;
-        wp_reset_postdata();
-        ?>
-
         <a href="#bestArticle">
             <img
                 src="<?php echo get_template_directory_uri(); ?>/src/assets/img/arrowButton.png"
@@ -152,7 +126,7 @@
                     'order'=>'DESC','post_status'=>'publish',
                     'date_query'=> array(
                         array('column' =>'post_date_gmt',
-                            'after' => '3 day ago'
+                            'after' => '1 week ago'
                         )));
                 $the_query = new WP_Query( $replywp_args ); ?>
                 <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
