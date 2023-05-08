@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+
+
 <section id="blog-banner">
     <div class="container lg:mt-[120px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
         <div class="left-rectangle z-0 hidden lg:flex"></div>
@@ -8,14 +10,13 @@
 
             <div class="flex lg:hidden justify-start w-full z-10">
                 <img
-                    src="<?php echo get_template_directory_uri(); ?>/src/assets/img/blog-pic.png"
+                    src="../assets/img/blog-pic.png"
                     width="575px"
                     height="360px"
-                    class="lg:mt-[48px] mt-[20px] lg:w-[85%] rounded-2xl relative lg:left-[-95px]"
+                    class="lg:mt-[48px] mt-[20px] lg:w-[85%] rounded-[15px]  relative lg:left-[-95px]"
                     alt="صرافی کافه ارز"
                 />
             </div>
-
 
             <div class="flex flex-col gap-[12px] mt-5 lg:mt-0  items-start justify-center w-full z-10">
                 <p class="text-[12px] font-bold first-blue-text">رمزارزها</p>
@@ -61,10 +62,10 @@
 
             <div class="lg:flex hidden justify-start w-full z-10">
                 <img
-                    src="<?php echo get_template_directory_uri(); ?>/src/assets/img/blog-pic.png"
+                    src="../assets/img/blog-pic.png"
                     width="575px"
                     height="360px"
-                    class="lg:mt-[-25px] mt-[20px] rounded-[15px] shadow-xl lg:w-[85%] relative lg:left-[-95px]"
+                    class="lg:mt-[-25px] mt-[20px] shadow-xl rounded-[15px] lg:w-[85%] relative lg:left-[-95px]"
                     alt="صرافی کافه ارز"
                 />
             </div>
@@ -74,129 +75,9 @@
     <div class="right-rectangle z-0 hidden lg:flex"></div>
 </section>
 
-<section id="selectBlog" class="container lg:w-[1200px] mx-auto">
-    <div class="selectBlog mt-[105px]">
-        <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
-            FAVORATE NEWS
-        </p>
-
-        <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
-            <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
-                <div
-                    class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
-                >
-                    #
-                </div>
-                <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
-                    منتخب سر دبیر
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="flex flex-row items-center gap-[5px] mt-[67.2px]">
-        <div class="selectBlog-rectangle"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 mx-auto">
 
 
-            <?php
-            $querystr = "
-            SELECT $wpdb->posts.* 
-            FROM $wpdb->posts, $wpdb->postmeta
-            WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id 
-            AND $wpdb->postmeta.meta_key = 'selected' 
-            AND $wpdb->postmeta.meta_value = 1 
-            AND $wpdb->posts.post_status = 'publish' 
-            AND $wpdb->posts.post_type = 'post'
-            ORDER BY $wpdb->posts.post_modified DESC
-            LIMIT 3
-         ";
-
-            $pageposts = $wpdb->get_results($querystr, OBJECT);
-            $selected_count= count($pageposts);
-            $selected_counter=0;
-            ?>
-
-            <?php if ($pageposts): ?>
-                <div class="row">
-                    <?php foreach ($pageposts as $post): ?>
-
-                        <?php if ($selected_count==1): ?>
-
-                            <div class="col-md-12 col-sm-12 starc-img-box" >
-                                <a  target="<?php echo  custom_permalink_target($post->ID); ?>"  title=" <?php the_title(); ?>" data-top-image="<?php the_post_thumbnail_url('large'); ?>" href="<?php echo  custom_permalink($post->ID); ?>" style="" class="blog-post bg-img">
-
-                                    <h2 class="title">   <?php the_title(); ?></h2>
-                                    <span class="mask"></span>
-
-                                </a>
-                                <?php get_category_post(); ?>
-
-                            </div>
-
-                        <?php else:; ?>
-
-                            <div class="col-md-6 col-sm-6 col-xs-6 xs-540 starc-img-box" >
-
-                                <a  target="<?php echo  custom_permalink_target($post->ID); ?>"  data-top-image="<?php the_post_thumbnail_url('large'); ?>"   title=" <?php the_title(); ?>" href="<?php echo  custom_permalink($post->ID); ?>" style="" class="blog-post bg-img">
-
-                                    <h2 class="title">   <?php the_title(); ?></h2>
-                                    <span class="mask"></span>
-                                </a>
-                                <?php get_category_post(); ?>
-
-                            </div>
-
-                        <?php endif; ?>
-
-                        <?php
-                        unset($pageposts[$selected_counter]);
-
-                        $selected_counter++;
-                        if($selected_counter==2)
-                            break;
-                        ?>
-
-                    <?php endforeach; ?>
-                    <?php wp_reset_postdata(); ?>
-
-                </div>
-
-                <?php if ($selected_count>5): ?>
-                    <div class="row m-t-10">
-                        <?php foreach ($pageposts as $post): ?>
-
-                            <?php if ($selected_count>5): ?>
-
-                                <div   class="col-md-3  col-sm-6 col-xs-6 xs-540 starc-img-box thumb">
-                                    <a target="_blank" title=" <?php the_title(); ?>" href="<?php echo custom_permalink($post->ID); ?>"  data-top-image="<?php the_post_thumbnail_url('large'); ?>"   style="" class="blog-post bg-img">
-
-                                        <h2 class="title">   <?php the_title(); ?></h2>
-                                        <span class="mask"></span>
-
-                                    </a>
-                                    <?php get_category_post(); ?>
-
-                                </div>
-
-
-                            <?php endif; ?>
-
-
-                        <?php endforeach; ?>
-
-                    </div>
-                <?php endif; ?>
-
-            <?php endif; ?>
-
-        </div>
-    </div>
-</section>
-
-<section id="bestArticle">
+<section id="bestArticle" class="">
     <div class="container relative lg:w-[1200px] mx-auto">
         <a href="#bestArticle">
             <img
@@ -425,7 +306,7 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -464,47 +345,7 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -544,7 +385,7 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -584,46 +425,7 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
-                        alt="شرکت های فعال در مناورس"
-                        class="w-full lg:w-[100%] px-3"
-                    />
-
-                    <div
-                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        رمزارزها
-                    </div>
-                </div>
-
-                <div
-                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
-                >
-                    <h3 class="font-bold text-[14px] mt-[14px]">
-                        شرکت‌ های فعال در متاورس کدامند؟
-                    </h3>
-                    <p
-                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
-                    >
-                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
-                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
-                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
-                    </p>
-                    <div
-                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
-                    >
-                        <i class="fa-regular fa-calendar-days"></i>
-
-                        <p>16 بهمن 1401</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
-
-                <div class="flex flex-col relative items-center">
-                    <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -663,7 +465,46 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
+                        alt="شرکت های فعال در مناورس"
+                        class="w-full lg:w-[100%] px-3"
+                    />
+
+                    <div
+                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
+                    >
+                        رمزارزها
+                    </div>
+                </div>
+
+                <div
+                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
+                >
+                    <h3 class="font-bold text-[14px] mt-[14px]">
+                        شرکت‌ های فعال در متاورس کدامند؟
+                    </h3>
+                    <p
+                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
+                    >
+                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
+                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
+                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
+                    </p>
+                    <div
+                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
+                    >
+                        <i class="fa-regular fa-calendar-days"></i>
+
+                        <p>16 بهمن 1401</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+
+                <div class="flex flex-col relative items-center">
+                    <img
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -703,7 +544,47 @@
 
                 <div class="flex flex-col relative items-center">
                     <img
-                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/second-index-pic.png"
+                        src="../assets/img/second-index-pic.png"
+                        alt="شرکت های فعال در مناورس"
+                        class="w-full lg:w-[100%] px-3"
+                    />
+
+                    <div
+                        class="category-btn bottom-[-18px] left-[22px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
+                    >
+                        رمزارزها
+                    </div>
+                </div>
+
+                <div
+                    class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
+                >
+                    <h3 class="font-bold text-[14px] mt-[14px]">
+                        شرکت‌ های فعال در متاورس کدامند؟
+                    </h3>
+                    <p
+                        class="text-[14px] leading-6 text-blogDetail text-center lg:text-justify font-light w-[95%]"
+                    >
+                        مقایسه پنکیک سواپ و یونی سواپ: دو صرافی پنکیک سواپ و یونی سواپ، از
+                        محبوبترین پلتفرم‌‌های معاملاتی غیرمتمرکز به شمار می‌روند که
+                        طرفداران زیادی در حوزه پرداخت ارزی به خصوص ارزهای دیجیتال دارند.
+                    </p>
+                    <div
+                        class="bg-dataBg px-[13px] py-[3px] gap-[6px] rounded-[25px] flex items-center"
+                    >
+                        <i class="fa-regular fa-calendar-days"></i>
+
+                        <p>16 بهمن 1401</p>
+                    </div>
+                </div>
+            </a>
+
+
+            <a href="" class="flex flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+
+                <div class="flex flex-col relative items-center">
+                    <img
+                        src="../assets/img/second-index-pic.png"
                         alt="شرکت های فعال در مناورس"
                         class="w-full lg:w-[100%] px-3"
                     />
@@ -743,4 +624,38 @@
 </section>
 
 
+<div class="container hidden lg:flex lg:flex-row justify-center mt-[72px] mb-[45px]">
+    <nav aria-label="Page navigation example">
+        <ul class="inline-flex bg-dataBg rounded-[15px] gap-5 items-center -space-x-px">
+            <li>
+                <a href="#" class="block px-3 py-2 ml-0 leading-tight text-black font-semibold rounded-r-[15px] text-[14px]   hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Previous</span>
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+            </li>
+            <li>
+                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+            </li>
+            <li>
+                <a href="#" aria-current="page" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">3</a>
+            </li>
+            <li>
+                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+            </li>
+            <li>
+                <a href="#" class="px-3 py-2 leading-tight text-black font-semibold text-[14px]  hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+            </li>
+            <li>
+                <a href="#" class="block px-3 py-2 leading-tight border-gray-300 rounded-l-[15px]   hover:bg-gold hover:text-black dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Next</span>
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <?php get_footer(); ?>
