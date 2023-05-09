@@ -5,70 +5,35 @@
 <section id="blog-banner">
     <div class="container lg:mt-[120px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
         <div class="left-rectangle z-0 hidden lg:flex"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 place-items-center">
+        <?php
 
-            <div class="flex lg:hidden justify-start w-full z-10">
-                <img
-                    src="../assets/img/blog-pic.png"
-                    width="575px"
-                    height="360px"
-                    class="lg:mt-[48px] mt-[20px] lg:w-[85%] rounded-[15px]  relative lg:left-[-95px]"
-                    alt="صرافی کافه ارز"
-                />
-            </div>
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-            <div class="flex flex-col gap-[12px] mt-5 lg:mt-0  items-start justify-center w-full z-10">
-                <p class="text-[12px] font-bold first-blue-text">رمزارزها</p>
+        $custom_args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'paged' => $paged
+        );
 
-                <h1 class="lg:text-[25px] font-black blog-title">
-                    مقایسه پنکیک سواپ و یونی سواپ؛ تفاوت دو صرافی غیرمتمرکز محبوب
-                </h1>
+        $custom_query = new WP_Query( $custom_args ); ?>
 
-                <p class="text-[16px] data-color font-light">16 بهمن 1401</p>
+        <?php if ( $custom_query->have_posts() ) : ?>
 
-                <p class="text-[16px] text-justify lg:mt-[17px] leading-[35px]">
-                    دو صرافی پنکیک سواپ و یونی سواپ، از محبوبترین پلتفرم‌‌های معاملاتی
-                    غیرمتمرکز به شمار می‌روند که طرفداران زیادی در حوزه پرداخت ارزی به
-                    خصوص ارزهای دیجیتال دارند. صرافی‌های غیرمتمرکز یکی از پدیده‌های نوظهور
-                    در زمینه پرداخت‌ های ارزی است که مقوله خرید و فروش ارزهای دیجیتال را
-                    به طور کلی متحول کرده است. از محبوبترین صرافی‌های غیرمتمرکز می‌توان به
-                    سوشی سواپ، یونی سواپ و پنکیک سواپ اشاره کرد. یونی سواپ پرچمدار
-                    صرافی‌های غیر متمرکز بر بستر بلاک‌ چین اتریوم است
-                </p>
+            <!-- the loop -->
+            <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-                <div class="flex flex-row items-center mt-[20px] lg:mt-[48px] w-full">
-                    <div class="flex items-center justify-start w-1/2">
-                        <div class="flex flex-row gap-[11px] items-center writer-pic">
-                            <div class="rounded-[50%] bg-black w-[54px] h-[54px]"></div>
-                            <div class="flex flex-col gap-[4px] justify-center">
-                                <p class="lg:text-[16px] text-black text-[12px] font-bold">
-                                    مهران رباطی
-                                </p>
-                                <p class="text-[12px]">نویسنده</p>
-                            </div>
-                        </div>
-                    </div>
+                <?php include 'RandomBlog.php'?>
 
-                    <div class="flex items-center justify-end w-1/2">
-                        <p
-                            class="read-duration-box font-bold text-[10px] lg:text-[14px] rounded-[9px]"
-                        >
-                            زمان مطالعه 6 دقیقه
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <?php endwhile; ?>
+            <!-- end of the loop -->
 
-            <div class="lg:flex hidden justify-start w-full z-10">
-                <img
-                    src="../assets/img/blog-pic.png"
-                    width="575px"
-                    height="360px"
-                    class="lg:mt-[-25px] mt-[20px] shadow-xl rounded-[15px] lg:w-[85%] relative lg:left-[-95px]"
-                    alt="صرافی کافه ارز"
-                />
-            </div>
-        </div>
+            <!-- pagination here -->
+
+            <?php wp_reset_postdata(); ?>
+
+        <?php else:  ?>
+            <p><?php _e( 'No content available' ); ?></p>
+        <?php endif; ?>
     </div>
 
     <div class="right-rectangle z-0 hidden lg:flex"></div>

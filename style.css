@@ -373,7 +373,11 @@ h1,h2,h3,h4,h5,h6 {
         height: 125px;
     }
 }
-
+.avatar{
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 50%;
+}
 
 
 

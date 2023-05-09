@@ -65,29 +65,6 @@
             },
         };
     </script>
-
-
-    <script src="https://kit.fontawesome.com/cc236d5619.js" crossorigin="anonymous"></script>
-
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Light.woff"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Light.woff2"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Regular.woff"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Regular.woff2"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Medium.woff2"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Medium.woff"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Bold.woff" crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Bold.woff2"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Black.woff"
-          crossorigin>
-    <link rel="preload" as="font" href="https://cafearz.s3.ir-thr-at1.arvanstorage.com/IRANSansX-Black.woff2"
-          crossorigin>
 </head>
 
 <body <?php body_class(); ?>
@@ -133,7 +110,7 @@
 
                 <div
                     id="myDropdown"
-                    class="dropdown-content rounded-[5px] max-w-[280px] lg:w-full shadow-md items-start bg-white top-[68px] left-0 lg:left-auto px-3 py-6 absolute"
+                    class="dropdown-content rounded-[5px] max-w-[280px] lg:w-full shadow-md items-start bg-white top-[68px] left-0 lg:left-auto px-3 py-5 absolute"
                 >
                     <?php include 'menu.php'; ?>
 
@@ -157,7 +134,9 @@
                         name="search-btn bg-black"
                         class="absolute left-[21px] top-[15px]"
                     >
-                        <i class="fa-solid fa-magnifying-glass" style="color: #c5c5c5"></i>
+                        <svg class="w-[17px] h-[16px]">
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#search"></use>
+                        </svg>
                     </button>
 
                     <input type="text" placeholder="جستجو"/>

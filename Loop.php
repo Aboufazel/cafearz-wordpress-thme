@@ -7,7 +7,7 @@
             <img
                 src="<?php the_post_thumbnail_url('large'); ?>"
                 alt="<?php the_title(); ?>"
-                class="w-full px-3 bg-none rounded-[10px] shadow-xl h-[178px]"
+                class="w-full w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
             />
         </div>
 
