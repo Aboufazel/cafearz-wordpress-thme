@@ -11,7 +11,7 @@
     </div>
 
     <div class="flex flex-col gap-[12px] mt-5 lg:mt-0  items-start justify-center w-full z-10">
-        <p class="text-[12px] font-bold first-blue-text">
+        <p target="_blank" class="text-[12px] font-bold first-blue-text">
             <?php get_category_post(); ?>
         </p>
 

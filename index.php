@@ -41,6 +41,10 @@
 
 
 
+
+
+
+
 <section id="bestArticle" class="">
     <div class="container relative lg:w-[1200px] mx-auto">
         <a href="#bestArticle">
@@ -191,9 +195,6 @@
                 <!-- end of the loop -->
 
                 <!-- pagination here -->
-                <?php
-                custom_pagination($custom_query->max_num_pages,"",$paged);
-                ?>
 
                 <?php wp_reset_postdata(); ?>
 

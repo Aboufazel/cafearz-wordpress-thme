@@ -1,5 +1,4 @@
 <?php get_header('blog'); ?>
-<section>
     <?php if (have_posts()) : ?>
 
     <?php while (have_posts()) :
@@ -110,19 +109,21 @@
 
                 <div class="flex-col w-full lg:px-[30px] px-[15px]">
 
-                    <div class="flex flex-row items-center lg:px-3 mt-8 justify-between w-full">
+                    <div class="flex flex-row items-center md:px-12 lg:px-3 mt-8 justify-between w-full">
                         <div
-                            class="flex justify-between items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
+                            class="flex justify-center gap-[5px] items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
                         >
-                            <p class="text-[14px]">
-                                <i class="fa-regular fa-calendar-days"></i>
-                                <span><?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?></span>
+                            <svg class="w-[18px] h-[18px]">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>
+                            </svg>
+                            <p class="text-[12px] lg:text-[14px]">
+                                <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
                             </p>
                         </div>
                         <div
-                            class="bg-black px-[32px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px] text-white"
+                            class="bg-black px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px] text-white"
                         >
-                            <p class="font-bold text-[14px]">
+                            <p class="font-bold text-[12px] lg:text-[14px]">
                                 <?php get_category_post(); ?>
                             </p>
                         </div>
@@ -300,6 +301,5 @@
         <?php endwhile; ?>
 
         <?php endif; ?>
-</section>
 <?php get_footer('blog'); ?>
 
