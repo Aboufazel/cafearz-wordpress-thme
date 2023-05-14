@@ -82,7 +82,9 @@
                 onclick="scrollTopBody()"
                 class="absolute cursor-pointer lg:right-[500px] lg:top-[-30px]"
             >
-                <img src="<?php echo get_template_directory_uri(); ?>/src/assets/img/footerUpArrow.png" alt="کافه ارز"/>
+                <svg class="w-[162px] h-[66px]">
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#footerArrow"></use>
+                </svg>
             </button>
         </div>
 
