@@ -116,30 +116,30 @@
            
           if(document.documentElement.clientWidth < mediaBreakpointSize){
             doc.querySelector("header").style.position =
-            htm.scrollTop > 50 ? "fixed" : "";
+            htm.scrollTop > 5 ? "fixed" : "";
 
             doc.querySelector("header").style.width =
-            htm.scrollTop > 50 ? "100%" : "";
+            htm.scrollTop > 5 ? "100%" : "";
 
             doc.querySelector("header").style.top =
-            htm.scrollTop > 50 ? "0" : "0";
+            htm.scrollTop > 5 ? "0" : "0";
 
             doc.querySelector("header").style.borderRadius =
-            htm.scrollTop > 50 ? "0" : "0";
+            htm.scrollTop > 5 ? "0" : "0";
 
             doc.querySelector("main").style.paddingTop =
-            htm.scrollTop > 50 ? "120px" : "0";
+            htm.scrollTop > 5 ? "120px" : "0";
 
           } else{
 
             doc.querySelector("header").style.position =
-            htm.scrollTop > 50 ? "fixed" : "";
+            htm.scrollTop > 5 ? "fixed" : "";
 
           doc.querySelector("header").style.top =
-            htm.scrollTop > 50 ? "0" : "0";
+            htm.scrollTop > 5 ? "0" : "0";
 
             doc.querySelector("header").style.borderRadius =
-            htm.scrollTop > 50 ? "0" : "0 0 25px 25px";
+            htm.scrollTop > 5 ? "0" : "0 0 25px 25px";
           }
 
           
