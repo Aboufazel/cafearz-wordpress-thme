@@ -76,7 +76,7 @@
 
 <header
     id="header"
-    class="header-box bg-white w-full mx-auto transition-all lg:w-[1200px] z-30"
+    class="header-box fixed top-0 right-[158px] w-full mx-auto transition-all lg:w-[1200px] z-30"
 >
     <div
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-[23px] py-[15px]"

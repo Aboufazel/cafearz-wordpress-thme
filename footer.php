@@ -135,17 +135,11 @@
             doc.querySelector("header").style.position =
             htm.scrollTop > 50 ? "fixed" : "";
 
-          doc.querySelector("main").style.paddingTop =
-            htm.scrollTop > 50 ? "90px" : "0";
-
-          doc.querySelector("header").style.width =
-            htm.scrollTop > 50 ? "100%" : "";
-
           doc.querySelector("header").style.top =
-            htm.scrollTop > 50 ? "0" : "50px";
+            htm.scrollTop > 50 ? "0" : "0";
 
             doc.querySelector("header").style.borderRadius =
-            htm.scrollTop > 50 ? "0" : "25px";
+            htm.scrollTop > 50 ? "0" : "0 0 25px 25px";
           }
 
           
