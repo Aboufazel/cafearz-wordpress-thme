@@ -128,7 +128,7 @@
             htm.scrollTop > 5 ? "0" : "0";
 
             doc.querySelector("main").style.paddingTop =
-            htm.scrollTop > 5 ? "120px" : "0";
+            htm.scrollTop > 5 ? "0" : "0";
 
           } else{
 

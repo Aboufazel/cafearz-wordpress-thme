@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:pb-[80px]">
+<div class="grid grid-cols-1 lg:grid-cols-2 mt-[90px] place-items-center lg:pb-[70px]">
 
     <div class="flex lg:hidden justify-start w-full z-10">
         <img
