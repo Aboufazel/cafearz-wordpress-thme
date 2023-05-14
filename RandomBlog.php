@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 lg:grid-cols-2 mt-[90px] place-items-center lg:pb-[70px]">
+<div class="grid grid-cols-1 lg:bg-[#0051FF]  lg:py-5 lg:px-8 rounded-[25px] lg:grid-cols-2 mt-[90px] place-items-center lg:pb-[70px]">
 
     <div class="flex lg:hidden justify-start w-full z-10">
         <img
@@ -11,38 +11,24 @@
     </div>
 
     <div class="flex flex-col gap-[12px] mt-5 lg:mt-0  items-start justify-center w-full z-10">
-        <p target="_blank" class="text-[12px] font-bold first-blue-text">
-            <?php get_category_post(); ?>
-        </p>
-
-        <h1 class="lg:text-[25px] font-black blog-title">
+        <h1 class="lg:text-[28px] lg:text-white font-black blog-title">
             <?php the_title(); ?>
         </h1>
 
-        <p class="text-[16px] data-color font-light">
-            <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
-        </p>
-
         <a title="<?php the_title(); ?>"
            target="<?php echo custom_permalink_target($post->ID); ?>"
-           href="<?php echo custom_permalink($post->ID); ?>" class="text-[16px] text-justify lg:mt-[17px] leading-[35px]">
+           href="<?php echo custom_permalink($post->ID); ?>" class="text-[16px] font-normal lg:text-dataBg text-justify lg:mt-[17px] leading-[35px]">
             <?php the_excerpt();?>
         </a>
 
-        <div class="flex flex-row items-center mt-[20px] lg:mt-[48px] w-full">
-            <div class="flex items-center justify-start w-1/2">
-                <div class="flex flex-row gap-[11px] items-center writer-pic">
-                    <div class="rounded-[50%] flex items-center justify-center w-[54px] h-[54px]">
-                        <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
-                    </div>
-                    <div class="flex flex-col gap-[4px] justify-center">
-                        <p class="lg:text-[16px] text-black text-[12px] font-bold">
-                            <?php the_author_posts_link(); ?>
-                        </p>
-                        <p class="text-[12px]">نویسنده</p>
-                    </div>
-                </div>
-            </div>
+        <div
+            class="hidden bg-dataBg px-[25px] py-[8px] mt-8 gap-[6px] rounded-[25px] lg:flex items-center"
+        >
+            <svg class="w-[18px] h-[18px]">
+                <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>
+            </svg>
+
+            <p class="text-[12px] font-bold"><?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?></p>
         </div>
     </div>
 

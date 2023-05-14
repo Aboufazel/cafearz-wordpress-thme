@@ -4,7 +4,6 @@
 
 <section id="blog-banner">
     <div class="container lg:mt-[120px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
-        <div class="left-rectangle z-0 hidden lg:flex"></div>
         <?php
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -35,8 +34,6 @@
             <p><?php _e( 'No content available' ); ?></p>
         <?php endif; ?>
     </div>
-
-    <div class="right-rectangle z-0 hidden lg:flex"></div>
 </section>
 
 
@@ -47,14 +44,6 @@
 
 <section id="bestArticle" class="">
     <div class="container relative lg:w-[1200px] mx-auto">
-        <a href="#bestArticle">
-            <img
-                src="<?php echo get_template_directory_uri(); ?>/src/assets/img/arrowButton.png"
-                alt="کافه ارز"
-                class="absolute hidden lg:block right-[44%] z-10 top-[45px]"
-            />
-        </a>
-
         <div class="selectBlog relative lg:pt-[120px]">
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"

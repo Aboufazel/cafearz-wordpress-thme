@@ -22,7 +22,6 @@ Text Domain: cafearz.com
     height: 42px;
     transition: 0.28s;
 }
-#bestArticle,
 #newBlogPost,
 #other-blog {
     background: linear-gradient(180deg, rgba(239, 244, 254, 0.8) 0, rgba(239, 244, 254, 0) 100%);
@@ -100,24 +99,6 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: bakh-extarbold;
-}
-.left-rectangle {
-    position: absolute;
-    left: 0;
-    background: var(--index-box-bg);
-    width: 500px;
-    height: 450px;
-    border-radius: 0 44px 44px 0;
-}
-.right-rectangle {
-    position: absolute;
-    right: -170px;
-    top: 80px;
-    background: var(--liner-box-bg);
-    transform: matrix(-0.98, 0.2, 0.2, 0.98, 0, 0);
-    width: 550px;
-    height: 430px;
-    border-radius: 95px;
 }
 .first-blue-text {
     color: var(--color-primary);
@@ -202,9 +183,7 @@ h1,h2,h3,h4,h5,h6 {
     background: var(--third-color);
 }
 .header-box {
-    box-shadow: 0 49px 29px -23px rgba(0, 0, 0, 0.05);
     border-radius: 0 0 25px 25px;
-    background: rgba( 255, 255, 255, 0.75 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
