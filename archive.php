@@ -1,50 +1,41 @@
 <?php get_header(); ?>
 
 
-<div
-    class="ArchiveTopBox font-black  text-[28px] lg:text-[40px] text-gold w-full mt-7 lg:mt-[25px] lg:mb-[40px]  flex items-center justify-center"
->
-    <?php dimox_breadcrumbs2(); ?>
-</div>
+<div class="container lg:w-[1200px] mt-[55px] mx-auto">
 
-
-<div class="container lg:w-[1200px] mx-auto">
-    <section class="breadCrump hidden lg:block mb-[55px]">
-        <div class="div flex flex-row items-center justify-between">
-            <div class="flex flex-row gap-[5px] text-zeroBlack text-[14px] font-bold items-center">
-                <?php
-                if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
-                ?>
-            </div>
+    <div class="hidden lg:flex flex flex-row items-center justify-between mt-[90px]">
+        <div class="flex flex-row gap-[5px] text-zeroBlack text-[14px] font-bold items-center">
+            <?php
+            if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
+            ?>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <div class="container relative lg:w-[1200px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
+    <h2 class="bg-[#0051FF] rounded-[7px] mt-[52px] text-white text-shadow:[3px 2px 4px 0 rgba(0, 0, 0, 0.25)] text-[35px] font-black max-w-max px-[30px] py-[5px]">
+        <?php get_category_post(); ?>
+    </h2>
 
-                <?php if (have_posts()) : ?>
-                    <!-- the loop -->
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php include 'Loop.php' ?>
-                    <?php endwhile; ?>
-                    <!-- end of the loop -->
+    <div class="container relative lg:w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
 
-
-                    <?php
-                    custom_pagination($wp_query->max_num_pages, "", $paged);
-                    ?>
+            <?php if (have_posts()) : ?>
+                <!-- the loop -->
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php include 'Loop.php' ?>
+                <?php endwhile; ?>
+                <!-- end of the loop -->
 
 
-                    <?php wp_reset_postdata(); ?>
+                <!-- pagination here -->
 
-                <?php else: ?>
-                    <p><?php _e('No content available'); ?></p>
-                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
 
-            </div>
+            <?php else: ?>
+                <p><?php _e('No content available'); ?></p>
+            <?php endif; ?>
+
         </div>
-    </section>
+    </div>
 </div>
 
 <?php get_footer(); ?>

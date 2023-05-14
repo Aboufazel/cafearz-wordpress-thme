@@ -32,6 +32,7 @@
                         date: "#898989",
                         gold: "#F0B90B",
                         hint: "#c5c5c5",
+                        inputBg:"#F5F8FD",
                         blogText: "#c4c4c4",
                         dataBg: "#F4F7FE",
                         blue: "#3377E8",
@@ -76,7 +77,7 @@
 
 <header
     id="header"
-    class="header-box fixed top-0 lg:right-[85px] w-full mx-auto transition-all  lg:w-[1350px] z-30"
+    class="header-box sticky top-0 lg:right-[85px] w-full mx-auto transition-all lg:w-[1350px] z-30"
 >
     <div
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-[23px] py-[15px]"

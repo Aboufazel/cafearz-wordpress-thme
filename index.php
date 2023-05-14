@@ -3,7 +3,7 @@
 
 
 <section id="blog-banner">
-    <div class="container lg:mt-[120px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
+    <div class="container lg:mt-[90px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

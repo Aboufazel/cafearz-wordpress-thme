@@ -1,9 +1,9 @@
 <?php get_header('blog'); ?>
-    <?php if (have_posts()) : ?>
+<?php if (have_posts()) : ?>
 
-    <?php while (have_posts()) :
-    the_post(); ?>
-    <?php setPostViews($post->ID); ?>
+<?php while (have_posts()) :
+the_post(); ?>
+<?php setPostViews($post->ID); ?>
 
     <div class="container lg:w-[800px] mt-[40px] lg:mt-[148px] mx-auto">
 
@@ -19,9 +19,7 @@
                     <p>/</p>
                     <div
                         class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[170px] lg:max-w-[500px] whitespace-nowrap text-ellipsis"
-                    >
-                        <?php the_title(); ?></div
-                    >
+                    ><?php the_title(); ?></div>
                 </div>
 
                 <a
@@ -49,7 +47,8 @@
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
 
                 <div class="flex w-full items-center justify-center relative lg:px-0 px-3">
-                    <img width="656px" height="410px" class="rounded-[15px] shadow-xl" src="<?php the_post_thumbnail_url('large'); ?>"
+                    <img width="656px" height="410px" class="rounded-[15px] shadow-xl"
+                         src="<?php the_post_thumbnail_url('large'); ?>"
                          alt="<?php the_title(); ?>"/>
                     <div id="shareSocial"
                          class="hidden lg:flex lg:flex-col transition items-center z-50 gap-[20px] absolute right-[-15px] top-[20px]">
@@ -114,7 +113,8 @@
                             class="flex justify-center gap-[5px] items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
                         >
                             <svg class="w-[18px] h-[18px]">
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>
+                                <use
+                                    xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>
                             </svg>
                             <p class="text-[12px] lg:text-[14px]">
                                 <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
@@ -207,99 +207,137 @@
     </div>
 
 
-    <div id="other-blog">
+<div id="other-blog">
 
-        <a href="#other-blog">
-            <img
-                src="<?php echo get_template_directory_uri(); ?>/src/assets/img/arrowButton.png"
-                alt="کافه ارز"
-                class="absolute hidden lg:block right-[44%] z-10 top-[46px]"
-            />
-        </a>
+    <a href="#other-blog">
+        <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
+            <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
+        </svg>
+    </a>
 
-        <div class="container lg:w-[800px] px-[15px] mx-auto">
+    <div class="container lg:w-[800px] px-[15px] mx-auto">
 
-            <div class="selectBlog relative lg:pt-[120px]">
-                <p
-                    class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
-                >
-                    CAFEARZ BLOG
-                </p>
-                <div class="flex flex-row items-center justify-between">
-                    <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
-                        <div
-                            class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
-                        >
-                            #
-                        </div>
-                        <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
-                            مطالب مرتبط
-                        </p>
-                    </div>
-
+        <div class="selectBlog relative lg:pt-[120px]">
+            <p
+                class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
+            >
+                CAFEARZ BLOG
+            </p>
+            <div class="flex flex-row items-center justify-between">
+                <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
                     <div
-                        class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[14px]"
+                        class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
                     >
-                        مشاهده همه
+                        #
                     </div>
+                    <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                        مطالب مرتبط
+                    </p>
                 </div>
-            </div>
 
-
-            <div class="grid lg:grid-cols-3 grid-cols-1 gap-[20px] mt-[20px]">
-
-                <?php
-                $categories = get_the_category($post->ID);
-                $args = null;
-                if ($categories) {
-                    $category_ids = array();
-                    foreach ($categories as $individual_category) $category_ids[] = $individual_category->term_id;
-                    $args = array(
-                        'category__in' => $category_ids,
-                        'post__not_in' => array($post->ID),
-                        'posts_per_page' => 3, // Number of related posts that will be shown.
-                        'ignore_sticky_posts' => 3
-                    );
-                }
-
-                if ($args) {
-
-                    $rel_posts = new WP_Query($args);
-                    if ($rel_posts->have_posts()) {
-                        ?>
-
-                        <?php while ($rel_posts->have_posts()) : $rel_posts->the_post(); ?>
-
-
-
-
-                            <div class="flex flex-col">
-                                <a href="<?php the_permalink() ?>"
-                                   title="<?php the_title(); ?>"
-                                   class="flex flex-col relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
-                                    <img
-                                        src="<?php the_post_thumbnail_url('large'); ?>"
-                                        alt="<?php the_title(); ?>"
-                                        class="w-full lg:h-[173px] rounded-[10px] shadow-xl"
-                                    />
-                                    <h3 class="text-[14px] px-1 overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis"><?php the_title(); ?></h3>
-                                </a>
-                            </div>
-
-
-                        <?php
-                        endwhile;
-                        ?>
-                        <?php
-                    }
-                }
-                wp_reset_postdata();
-                ?>
+                <div
+                    class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[14px]"
+                >
+                    مشاهده همه
+                </div>
             </div>
         </div>
 
-        <?php endwhile; ?>
 
-        <?php endif; ?>
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-[20px] mt-[20px]">
+
+            <?php
+            $categories = get_the_category($post->ID);
+            $args = null;
+            if ($categories) {
+                $category_ids = array();
+                foreach ($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+                $args = array(
+                    'category__in' => $category_ids,
+                    'post__not_in' => array($post->ID),
+                    'posts_per_page' => 3, // Number of related posts that will be shown.
+                    'ignore_sticky_posts' => 3
+                );
+            }
+
+            if ($args) {
+
+                $rel_posts = new WP_Query($args);
+                if ($rel_posts->have_posts()) {
+                    ?>
+
+                    <?php while ($rel_posts->have_posts()) : $rel_posts->the_post(); ?>
+
+
+                        <div class="flex flex-col">
+                            <a href="<?php the_permalink() ?>"
+                               title="<?php the_title(); ?>"
+                               class="flex flex-col relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
+                                <img
+                                    src="<?php the_post_thumbnail_url('large'); ?>"
+                                    alt="<?php the_title(); ?>"
+                                    class="w-full lg:h-[173px] rounded-[10px] shadow-xl"
+                                />
+                                <h3 class="text-[14px] px-1 overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis"><?php the_title(); ?></h3>
+                            </a>
+                        </div>
+
+
+                    <?php
+                    endwhile;
+                    ?>
+                    <?php
+                }
+            }
+            wp_reset_postdata();
+            ?>
+        </div>
+    </div>
+
+    <?php endwhile; ?>
+
+    <?php endif; ?>
+
+</div>
+
+
+<section id="comment-block">
+
+    <a href="#comment-block">
+        <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
+            <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
+        </svg>
+    </a>
+
+    <div class="container flex flex-col lg:w-[800px] items-start mx-auto relative p-3 lg:p-0">
+        <h3 class="text-[28px] text-black">
+            ارسال دیدگاه
+        </h3>
+        <p class="text-hint mt-3 text-[12px] lg:text-[14px] font-bold">
+            شما هم میتوانید نظر خود را با ما به اشتراک بگذارید
+        </p>
+
+
+        <form onsubmit="" class="w-full flex flex-col gap-[20px]">
+            <textarea
+                class="w-full h-[290px] bg-data mt-[53px] rounded-[12px] placeholder:text-start p-4"
+                placeholder="دیدگاه شما"></textarea>
+
+            <input type="name" placeholder="نام و نام خانوادگی" class="bg-data p-4 rounded-[12px] w-full"/>
+            <input type="email" placeholder="ایمیل" class="bg-data p-4 rounded-[12px] w-full"/>
+
+            <div class="flex flex-row-reverse items-center justify-between w-full">
+                <button type="submit" class="bg-blue px-[27px] py-[12px] rounded-[13px] text-[14px] font-semibold text-white">
+                    ارسال دیدگاه
+                </button>
+
+                <div class="flex flex-row-reverse gap-[5px] items-center">
+                    <p class="text-[12px] text-black font-semibold">مرا به خاطر بسپار</p>
+                    <input type="checkbox" class="p-3 border-0 outline-0 w-[20px] h-[20px] rounded-[6px]">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 <?php get_footer('blog'); ?>
 

@@ -122,14 +122,10 @@
             console.log(document.documentElement.clientWidth, mediaBreakpointSize)
 
             if (document.documentElement.clientWidth < mediaBreakpointSize) {
-                doc.querySelector("header").style.position =
-                    htm.scrollTop > 5 ? "fixed" : "";
 
                 doc.querySelector("header").style.width =
-                    htm.scrollTop > 5 ? "100%" : "";
+                    htm.scrollTop > 5 ? "100%" : "100%";
 
-                doc.querySelector("header").style.top =
-                    htm.scrollTop > 5 ? "0" : "0";
 
                 doc.querySelector("header").style.borderRadius =
                     htm.scrollTop > 5 ? "0" : "0";
@@ -137,8 +133,6 @@
                 doc.querySelector("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
 
-                doc.querySelector("main").style.paddingTop =
-                    htm.scrollTop > 5 ? "0" : "0";
 
                 doc.querySelector("header").style.boxShadow =
                     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
@@ -151,14 +145,12 @@
                 doc.querySelector("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
 
-                doc.querySelector("header").style.position =
-                    htm.scrollTop > 5 ? "fixed" : "";
 
                 doc.querySelector("header").style.top =
                     htm.scrollTop > 5 ? "0" : "0";
 
                 doc.querySelector("header").style.borderRadius =
-                    htm.scrollTop > 5 ? "0" : "0 0 25px 25px";
+                    htm.scrollTop > 5 ? "0 0 25px 25px" : "0";
             }
 
 
