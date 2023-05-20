@@ -75,23 +75,25 @@
             <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto gap-[20px]">
 
                 <?php
-                $today = getdate();
-                $replywp_args = array(
-                    'post_type'=>'post',
-                    'posts_per_page'=>'10',
-                    'offset'=>0,
-                    'meta_key'=>'views','orderby'=>'meta_value_num',
-                    'order'=>'DESC','post_status'=>'publish',
-                    'date_query'=> array(
-                        array('column' =>'post_date_gmt',
-                            'after' => '1 week ago'
-                        )));
-                $the_query = new WP_Query( $replywp_args ); ?>
-                <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                <?php endwhile; wp_reset_postdata(); else : ?>
-                    <?php _e( 'متاسفیم مطلبی برای نمایش وجود ندارد' ); ?>
-                <?php endif; ?>
+                $popularpost = new WP_Query(array(
+                    'posts_per_page' =>-3,
+                    'meta_key' => 'post_views_count',
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC',
+                    'date_query'     => array(
+                        array(
+                            'after' => '4 week ago'
+                        )
+                    )
+
+                ));
+
+                while ( $popularpost->have_posts() ) : $popularpost->the_post();
+                    include 'Loop.php';
+                endwhile;
+
+                ?>
 
                 <a href="https://www.instagram.com/cafearz_com"
                    target="_blank"
@@ -126,11 +128,9 @@
 <section id="newBlogPost">
     <div class="container relative lg:w-[1200px] mx-auto">
         <a href="#newBlogPost">
-            <img
-                src="<?php echo get_template_directory_uri(); ?>/src/assets/img/arrowButton.png"
-                alt="کافه ارز"
-                class="absolute hidden lg:block right-[44%] z-10 top-[45px]"
-            />
+            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
+                <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
+            </svg>
         </a>
 
         <div class="selectBlog relative lg:pt-[120px]">

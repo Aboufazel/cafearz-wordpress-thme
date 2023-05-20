@@ -53,7 +53,8 @@ the_post(); ?>
                     <div id="shareSocial"
                          class="hidden lg:flex lg:flex-col transition items-center z-50 gap-[20px] absolute right-[-15px] top-[20px]">
 
-                        <a href="" target="_blank" class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                        <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
+                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
                             <svg class="fill-[#989898] hover:fill-[#FF7E0D]" id="instadetailSocial" width="35"
                                  height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +64,8 @@ the_post(); ?>
 
                         </a>
 
-                        <a href="" target="_blank" class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                        <a title="whatsApp" href="https://www.instagram.com/cafearz_com" target="_blank"
+                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
                             <svg class="fill-[#989898] hover:fill-[#4ade80]" id="whatsdetailSocial" width="35"
                                  height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +74,8 @@ the_post(); ?>
                             </svg>
                         </a>
 
-                        <a href="" target="_blank" class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                        <a title="telegram" href="https://t.me/cafearzz" target="_blank"
+                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
                             <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="30" height="26" viewBox="0 0 30 26"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +85,8 @@ the_post(); ?>
 
                         </a>
 
-                        <a href="http://www.twitter.com/share?url=<?php the_permalink(); ?>" target="_blank"
+                        <a title="twitter" href="http://www.twitter.com/share?url=<?php the_permalink(); ?>"
+                           target="_blank"
                            class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
                             <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36" viewBox="0 0 35 36"
@@ -93,7 +97,8 @@ the_post(); ?>
 
                         </a>
 
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"
+                        <a title="linkedIn"
+                           href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"
                            target="_blank"
                            class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
@@ -327,7 +332,8 @@ the_post(); ?>
             <input type="email" placeholder="ایمیل" class="bg-data p-4 rounded-[12px] w-full"/>
 
             <div class="flex flex-row-reverse items-center justify-between w-full">
-                <button type="submit" class="bg-blue px-[27px] py-[12px] rounded-[13px] text-[14px] font-semibold text-white">
+                <button type="submit"
+                        class="bg-blue px-[27px] py-[12px] rounded-[13px] text-[14px] font-semibold text-white">
                     ارسال دیدگاه
                 </button>
 
@@ -337,7 +343,52 @@ the_post(); ?>
                 </div>
             </div>
         </form>
+
+
+        <h2 class="flex flex-row items-center text-28px mt-[120px]">
+            دیدگاه کاربران
+            <span>(2)</span>
+        </h2>
+
+
+        <div class="flex flex-col justify-center w-full relative mt-[50px] p-5 rounded-[16px] bg-white shadow-sm">
+            <div class="flex flex-row w-full items-center justify-between">
+                <div class="flex flex-row gap-[9px] items-center">
+                    <div class="bg-blue w-[48px] h-[48px] rounded-[12px]"></div>
+                    <p class="flex flex-col font-black gap-2 text-[16px]">
+                        حسین عابدی
+                        <span class="text-hint font-normal text-[12px]">
+                            کاربر کافه ارز
+                        </span>
+                    </p>
+                </div>
+
+                <div
+                    class="hidden bg-dataBg px-[25px] py-[8px] gap-[6px] rounded-[25px] lg:flex items-center"
+                >
+                    <svg class="w-[18px] h-[18px]">
+                        <use
+                            xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>
+                    </svg>
+
+                    <p class="text-[12px] font-bold"><?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?></p>
+                </div>
+            </div>
+            <p class="text-justify text-[12px] font-normal mt-5 leading-[31px]">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
+                شناخت فراوان جامعه و متخصصان را می طلبد
+            </p>
+
+            <button type="submit"
+                    class="bg-blue px-[27px] relative lg:left-[-650px] lg:mt-0 mt-3 lg:w-max py-[12px] rounded-[13px] text-[14px] font-semibold text-white">
+                پاسخ دادن
+            </button>
+        </div>
     </div>
 </section>
+
+
 <?php get_footer('blog'); ?>
 

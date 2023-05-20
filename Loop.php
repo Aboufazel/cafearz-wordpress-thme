@@ -1,4 +1,4 @@
-<div class="flex cursor-pointer flex-col mb-[32px] gap-[12px] items-center hover:translate-y-[-16px] transition">
+<div class="flex cursor-pointer flex-col mb-[32px] gap-[12px] items-center">
 
     <div class="flex flex-col mb-[15px] relative items-center">
         <img
@@ -8,7 +8,8 @@
         />
 
         <div
-            class="category-btn h-[29px] text-[12px] bottom-[-14px] left-[22px] bg-white flex flex-row items-center font-bold text-[14px]"
+            class="category-btn h-[29px] text-[12px]
+             bottom-[-14px] left-[22px] bg-white flex flex-row items-center justify-center font-bold text-[14px]"
         >
             <?php get_category_post(); ?>
         </div>
@@ -39,7 +40,7 @@
             </div>
             <a href="<?php echo custom_permalink($post->ID); ?>"
                target="<?php echo custom_permalink_target($post->ID); ?>"
-               class="bg-dataBg  px-5 py-1 text-blue text-[12px] rounded-[25px] font-semibold">
+               class="bg-dataBg  px-5 py-1 text-blue text-[12px] hover:scale-110 hover:bg-blue hover:text-white  transition rounded-[25px] font-semibold">
                 مطالعه
             </a>
         </div>

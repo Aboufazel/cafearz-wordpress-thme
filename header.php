@@ -96,7 +96,7 @@
         <div class="lg:col-span-2 flex justify-end lg:justify-start w-full">
             <div class="flex relative gap-3 flex-row items-center">
                 <button
-                    name="menu-btn"
+                    title="menu-btn"
                     onclick="myFunction()"
                     class="dropbtn gap-[12px] relative w-[42px] h-[42px] flex flex-row items-center justify-center bg-dataBg p-3 rounded-[13px]"
                 >
@@ -132,7 +132,7 @@
 
                 <div class="search-box hidden relative lg:flex items-center mr-[49px]">
                     <button
-                        name="search-btn bg-black"
+                        title="search-btn bg-black"
                         class="absolute left-[21px] top-[15px]"
                     >
                         <svg class="w-[17px] h-[16px]">

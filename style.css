@@ -125,6 +125,12 @@ h1,h2,h3,h4,h5,h6 {
     transition: 0.25s;
     position: absolute;
 }
+.category-btn a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50px;
+}
 #other-blog,
 #selectBlog,
 .header-box,

@@ -79,6 +79,7 @@
             class="flex flex-row bg-white justify-center bottom-[-12px] lg:bottom-[-42px] z-10 w-full relative"
         >
             <button
+                title="arrow-up-btn"
                 onclick="scrollTopBody()"
                 class="absolute cursor-pointer lg:right-[500px] lg:top-[-30px]"
             >
