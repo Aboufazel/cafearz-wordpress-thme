@@ -283,7 +283,7 @@ the_post(); ?>
 
 </div>
 
-<?php include 'comments.php'; ?>
+
 <section id="comment-block">
 
     <a href="#comment-block">
@@ -293,6 +293,7 @@ the_post(); ?>
     </a>
 
     <div class="container flex flex-col lg:w-[800px] items-start mx-auto relative p-3 lg:p-0">
+        <?php include 'comments.php'; ?>
         <h3 class="text-[28px] text-black">
             ارسال دیدگاه
         </h3>
