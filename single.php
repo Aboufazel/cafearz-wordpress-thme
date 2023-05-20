@@ -10,35 +10,14 @@ the_post(); ?>
 
     <div class="container lg:w-[800px] mt-[40px] mx-auto">
 
-        <div class="breadCrump hidden lg:block mb-[55px]">
-
-
-            <div class="div flex flex-row items-center justify-between">
-
-                <div class="flex flex-row gap-[5px] items-center">
-                    <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
-                    <p>/</p>
-                    <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
-                    <p>/</p>
-                    <div
-                        class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[170px] lg:max-w-[500px] whitespace-nowrap text-ellipsis"
-                    ><?php the_title(); ?></div>
-                </div>
-
-                <a
-                    href="<?php echo site_url(); ?>"
-                    class="lg:flex flex-row font-bold items-center gap-[4px] text-[14px] text-zeroBlack hidden"
-                >
-                    بازگشت به وبلاگ
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M8.75154 11.6199L4.9482 7.81655C4.49904 7.36738 4.49904 6.63238 4.9482 6.18322L8.75154 2.37988"
-                            stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                    </svg>
-
-                </a>
-            </div>
+        <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[55px]">
+            <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
+            <p>/</p>
+            <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
+            <p>/</p>
+            <div
+                class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
+            ><?php the_title(); ?></div>
         </div>
 
         <div id="blog-detail-text">

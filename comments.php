@@ -25,13 +25,10 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-        <div class="blog-title">
-            <strong class="title">
-                دیدگاه ها
-                <span style="font-size: 13px;">(<?php echo get_comments_number();?>)</span>
-            </strong>
-        </div>
-			<div class="clearfix"></div>
+		<strong class="flex flex-row items-center text-28px mt-[120px]">
+			دیدگاه کاربران
+			<span class="text-[13px]">(<?php echo get_comments_number();?>)</span>
+		</strong>
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
