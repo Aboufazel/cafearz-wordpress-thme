@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-
-
 <section id="blog-banner">
     <div class="container lg:mt-[90px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
@@ -37,8 +35,105 @@
 </section>
 
 
+<?php
+$querystr = "
+            SELECT $wpdb->posts.* 
+            FROM $wpdb->posts, $wpdb->postmeta
+            WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id 
+            AND $wpdb->postmeta.meta_key = 'selected' 
+            AND $wpdb->postmeta.meta_value = 1 
+            AND $wpdb->posts.post_status = 'publish' 
+            AND $wpdb->posts.post_type = 'post'
+            ORDER BY $wpdb->posts.post_modified DESC
+            LIMIT 4
+         ";
+
+$pageposts = $wpdb->get_results($querystr, OBJECT);
+$selected_count= count($pageposts);
+$selected_counter=0;
 
 
+?>
+
+
+<?php if ($pageposts): ?>
+
+
+
+        <?php if ($selected_count>=4): ?>
+            <section id="selectBlog" class="container lg:w-[1200px] mx-auto">
+                <div class="selectBlog mt-[105px]">
+                    <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
+                        FAVORATE NEWS
+                    </p>
+
+                    <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
+                        <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
+                            <div
+                                class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
+                            >
+                                #
+                            </div>
+                            <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                                منتخب سر دبیر
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-12 justify-between items-center gap-[5px] mt-[67.2px]">
+
+
+                    <?php foreach ($pageposts as $post): ?>
+                        <div class="col-span-1 lg:col-span-3 ">
+                            <div title=" <?php the_title(); ?>"
+                               class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
+                            >
+                                <div class="flex flex-col relative items-center lg:items-start">
+                                    <img
+                                        src="<?php the_post_thumbnail_url('large'); ?>"
+                                        alt="<?php the_title(); ?>"
+                                        class="w-[95%] bg-none rounded-[10px]"
+                                    />
+
+                                    <div
+                                        class="category-btn bottom-[-18px] left-[40px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
+                                    >
+                                        <?php get_category_post(); ?>
+                                    </div>
+                                </div>
+
+                                <div class="flex w-[95%] flex-col mt-2 items-center lg:items-start">
+                                    <h2
+                                        class="font-bold text-[13px] lg:text-[16px] lg:mt-[14px] mt-[25px]"
+                                    >
+                                        <?php the_title(); ?>
+                                    </h2>
+                                    <p class="flex flex-row items-center justify-between w-full text-[14px] mt-[5px] data-color">
+                                        <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
+
+                                        <a href="<?php echo custom_permalink($post->ID); ?>"
+                                           target="<?php echo custom_permalink_target($post->ID); ?>"
+                                           class="bg-dataBg  px-5 py-1 text-blue text-[12px] hover:scale-110 hover:bg-blue hover:text-white  transition rounded-[25px] font-semibold">
+                                            مطالعه
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+
+                </div>
+            </section>
+
+
+        <?php endif; ?>
+
+
+
+    <?php wp_reset_postdata(); ?>
+<?php endif; ?>
 
 
 
@@ -61,13 +156,6 @@
                         برترین مطالب
                     </p>
                 </div>
-
-                <a href="<?php the_permalink()?>"
-                   target="_blank"
-                    class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[12px] lg:text-[14px]"
-                >
-                    مشاهده همه
-                </a>
             </div>
         </div>
 
@@ -128,7 +216,7 @@
 <section id="newBlogPost">
     <div class="container relative lg:w-[1200px] mx-auto">
         <a href="#newBlogPost">
-            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
+            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[41%] z-10 top-[46px]">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
             </svg>
         </a>
@@ -149,12 +237,6 @@
                     <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
                         جدیدترین مطالب
                     </p>
-                </div>
-
-                <div
-                    class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[12px] lg:text-[14px]"
-                >
-                    مشاهده همه
                 </div>
             </div>
         </div>
@@ -183,8 +265,6 @@
                 <?php endwhile; ?>
                 <!-- end of the loop -->
 
-                <!-- pagination here -->
-
                 <?php wp_reset_postdata(); ?>
 
             <?php else:  ?>
@@ -193,6 +273,11 @@
 
 
         </div>
+        <!-- pagination here -->
+        <?php
+        custom_pagination($custom_query->max_num_pages,"",$paged);
+        ?>
+
     </div>
 </section>
 

@@ -4,8 +4,11 @@
 <?php while (have_posts()) :
 the_post(); ?>
 <?php setPostViews($post->ID); ?>
+<script>
+    document.getElementById("header").classList.add('bg-white');
+</script>
 
-    <div class="container lg:w-[800px] mt-[40px] lg:mt-[148px] mx-auto">
+    <div class="container lg:w-[800px] mt-[40px] mx-auto">
 
         <div class="breadCrump hidden lg:block mb-[55px]">
 
@@ -35,10 +38,6 @@ the_post(); ?>
                     </svg>
 
                 </a>
-
-
-                <div class="detailBlog-rectangle"></div>
-
             </div>
         </div>
 
@@ -305,7 +304,7 @@ the_post(); ?>
 
 </div>
 
-
+<?php include 'comments.php'; ?>
 <section id="comment-block">
 
     <a href="#comment-block">

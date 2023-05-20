@@ -35,6 +35,11 @@
             <?php endif; ?>
 
         </div>
+
+
+        <?php
+        custom_pagination($wp_query->max_num_pages,"",$paged);
+        ?>
     </div>
 </div>
 

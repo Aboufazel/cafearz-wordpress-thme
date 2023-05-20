@@ -20,8 +20,6 @@
     <?php wp_head(); ?>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="text/javascript" src="./src/assets/js/tailwind.js"></script>
-
 
     <script>
         tailwind.config = {
@@ -77,13 +75,13 @@
 
 <header
     id="header"
-    class="header-box sticky top-0 lg:right-[85px] w-full mx-auto transition-all lg:w-[1350px] z-30"
+    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-0 lg:right-[85px] w-full mx-auto transition-all lg:w-[1350px] z-30"
 >
     <div
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-[23px] py-[15px]"
     >
         <div class="flex flex-row justify-start items-center w-full">
-            <a href="<?php echo get_template_directory_uri(); ?>">
+            <a href="http://localhost/cafearz">
                 <img
                     src="<?php echo get_template_directory_uri(); ?>/src/assets/img/logo.png"
                     width="124px"

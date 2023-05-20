@@ -1,4 +1,4 @@
-<div class="flex cursor-pointer flex-col mb-[32px] gap-[12px] items-center">
+<div class="flex cursor-pointer min-h-[300px] flex-col mb-[32px] gap-[12px] items-center">
 
     <div class="flex flex-col mb-[15px] relative items-center">
         <img
@@ -18,7 +18,7 @@
     <div
         class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
     >
-        <h3 class="lg:text-[14px] px-1 overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis">
+        <h3 title="<?php the_title(); ?>" class="lg:text-[14px] px-1">
             <?php the_title(); ?>
         </h3>
         <div
