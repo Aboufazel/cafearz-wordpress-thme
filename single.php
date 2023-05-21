@@ -8,12 +8,12 @@ the_post(); ?>
         document.getElementById("header").classList.add('bg-white');
     </script>
 
-    <div id="content" class="detail-post container lg:w-[800px] mt-[40px] mx-auto">
+    <div id="content" class="container lg:w-[800px] mt-[40px] mx-auto">
 
         <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[55px]">
             <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
             <p>/</p>
-            <div class="text-white text-[14px] font-bold"><?php get_category_post(); ?></div>
+            <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
             <p>/</p>
             <div
                 class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
@@ -30,7 +30,7 @@ the_post(); ?>
                          alt="<?php the_title(); ?>"/>
 
                     <div id="shareSocial"
-                         class="hidden lg:flex lg:flex-col transition items-center z-50 gap-[20px] absolute right-[-15px] top-[20px]">
+                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-15px] top-[20px]">
 
                         <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
                            class="hover:translate-y-[-8px] hover:scale-105 transition-all">
@@ -105,7 +105,7 @@ the_post(); ?>
                             </p>
                         </div>
                         <div
-                            class="bg-black font-bold text-[12px] lg:text-[14px] px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px] text-white"
+                            class="bg-black font-bold text-[12px] text-white px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px]"
                         >
                             <?php get_category_post(); ?>
                         </div>
@@ -116,9 +116,13 @@ the_post(); ?>
                     </h1>
 
                     <div
-                        class="flex flex-col w-full gap-[30px] px-[13px] text-justify lg:leading-9 leading-8 text-[14px] mb-[32px]">
+                        class="flex flex-col w-full gap-[30px] detail-post px-[13px] text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
                     </div>
+
+
+
+                    <div id="finish-content"></div>
 
                     <div
                         class="flex lg:flex-row lg:px-[32px] py-[25px] px-[10px] items-center gap-4 lg:gap-0 flex-col rounded-[11px] lg:mt-[65px] text-white justify-between bg-blue"
@@ -243,7 +247,6 @@ the_post(); ?>
                 </div>
             </div>
         </div>
-    <div id="finish-content"></div>
     </div>
 
 
@@ -258,11 +261,6 @@ the_post(); ?>
     <div class="container lg:w-[800px] px-[15px] mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
-            <p
-                class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
-            >
-                CAFEARZ BLOG
-            </p>
             <div class="flex flex-row items-center justify-between">
                 <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
                     <div

@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 lg:grid-cols-2 lg:place-items-center lg:bg-[#0051FF]  lg:py-5 lg:px-8 rounded-[25px] lg:pb-[70px]">
+<div class="first-blog grid grid-cols-1 lg:grid-cols-2 lg:place-items-center lg:py-5 lg:px-8 rounded-[25px] lg:pb-[70px]">
 
     <div class="flex lg:hidden justify-start w-full z-10">
         <img
@@ -10,17 +10,16 @@
         />
     </div>
 
-    <div class="flex flex-col gap-[12px] mt-5 lg:mt-0  items-start justify-center w-full z-10">
+    <div class="flex flex-col gap-[12px] mt-5 lg:mt-0 pr-[20px] items-start justify-center w-full z-10">
         <h1 title="<?php the_title(); ?>" class="lg:text-[28px] lg:text-white font-black blog-title">
             <?php the_title(); ?>
         </h1>
 
-        <a target="<?php echo custom_permalink_target($post->ID); ?>"
-           href="<?php echo custom_permalink($post->ID); ?>" class="text-[16px] font-normal lg:text-dataBg text-justify lg:mt-[17px] leading-[35px]">
-            <?php the_excerpt();?>
-        </a>
+        <p class="text-[16px] font-normal lg:text-dataBg text-justify lg:mt-[17px] leading-[35px]">
+            <?php echo  mb_substr(get_the_excerpt(),0,200);?>
+        </p>
 
-        <div class="flex flex-row w-full mt-8 items-center justify-between">
+        <div class="flex flex-row w-full mt-3 items-center justify-between">
             <div
                 class="bg-dataBg px-[25px] py-[8px] gap-[6px] rounded-[25px] flex items-center"
             >
@@ -34,7 +33,7 @@
             <a href="<?php echo custom_permalink($post->ID); ?>"
                title="<?php the_title(); ?>"
                target="<?php echo custom_permalink_target($post->ID); ?>"
-               class="bg-dataBg  px-5 py-1 text-blue text-[12px] hover:scale-110 hover:text-black hover:shadow-lg transition rounded-[25px] font-semibold">
+               class="bg-dataBg  px-5 py-1 text-blue text-[18px] hover:scale-110 hover:text-black hover:shadow-lg transition rounded-[25px] font-semibold">
                 مطالعه
             </a>
         </div>

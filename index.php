@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section id="blog-banner">
-    <div class="container lg:mt-[90px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
+    <div class="container lg:mt-[60px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -81,7 +81,7 @@ $selected_counter=0;
                     </div>
 
                 </div>
-                <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[5px] lg:mt-[50px]">
+                <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
 
 
                     <?php foreach ($pageposts as $post): ?>
@@ -136,12 +136,81 @@ $selected_counter=0;
 <?php endif; ?>
 
 
-
-<section id="bestArticle" class="">
+<section id="newBlogPost">
     <div class="container relative lg:w-[1200px] mx-auto">
+        <a href="#newBlogPost">
+            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[41%] z-10 top-[46px]">
+                <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
+            </svg>
+        </a>
+
         <div class="selectBlog relative lg:pt-[120px]">
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
+            >
+                CAFEARZ BLOG
+            </p>
+            <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
+                <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
+                    <div
+                        class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
+                    >
+                        #
+                    </div>
+                    <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                        جدیدترین مطالب
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-[70px]">
+
+            <?php
+
+            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+            $custom_args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 8,
+                'paged' => $paged
+            );
+
+            $custom_query = new WP_Query( $custom_args ); ?>
+
+            <?php if ( $custom_query->have_posts() ) : ?>
+
+                <!-- the loop -->
+                <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+
+                    <?php include 'Loop.php'?>
+
+                <?php endwhile; ?>
+                <!-- end of the loop -->
+
+                <?php wp_reset_postdata(); ?>
+
+            <?php else:  ?>
+                <p><?php _e( 'No content available' ); ?></p>
+            <?php endif; ?>
+
+
+        </div>
+        <!-- pagination here -->
+        <?php
+        custom_pagination($custom_query->max_num_pages,"",$paged);
+        ?>
+
+    </div>
+</section>
+
+
+
+<section id="bestArticle">
+    <div class="container relative lg:w-[1200px] mx-auto">
+        <div class="selectBlog relative lg:pt-[50px]">
+            <p
+                class="text-hint absolute text-[18px] top-[-12px] lg:top-[37px] right-[140px]"
             >
                 CAFEARZ BLOG
             </p>
@@ -210,74 +279,6 @@ $selected_counter=0;
                 </a>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="newBlogPost">
-    <div class="container relative lg:w-[1200px] mx-auto">
-        <a href="#newBlogPost">
-            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[41%] z-10 top-[46px]">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
-            </svg>
-        </a>
-
-        <div class="selectBlog relative lg:pt-[120px]">
-            <p
-                class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
-            >
-                CAFEARZ BLOG
-            </p>
-            <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
-                <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
-                    <div
-                        class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
-                    >
-                        #
-                    </div>
-                    <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
-                        جدیدترین مطالب
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-[70px]">
-
-            <?php
-
-            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
-            $custom_args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 8,
-                'paged' => $paged
-            );
-
-            $custom_query = new WP_Query( $custom_args ); ?>
-
-            <?php if ( $custom_query->have_posts() ) : ?>
-
-                <!-- the loop -->
-                <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
-
-                    <?php include 'Loop.php'?>
-
-                <?php endwhile; ?>
-                <!-- end of the loop -->
-
-                <?php wp_reset_postdata(); ?>
-
-            <?php else:  ?>
-                <p><?php _e( 'No content available' ); ?></p>
-            <?php endif; ?>
-
-
-        </div>
-        <!-- pagination here -->
-        <?php
-        custom_pagination($custom_query->max_num_pages,"",$paged);
-        ?>
-
     </div>
 </section>
 

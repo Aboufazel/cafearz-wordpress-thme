@@ -34,7 +34,7 @@ Text Domain: cafearz.com
     transition: .28s
 }
 
-#bestArticle::before, #footer::before, #newBlogPost::before, #other-blog::before {
+#footer::before, #newBlogPost::before, #other-blog::before {
     background: var(--color-white);
     width: 100%;
     height: 80px;
@@ -553,13 +553,13 @@ ol li, ul li {
 
 
 .detail-post a {
-    color: #6196ed !important;
+    color: #6196ed;
 }
 .detail-post a * {
-    color: #6196ed !important;
+    color: #6196ed;
 }
 .detail-post a:hover {
-    color: #3377E8 !important;
+    color: #3377E8;
 }
 
 .float-right {
@@ -660,4 +660,11 @@ ol li, ul li {
 
 .top-nav{
     width: 100%;
+}
+
+
+.first-blog{
+    background-image: url("./src/assets/img/bg-pattern.png"),linear-gradient(301deg, rgba(21,83,186,1) 0%, rgba(51,119,232,1) 100%) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

@@ -118,9 +118,17 @@
         doc = document;
         bod = doc.body;
         htm = doc.documentElement;
+
+
+
+        const element = document.getElementById("finish-content");
+
+        const yElement = element.offsetTop;
+
+
         addEventListener("scroll", function () {
 
-            console.log(document.documentElement.clientWidth, mediaBreakpointSize)
+            const content= window.scrollY;
 
             if (document.documentElement.clientWidth < mediaBreakpointSize) {
 
@@ -140,6 +148,7 @@
 
             } else {
 
+
                 doc.querySelector("header").style.boxShadow =
                     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
 
@@ -151,7 +160,7 @@
                     htm.scrollTop > 5 ? "0" : "0";
 
                 doc.querySelector("header").style.borderRadius =
-                    htm.scrollTop > 5 ? "0 0 25px 25px" : "0";
+                    htm.scrollTop > 5 ? "0 0 25px 25px" : "0 0 25px 25px";
             }
 
 
@@ -165,7 +174,7 @@
                 htm.scrollTop > 90 ? "230px" : "";
 
             doc.getElementById("shareSocial").style.display =
-                window.innerHeight + window.scrollY >= document.body.clientHeight
+                 content >= yElement
                     ? "none"
                     : "";
         });
