@@ -22,7 +22,7 @@
 
         <div class="flex flex-row w-full mt-8 items-center justify-between">
             <div
-                class="hidden bg-dataBg px-[25px] py-[8px] gap-[6px] rounded-[25px] lg:flex items-center"
+                class="bg-dataBg px-[25px] py-[8px] gap-[6px] rounded-[25px] flex items-center"
             >
                 <svg class="w-[18px] h-[18px]">
                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#calendar"></use>

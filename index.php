@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section id="blog-banner">
-    <div class="container lg:mt-[90px] p-[20px] lg:p-[0] lg:w-[1200px] mx-auto">
+    <div class="container lg:mt-[90px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -81,11 +81,11 @@ $selected_counter=0;
                     </div>
 
                 </div>
-                <div class="grid grid-cols-12 justify-between items-center gap-[5px] mt-[67.2px]">
+                <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[5px] lg:mt-[50px]">
 
 
                     <?php foreach ($pageposts as $post): ?>
-                        <div class="col-span-1 lg:col-span-3 ">
+                        <div class="col-span-3 ">
                             <div title=" <?php the_title(); ?>"
                                class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
                             >
@@ -103,7 +103,7 @@ $selected_counter=0;
                                     </div>
                                 </div>
 
-                                <div class="flex w-[95%] flex-col mt-2 items-center lg:items-start">
+                                <div class="flex w-full flex-col mt-2 px-3 lg:px-0 items-start">
                                     <h2
                                         class="font-bold text-[13px] lg:text-[16px] lg:mt-[14px] mt-[25px]"
                                     >

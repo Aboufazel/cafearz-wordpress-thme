@@ -114,7 +114,7 @@
                     <?php include 'menu.php'; ?>
 
                     <div
-                        class="flex flex-row lg:hidden items-center justify-center gap-3 w-full"
+                        class="flex flex-row lg:hidden mt-[30px] items-center justify-center gap-3 w-full"
                     >
                         <button
                             class="secondary-button lg:hidden flex items-center gap-[12px] justify-start font-semibold"
@@ -132,6 +132,7 @@
                     <button
                         title="search-btn bg-black"
                         class="absolute left-[21px] top-[15px]"
+                        onclick="show_mask('mask_search')"
                     >
                         <svg class="w-[17px] h-[16px]">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#search"></use>

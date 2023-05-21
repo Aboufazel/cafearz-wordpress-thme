@@ -18,9 +18,9 @@
     <div
         class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
     >
-        <h3 title="<?php the_title(); ?>" class="lg:text-[14px] px-1">
+        <h2 title="<?php the_title(); ?>" class="lg:text-[14px] px-1">
             <?php the_title(); ?>
-        </h3>
+        </h2>
         <div
             class="text-[14px] leading-6 text-blogDetail text-center
                 overflow-hidden max-w-[300px] lg:max-w-[1550px] whitespace-nowrap text-ellipsis

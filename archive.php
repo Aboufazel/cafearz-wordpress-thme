@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
+    <script>
+        document.getElementById("header").classList.add('bg-white' , 'rounded-b-[25px]');
+    </script>
+<div class="container lg:w-[1200px] mx-auto">
 
-<div class="container lg:w-[1200px] mt-[55px] mx-auto">
-
-    <div class="hidden lg:flex flex flex-row items-center justify-between mt-[90px]">
+    <div class="hidden lg:flex flex flex-row items-center justify-between mt-[50px]">
         <div class="flex flex-row gap-[5px] text-zeroBlack text-[14px] font-bold items-center">
             <?php
             if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
@@ -28,6 +30,11 @@
 
                 <!-- pagination here -->
 
+                <?php
+                custom_pagination($wp_query->max_num_pages,"",$paged);
+                ?>
+
+
                 <?php wp_reset_postdata(); ?>
 
             <?php else: ?>
@@ -36,7 +43,6 @@
 
         </div>
 
-
         <?php
         custom_pagination($wp_query->max_num_pages,"",$paged);
         ?>
@@ -44,6 +50,3 @@
 </div>
 
 <?php get_footer(); ?>
-
-
-
