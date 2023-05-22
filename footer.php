@@ -140,8 +140,9 @@
                 doc.getElementById("header").style.position =
                     htm.scrollTop > 5 ? "sticky" : "";
 
+
                 doc.getElementById("header").style.background =
-                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
+                    htm.scrollTop > 5 ? "rgba(255, 255, 255, 0.85)" : ""
 
 
                 doc.getElementById("header").style.boxShadow =
@@ -200,7 +201,7 @@
         $(this).closest('.lazy-box').removeClass('lazy-box');
     });
 
-    $(".lazy-img").prepend(function () {
+    $(".lazy-box").prepend(function () {
         $(this).attr('src', $(this).data('src'));
     });
 

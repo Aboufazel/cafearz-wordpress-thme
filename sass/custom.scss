@@ -501,6 +501,12 @@ input::placeholder, textarea {
 }
 
 
+.comment-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .comment-form-cookies-consent {
   font-size: 12px;
 }

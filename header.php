@@ -95,7 +95,11 @@
                         </svg>
                     </button>
 
-                    <input type="text" placeholder="جستجو"/>
+                    <form class="search-form clearfix" action="<?php echo home_url(); ?>">
+                        <input name="s"  type="text" placeholder="جستجو"/>
+
+                        <input type="hidden" value="submit" />
+                    </form>
                 </div>
             </div>
         </div>

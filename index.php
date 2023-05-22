@@ -1,51 +1,5 @@
 <?php get_header(); ?>
 
-<script>
-    let doc, bod, htm;
-    let mediaBreakpointSize = 1000
-    addEventListener("load", function () {
-        doc = document;
-        bod = doc.body;
-        htm = doc.documentElement;
-
-
-        addEventListener("scroll", function () {
-
-            const content= window.scrollY;
-
-            if (document.documentElement.clientWidth < mediaBreakpointSize) {
-
-                doc.getElementById("header").style.background =
-                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
-
-
-                doc.getElementById("header").style.boxShadow =
-                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
-
-            } else {
-
-
-                doc.getElementById("header").style.boxShadow =
-                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
-
-                doc.getElementById("header").style.background =
-                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
-            }
-        });
-    });
-
-
-    function scrollTopBody() {
-        var rootElement = document.documentElement;
-
-        // Scroll to top logic
-        rootElement.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }
-</script>
-
 <section id="blog-banner">
     <div class="container lg:mt-[80px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
@@ -329,6 +283,79 @@ $selected_counter=0;
         </div>
     </div>
 </section>
+
+
+<script>
+    addEventListener("load", function () {
+        doc = document;
+        bod = doc.body;
+        htm = doc.documentElement;
+
+        const element = document.getElementById("finish-content");
+
+        const yElement = element.offsetTop;
+
+
+        addEventListener("scroll", function () {
+
+            const content= window.scrollY;
+
+            if (document.documentElement.clientWidth < mediaBreakpointSize) {
+
+                doc.getElementById("header").style.width =
+                    htm.scrollTop > 5 ? "100%" : "100%";
+
+
+                doc.getElementById("header").style.borderRadius =
+                    htm.scrollTop > 5 ? "0" : "0";
+
+                doc.getElementById("header").style.position =
+                    htm.scrollTop > 5 ? "sticky" : "";
+
+                doc.getElementById("header").style.background =
+                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
+
+
+                doc.getElementById("header").style.boxShadow =
+                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
+
+            } else {
+
+
+                doc.getElementById("header").style.boxShadow =
+                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
+
+                doc.getElementById("header").style.background =
+                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
+
+
+                doc.getElementById("header").style.position =
+                    htm.scrollTop > 5 ? "sticky" : "sticky";
+
+                doc.getElementById("header").style.top =
+                    htm.scrollTop > 5 ? "0" : "0";
+
+                doc.getElementById("header").style.borderRadius =
+                    htm.scrollTop > 5 ? "0 0 25px 25px" : "0 0 25px 25px";
+            }
+
+
+            doc.getElementById("shareSocial").style.position =
+                htm.scrollTop > 90 ? "fixed" : "";
+
+            doc.getElementById("shareSocial").style.right =
+                htm.scrollTop > 90 ? "370px" : "";
+
+            doc.getElementById("shareSocial").style.top =
+                htm.scrollTop > 90 ? "130px" : "";
+
+            doc.getElementById("shareSocial").style.display =
+                content >= yElement
+                    ? "none"
+                    : "";
+        });
+    });
+</script>
 
 
 

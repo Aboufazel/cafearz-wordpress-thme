@@ -310,9 +310,9 @@ the_post(); ?>
                         <div class="flex flex-col">
                             <a href="<?php the_permalink() ?>"
                                title="<?php the_title(); ?>"
-                               class="flex flex-col relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
+                               class="flex flex-col lazy-box relative hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
                                 <img
-                                    src="<?php the_post_thumbnail_url('large'); ?>"
+                                    data-src="<?php the_post_thumbnail_url('large'); ?>"
                                     alt="<?php the_title(); ?>"
                                     class="w-full lg:h-[173px] rounded-[10px] shadow-xl"
                                 />
@@ -347,7 +347,7 @@ the_post(); ?>
         </svg>
     </a>
 
-    <div class="container flex flex-col lg:w-[800px] items-start mx-auto relative p-3 lg:p-0">
+    <div class="container flex flex-col w-full lg:w-[800px] items-start mx-auto relative p-3 lg:p-0">
         <?php include 'comments.php'; ?>
     </div>
 </section>
