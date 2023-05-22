@@ -10,7 +10,6 @@
     <meta name="description" content="Put your description here." />
 
     <link rel="stylesheet" media="all" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?v=3.91"/>
-    <link rel="shortcut icon" href="<?php echo bloginfo('template_url'); ?>/favicon2.ico">
 
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
 
@@ -19,51 +18,6 @@
 
     <?php wp_head(); ?>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        black: "#21294D",
-                        date: "#898989",
-                        gold: "#F0B90B",
-                        hint: "#c5c5c5",
-                        inputBg:"#F5F8FD",
-                        blogText: "#c4c4c4",
-                        dataBg: "#F4F7FE",
-                        blue: "#3377E8",
-                        white: "#ffffff",
-                        zeroBlack: "#000000",
-                        blogDetail: "#6F6F6F",
-                    },
-                },
-                fontFamily: {
-                    sans: [
-                        "bakh-regular",
-                        "bakh-light",
-                        "bakh-bold",
-                        "bakh-black",
-                        "bakh-extrablack",
-                        "bakh-extarbold",
-                    ],
-                },
-                fontWeight: {
-                    thin: "100",
-                    hairline: "100",
-                    extralight: "200",
-                    light: "300",
-                    normal: "400",
-                    medium: "500",
-                    semibold: "600",
-                    bold: "700",
-                    extrabold: "800",
-                    black: "900",
-                },
-            },
-        };
-    </script>
 </head>
 
 <body <?php body_class(); ?>
@@ -75,13 +29,13 @@
 
 <header
     id="header"
-    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-0 lg:right-[85px] w-full mx-auto transition-all lg:w-[1350px] z-30"
+    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-[0px] lg:right-[0px] w-full mx-auto transition-all lg:w-[1350px] z-30"
 >
     <div
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-[23px] py-[15px]"
     >
         <div class="flex flex-row justify-start items-center w-full">
-            <a href="http://localhost/cafearz">
+            <a href="http://cblog.test/">
                 <img
                     src="<?php echo get_template_directory_uri(); ?>/src/assets/img/logo.png"
                     width="124px"
@@ -92,19 +46,20 @@
             </a>
         </div>
         <div class="lg:col-span-2 flex justify-end lg:justify-start w-full">
-            <div class="flex relative gap-3 flex-row items-center">
-                <button
+            <div class="flex relative gap-3 flex-row items-center" >
+
+                <div
                     title="menu-btn"
-                    onclick="myFunction()"
-                    class="dropbtn gap-[12px] relative w-[42px] h-[42px] flex flex-row items-center justify-center bg-dataBg p-3 rounded-[13px]"
+                    class=" gap-[12px] relative w-[42px] h-[42px] flex flex-row items-center justify-center bg-dataBg p-3 rounded-[13px]"
                 >
-                    <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div onclick="myFunction()" class="dropbtn absolute cursor-pointer w-[42px] h-[42px]  rounded-[13px] z-50"></div>
+                    <svg  width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.7793 15H1.00153" stroke="#21294D" stroke-width="2" stroke-linecap="round"/>
                         <path opacity="0.79" d="M17.7793 8.43457H1.00153" stroke="#21294D" stroke-width="2" stroke-linecap="round"/>
                         <path opacity="0.43" d="M17.4902 1.86963L1.00174 1.86963" stroke="#21294D" stroke-width="2" stroke-linecap="round"/>
                     </svg>
 
-                </button>
+                </div>
                 <p class="font-semibold text-[12px] hidden lg:block">دسته بندی ها</p>
 
                 <div

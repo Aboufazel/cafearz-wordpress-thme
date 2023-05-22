@@ -1,11 +1,14 @@
 <div class="flex cursor-pointer min-h-[300px] flex-col mb-[32px] gap-[12px] items-center">
 
-    <div class="flex flex-col mb-[15px] relative items-center">
-        <img
-            src="<?php the_post_thumbnail_url('large'); ?>"
-            alt="<?php the_title(); ?>"
-            class="w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
-        />
+    <div class="flex flex-col mb-[15px] relative items-center ">
+        <div class="lazy-box ">
+            <img
+                data-src="<?php the_post_thumbnail_url('small'); ?>"
+                alt="<?php the_title(); ?>"
+                class="w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
+            />
+        </div>
+
 
         <div
             class="category-btn h-[29px] text-[12px]

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section id="blog-banner">
-    <div class="container lg:mt-[60px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
+    <div class="container lg:mt-[80px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

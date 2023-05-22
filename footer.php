@@ -108,8 +108,8 @@
 </footer>
 
 
-//
-<script defer src="<?php bloginfo('template_url'); ?>/js/website.js?v=2"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 
 <script>
     let doc, bod, htm;
@@ -119,6 +119,17 @@
         bod = doc.body;
         htm = doc.documentElement;
 
+        $(".lazy-box img").prepend(function () {
+            $(this).attr('src', $(this).data('src'));
+            $(this).closest('.lazy-box').removeClass('lazy-box');
+        });
+
+        $(".lazy-img").prepend(function () {
+            $(this).attr('src', $(this).data('src'));
+        });
+
+
+        doc.getElementById("header").style.top="0px"
 
 
         const element = document.getElementById("finish-content");
@@ -132,34 +143,40 @@
 
             if (document.documentElement.clientWidth < mediaBreakpointSize) {
 
-                doc.querySelector("header").style.width =
+                doc.getElementById("header").style.width =
                     htm.scrollTop > 5 ? "100%" : "100%";
 
 
-                doc.querySelector("header").style.borderRadius =
+                doc.getElementById("header").style.borderRadius =
                     htm.scrollTop > 5 ? "0" : "0";
 
-                doc.querySelector("header").style.background =
+                doc.getElementById("header").style.position =
+                    htm.scrollTop > 5 ? "sticky" : "sticky";
+
+                doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
 
 
-                doc.querySelector("header").style.boxShadow =
+                doc.getElementById("header").style.boxShadow =
                     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
 
             } else {
 
 
-                doc.querySelector("header").style.boxShadow =
+                doc.getElementById("header").style.boxShadow =
                     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
 
-                doc.querySelector("header").style.background =
+                doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
 
 
-                doc.querySelector("header").style.top =
+                doc.getElementById("header").style.position =
+                    htm.scrollTop > 5 ? "sticky" : "sticky";
+
+                doc.getElementById("header").style.top =
                     htm.scrollTop > 5 ? "0" : "0";
 
-                doc.querySelector("header").style.borderRadius =
+                doc.getElementById("header").style.borderRadius =
                     htm.scrollTop > 5 ? "0 0 25px 25px" : "0 0 25px 25px";
             }
 
@@ -168,10 +185,10 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "320px" : "";
+                htm.scrollTop > 90 ? "370px" : "";
 
             doc.getElementById("shareSocial").style.top =
-                htm.scrollTop > 90 ? "230px" : "";
+                htm.scrollTop > 90 ? "130px" : "";
 
             doc.getElementById("shareSocial").style.display =
                  content >= yElement
@@ -190,9 +207,19 @@
             behavior: "smooth",
         });
     }
+
+    // $(".lazy-box img").prepend(function () {
+    //     $(this).attr("src", $(this).data("src"));
+    //     $(this).closest(".lazy-box").removeClass("lazy-box");
+    // })
+        // $(".lazy-img").prepend(function () {
+        //     $(this).attr("src", $(this).data("src"));
+        // });
 </script>
 
 <script>
+
+
     /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
     function myFunction() {

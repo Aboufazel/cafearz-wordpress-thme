@@ -10,7 +10,7 @@
         />
     </div>
 
-    <div class="flex flex-col gap-[12px] mt-5 lg:mt-0 pr-[20px] items-start justify-center w-full z-10">
+    <div class="flex flex-col gap-[12px] mt-5 lg:mt-0 lg:pr-[20px] items-start justify-center w-full z-10">
         <h1 title="<?php the_title(); ?>" class="lg:text-[28px] lg:text-white font-black blog-title">
             <?php the_title(); ?>
         </h1>
@@ -33,8 +33,8 @@
             <a href="<?php echo custom_permalink($post->ID); ?>"
                title="<?php the_title(); ?>"
                target="<?php echo custom_permalink_target($post->ID); ?>"
-               class="bg-dataBg  px-5 py-1 text-blue text-[18px] hover:scale-110 hover:text-black hover:shadow-lg transition rounded-[25px] font-semibold">
-                مطالعه
+               class="read-more text-gold text-[12px] lg:text-[14px] hover:scale-110 hover:text-white hover:shadow-lg transition rounded-[25px] font-semibold">
+                ادامه مطلب ...
             </a>
         </div>
     </div>
