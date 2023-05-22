@@ -1,6 +1,16 @@
 <div class="first-blog grid grid-cols-1 lg:grid-cols-2 lg:place-items-center lg:py-5 lg:px-8 rounded-[25px] lg:pb-[70px]">
 
     <div class="flex lazy-box lg:hidden justify-start w-full z-10">
+
+        <div class="absolute flex items-center justify-center w-full">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <img
             data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"
@@ -39,7 +49,16 @@
         </div>
     </div>
 
-    <div class="lazy-box-index lg:flex hidden justify-start w-full z-10">
+    <div class="lazy-box-index relative lg:flex hidden justify-start w-full z-10">
+
+        <div class="absolute flex items-center justify-center w-full">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <img
             data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"

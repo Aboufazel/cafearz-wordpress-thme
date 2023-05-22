@@ -90,7 +90,18 @@ $selected_counter=0;
                                class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
                             >
                                 <div class="flex flex-col relative items-center lg:items-start">
-                                    <div class="lazy-box ">
+
+                                    <div class="lazy-box relative">
+
+                                        <div class="absolute flex items-center justify-center w-full">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
                                             alt="<?php the_title(); ?>"

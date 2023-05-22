@@ -25,19 +25,22 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-		<strong class="flex flex-row items-center text-28px mt-[120px]">
-			دیدگاه کاربران
-			<span class="text-[13px]">(<?php echo get_comments_number();?>)</span>
-		</strong>
+		<div class="blog-title">
+			<strong class="title">
+				دیدگاه ها
+				<span style="font-size: 13px;">(<?php echo get_comments_number();?>)</span>
+			</strong>
+		</div>
+		<div class="clearfix"></div>
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 42,
-				) );
+			wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 42,
+			) );
 			?>
 		</ol><!-- .comment-list -->
 
@@ -46,17 +49,17 @@ if ( post_password_required() ) {
 	<?php endif; // Check for have_comments(). ?>
 
 	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentysixteen' ); ?></p>
 	<?php endif; ?>
 
-	<?php
+		<?php
 		comment_form( array(
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
 		) );
-	?>
+		?>
 
 </div><!-- .comments-area -->

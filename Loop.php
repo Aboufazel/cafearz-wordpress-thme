@@ -1,11 +1,19 @@
 <div class="flex cursor-pointer min-h-[300px] flex-col mb-[32px] gap-[12px] items-center">
 
     <div class="flex flex-col mb-[15px] relative items-center ">
-        <div class="lazy-box ">
+        <div class="flex shadow-xl flex-grow items-center relative justify-center w-full lazy-box ">
+            <div class="absolute flex items-center justify-center w-full">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
-                class="w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
+                class="rounded-[10px] w-[278px] h-[178px]"
             />
         </div>
 
@@ -19,7 +27,7 @@
     </div>
 
     <div
-        class="flex w-[95%] gap-[12px] flex-col items-center lg:items-start"
+        class="flex w-full sm:max-w-[300px] gap-[12px] px-3 flex-col items-center lg:items-start"
     >
         <h2 title="<?php the_title(); ?>" class="lg:text-[14px] px-1">
             <?php the_title(); ?>
