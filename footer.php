@@ -173,10 +173,10 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "370px" : "";
+                htm.scrollTop > 90 ? "378px" : "";
 
             doc.getElementById("shareSocial").style.top =
-                htm.scrollTop > 90 ? "130px" : "";
+                htm.scrollTop > 90 ? "115px" : "";
 
             doc.getElementById("shareSocial").style.display =
                  content >= yElement

@@ -105,7 +105,7 @@ the_post(); ?>
                             </p>
                         </div>
                         <div
-                            class="bg-black font-bold text-[12px] text-white px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px]"
+                            class="bg-black font-bold text-[10px] text-white px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px]"
                         >
                             <?php get_category_post(); ?>
                         </div>
@@ -347,7 +347,7 @@ the_post(); ?>
         </svg>
     </a>
 
-    <div class="container flex flex-col w-full lg:w-[800px] items-start mx-auto relative p-3 lg:p-0">
+    <div class="new-comment-block flex flex-col items-center mx-auto relative p-3 lg:p-0">
         <?php include 'comments.php'; ?>
     </div>
 </section>

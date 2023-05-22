@@ -1,26 +1,17 @@
 <?php get_header(); ?>
 
-<div  class="page_header_page "   >
-    <div   class="app-container">
+<div class="container lg:w-[1200px] mx-auto">
+
+    <div class="hidden lg:flex  lg:flex-row items-center justify-between mt-[50px]">
         <h1>
             نتیجه جستجو :
             <?php printf(the_search_query());?>
         </h1>
-        <?php
-        if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
-        ?>
     </div>
-</div>
 
-<div class="app-container   d-none d-md-block ">
-    <?php include 'menu.php'; ?>
-</div>
+    <div class="container relative lg:w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
 
-
-<div class="app-container mt-5">
-
-    <div class="row">
-        <div class="col-lg-9 col-md-12  xs-540">
 
             <?php if ( have_posts() ) : ?>
                 <!-- the loop -->
@@ -34,22 +25,20 @@
                 global $wp_query;
                 ?>
 
-                <?php
-                custom_pagination($wp_query->max_num_pages,"",$paged);
-                ?>
-
                 <?php wp_reset_postdata(); ?>
 
             <?php else:  ?>
-                <div class="notfound"><?php _e( 'No content available' ); ?></div>
+                <div class="col-span-3 font-semibold text-[14px]"><?php _e( 'یافت می نشد! آنچه یافت می نشود آنم آرزوست!' ); ?></div>
             <?php endif; ?>
-        </div>
-        <div id="afix" class="col-lg-3  xs-540">
 
-            <?php get_sidebar(); ?>
         </div>
+
+        <?php
+        custom_pagination($wp_query->max_num_pages,"",$paged);
+        ?>
     </div>
-
 </div>
+
+
 
 <?php get_footer(); ?>

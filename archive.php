@@ -6,14 +6,14 @@
 <div class="container lg:w-[1200px] mx-auto">
 
     <div class="hidden lg:flex flex flex-row items-center justify-between mt-[50px]">
-        <div class="flex flex-row gap-[5px] text-zeroBlack text-[14px] font-bold items-center">
-            <?php
-            if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs();
-            ?>
+        <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[55px]">
+            <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
+            <p>/</p>
+            <div class="text-black text-[14px] font-bold"><?php get_category_post(); ?></div>
         </div>
     </div>
 
-    <h2 class="bg-[#0051FF] rounded-[7px] mt-[52px] text-white text-shadow:[3px 2px 4px 0 rgba(0, 0, 0, 0.25)] text-[35px] font-black max-w-max px-[30px] py-[5px]">
+    <h2 class="bg-[#0051FF] rounded-[7px] text-white text-shadow:[3px 2px 4px 0 rgba(0, 0, 0, 0.25)] text-[35px] font-black max-w-max px-[30px] py-[5px]">
         <?php get_category_post(); ?>
     </h2>
 

@@ -650,9 +650,6 @@ video {
 .mt-\[50px\]{
   margin-top: 50px;
 }
-.mt-\[52px\]{
-  margin-top: 52px;
-}
 .mt-\[5px\]{
   margin-top: 5px;
 }
@@ -1017,6 +1014,9 @@ video {
 .text-justify{
   text-align: justify;
 }
+.text-\[10px\]{
+  font-size: 10px;
+}
 .text-\[12px\]{
   font-size: 12px;
 }
@@ -1109,10 +1109,6 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-zeroBlack{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1241,10 +1237,6 @@ body {
 
 .blog-text-color {
   color: #c4c4c4;
-}
-
-.container {
-  max-width: 1200px;
 }
 
 .category-btn:hover {
@@ -1388,6 +1380,7 @@ h1, h2, h3, h4, h5, h6 {
 .search-box {
   padding: 12px 21px;
   border-radius: 80px;
+  border: 1px solid #cbdbf6;
 }
 
 .search-box input {
@@ -1591,11 +1584,15 @@ input::placeholder, textarea {
 #comment {
   display: flex;
   flex-direction: column;
-  background: white;
-  width: 100% !important;
+  background: var(--color-white);
   height: 290px;
   border-radius: 13px;
   padding: 15px;
+}
+@media (max-width: 1000px) {
+  #comment {
+    width: 35% !important;
+  }
 }
 
 .comment-reply-title {
@@ -1629,6 +1626,12 @@ input::placeholder, textarea {
   display: flex;
   justify-content: end;
   margin: 10px 0 0 0;
+}
+@media (max-width: 1000px) {
+  .form-submit {
+    justify-content: center !important;
+    width: 35% !important;
+  }
 }
 
 .comment-form {
@@ -1839,6 +1842,28 @@ ol li, ul li {
 header {
   position: sticky !important;
   top: 0 !important;
+}
+
+.comment-respond input[type=text], .comment-respond input[type=email], .comment-respond input[type=url], .comment-respond textarea {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 10px;
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .comment-respond input[type=text], .comment-respond input[type=email], .comment-respond input[type=url], .comment-respond textarea {
+    width: 35% !important;
+  }
+}
+
+@media (max-width = 1000px) {
+  .comment-form-cookies-consent {
+    display: none !important;
+  }
+}
+
+.wp-block-image img {
+  border-radius: 15px !important;
 }
 
 .hover\:translate-y-\[-16px\]:hover{

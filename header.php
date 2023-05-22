@@ -84,7 +84,7 @@
                 </div>
 
 
-                <div class="search-box shadow-md hidden relative lg:flex items-center mr-[49px]">
+                <div class="search-box hidden relative lg:flex items-center mr-[49px]">
                     <button
                         title="search-btn bg-black"
                         class="absolute left-[21px] top-[15px]"

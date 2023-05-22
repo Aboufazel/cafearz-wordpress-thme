@@ -98,11 +98,6 @@ body {
 .blog-text-color {
   color: #c4c4c4;
 }
-
-.container {
-  max-width: 1200px;
-}
-
 .category-btn:hover {
   background: var(--secondary-button-hover);
   background: var(--color-primary) !important;
@@ -255,6 +250,7 @@ h1, h2, h3, h4, h5, h6 {
 .search-box {
   padding: 12px 21px;
   border-radius: 80px;
+  border: 1px solid #cbdbf6;
 }
 
 .search-box input {
@@ -457,12 +453,15 @@ input::placeholder, textarea {
 #comment {
   display: flex;
   flex-direction: column;
-  background: white;
-  width: 100% !important;
+  background: var(--color-white);
   height: 290px;
   border-radius: 13px;
   padding: 15px;
 
+
+  @media (max-width: 1000px) {
+    width: 35% !important;
+  }
 }
 
 .comment-reply-title {
@@ -498,6 +497,12 @@ input::placeholder, textarea {
   display: flex;
   justify-content: end;
   margin: 10px 0 0 0;
+
+  @media (max-width: 1000px) {
+    justify-content: center !important;
+
+    width: 35% !important;
+  }
 }
 
 
@@ -707,4 +712,29 @@ ol li, ul li {
 header{
   position: sticky !important;
   top: 0!important;
+}
+
+
+.comment-respond input[type=text], .comment-respond input[type=email], .comment-respond input[type=url], .comment-respond textarea {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 10px;
+  width: 100%;
+
+  @media (max-width: 1000px) {
+    width: 35% !important;
+  }
+}
+
+.comment-form-cookies-consent{
+  @media (max-width=1000px) {
+    display: none !important;
+  }
+}
+
+
+.wp-block-image{
+  img{
+    border-radius: 15px !important;
+  }
 }
