@@ -1,5 +1,59 @@
 <?php get_header(); ?>
 
+<script>
+    let doc, bod, htm;
+    let mediaBreakpointSize = 1000
+    addEventListener("load", function () {
+        doc = document;
+        bod = doc.body;
+        htm = doc.documentElement;
+
+
+        addEventListener("scroll", function () {
+
+            const content= window.scrollY;
+
+            if (document.documentElement.clientWidth < mediaBreakpointSize) {
+
+                doc.getElementById("header").style.background =
+                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
+
+
+                doc.getElementById("header").style.boxShadow =
+                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
+
+            } else {
+
+
+                doc.getElementById("header").style.boxShadow =
+                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
+
+                doc.getElementById("header").style.background =
+                    htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
+            }
+        });
+    });
+
+
+    function scrollTopBody() {
+        var rootElement = document.documentElement;
+
+        // Scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
+    // $(".lazy-box img").prepend(function () {
+    //     $(this).attr("src", $(this).data("src"));
+    //     $(this).closest(".lazy-box").removeClass("lazy-box");
+    // })
+    // $(".lazy-img").prepend(function () {
+    //     $(this).attr("src", $(this).data("src"));
+    // });
+</script>
+
 <section id="blog-banner">
     <div class="container lg:mt-[80px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
@@ -90,11 +144,13 @@ $selected_counter=0;
                                class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
                             >
                                 <div class="flex flex-col relative items-center lg:items-start">
-                                    <img
-                                        src="<?php the_post_thumbnail_url('large'); ?>"
-                                        alt="<?php the_title(); ?>"
-                                        class="w-[95%] bg-none rounded-[10px]"
-                                    />
+                                    <div class="lazy-box ">
+                                        <img
+                                            data-src="<?php the_post_thumbnail_url('small'); ?>"
+                                            alt="<?php the_title(); ?>"
+                                            class="w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
+                                        />
+                                    </div>
 
                                     <div
                                         class="category-btn bottom-[-18px] left-[40px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"

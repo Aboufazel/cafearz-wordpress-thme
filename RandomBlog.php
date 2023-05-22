@@ -1,8 +1,8 @@
 <div class="first-blog grid grid-cols-1 lg:grid-cols-2 lg:place-items-center lg:py-5 lg:px-8 rounded-[25px] lg:pb-[70px]">
 
-    <div class="flex lg:hidden justify-start w-full z-10">
+    <div class="flex lazy-box lg:hidden justify-start w-full z-10">
         <img
-            src="<?php the_post_thumbnail_url('large'); ?>"
+            data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"
             width="575px"
             height="360px"
@@ -39,9 +39,9 @@
         </div>
     </div>
 
-    <div class="lg:flex hidden justify-start w-full z-10">
+    <div class="lazy-box lg:flex hidden justify-start w-full z-10">
         <img
-            src="<?php the_post_thumbnail_url('large'); ?>"
+            data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"
             class="lg:mt-[35px] shadow-xl rounded-[15px] w-[575px] h-[360px] relative left-[-95px]"
         />

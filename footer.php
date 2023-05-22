@@ -129,7 +129,16 @@
         });
 
 
-        doc.getElementById("header").style.top="0px"
+        $(".lazy-box-index img").prepend(function () {
+            $(this).attr('src', $(this).data('src'));
+            $(this).closest('.lazy-box').removeClass('lazy-box');
+        });
+
+        $(".lazy-box-index").prepend(function () {
+            $(this).attr('src', $(this).data('src'));
+        });
+
+        // doc.getElementById("header").style.top="0px"
 
 
         const element = document.getElementById("finish-content");
@@ -151,7 +160,7 @@
                     htm.scrollTop > 5 ? "0" : "0";
 
                 doc.getElementById("header").style.position =
-                    htm.scrollTop > 5 ? "sticky" : "sticky";
+                    htm.scrollTop > 5 ? "sticky" : "";
 
                 doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85 )" : "rgba( 255, 255, 255, 0.85 )"
