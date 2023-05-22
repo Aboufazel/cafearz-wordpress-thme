@@ -119,28 +119,6 @@
         bod = doc.body;
         htm = doc.documentElement;
 
-        $(".lazy-box img").prepend(function () {
-            $(this).attr('src', $(this).data('src'));
-            $(this).closest('.lazy-box').removeClass('lazy-box');
-        });
-
-        $(".lazy-img").prepend(function () {
-            $(this).attr('src', $(this).data('src'));
-        });
-
-
-        $(".lazy-box-index img").prepend(function () {
-            $(this).attr('src', $(this).data('src'));
-            $(this).closest('.lazy-box').removeClass('lazy-box');
-        });
-
-        $(".lazy-box-index").prepend(function () {
-            $(this).attr('src', $(this).data('src'));
-        });
-
-        // doc.getElementById("header").style.top="0px"
-
-
         const element = document.getElementById("finish-content");
 
         const yElement = element.offsetTop;
@@ -217,13 +195,24 @@
         });
     }
 
-    // $(".lazy-box img").prepend(function () {
-    //     $(this).attr("src", $(this).data("src"));
-    //     $(this).closest(".lazy-box").removeClass("lazy-box");
-    // })
-        // $(".lazy-img").prepend(function () {
-        //     $(this).attr("src", $(this).data("src"));
-        // });
+    $(".lazy-box img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.lazy-box').removeClass('lazy-box');
+    });
+
+    $(".lazy-img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+    });
+
+
+    $(".lazy-box-index img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.lazy-box').removeClass('lazy-box');
+    });
+
+    $(".lazy-box-index").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+    });
 </script>
 
 <script>

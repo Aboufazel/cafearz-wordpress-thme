@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="lazy-box lg:flex hidden justify-start w-full z-10">
+    <div class="lazy-box-index lg:flex hidden justify-start w-full z-10">
         <img
             data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"

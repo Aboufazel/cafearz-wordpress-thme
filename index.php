@@ -44,14 +44,6 @@
             behavior: "smooth",
         });
     }
-
-    // $(".lazy-box img").prepend(function () {
-    //     $(this).attr("src", $(this).data("src"));
-    //     $(this).closest(".lazy-box").removeClass("lazy-box");
-    // })
-    // $(".lazy-img").prepend(function () {
-    //     $(this).attr("src", $(this).data("src"));
-    // });
 </script>
 
 <section id="blog-banner">
