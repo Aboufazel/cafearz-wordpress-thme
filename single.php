@@ -55,7 +55,7 @@ the_post(); ?>
                             </svg>
                         </a>
 
-                        <a title="telegram" href="https://t.me/cafearzz" target="_blank"
+                        <a title="telegram" href="https://t.me/share/url?url=<?php the_permalink(); ?>" target="_blank"
                            class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#3b82f6]" width="30" height="26" viewBox="0 0 30 26"

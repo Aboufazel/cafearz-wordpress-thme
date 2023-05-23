@@ -204,16 +204,6 @@
     $(".lazy-box").prepend(function () {
         $(this).attr('src', $(this).data('src'));
     });
-
-
-    $(".lazy-box-index img").prepend(function () {
-        $(this).attr('src', $(this).data('src'));
-        $(this).closest('.lazy-box').removeClass('lazy-box');
-    });
-
-    $(".lazy-box-index").prepend(function () {
-        $(this).attr('src', $(this).data('src'));
-    });
 </script>
 
 <script>

@@ -1590,10 +1590,16 @@ input::placeholder, textarea {
   display: flex;
   flex-direction: column;
   background: var(--color-white);
+  font-family: bakh-regular;
+  margin-top: 10px;
   height: 290px;
   border-radius: 13px;
-  padding: 15px;
+  padding: 15px !important;
   width: 100% !important;
+}
+#comment:focus {
+  outline: var(--color-primary) !important;
+  box-shadow: 0 0 8px rgba(51, 119, 232, 0.35);
 }
 
 .comment-reply-title {
@@ -1663,6 +1669,7 @@ input::placeholder, textarea {
   padding: 10px 15px !important;
   border-radius: 12px !important;
   width: 100% !important;
+  font-family: bakh-regular;
 }
 #author:focus, #email:focus, #url:focus {
   outline: var(--color-primary) !important;
@@ -1864,31 +1871,6 @@ ol li, ul li {
   text-indent: -9999px;
 }
 .lazy-box::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  animation: loading 1.5s infinite;
-}
-@keyframes loading {
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.lazy-box-index {
-  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  overflow: hidden;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.11);
-  border-radius: 15px;
-  position: relative;
-  width: 575px !important;
-  height: 359px !important;
-}
-.lazy-box-index::after {
   display: block;
   content: "";
   position: absolute;

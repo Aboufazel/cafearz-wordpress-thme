@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <section id="blog-banner">
     <div class="container lg:mt-[80px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
