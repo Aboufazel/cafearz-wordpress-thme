@@ -94,7 +94,7 @@ the_post(); ?>
 
                 <div class="flex-col w-full lg:px-[30px] px-3">
 
-                    <div class="flex flex-row items-center md:px-12 lg:px-3 mt-8 justify-between w-full">
+                    <div class="flex flex-row items-center px-3 lg:px-3 mt-8 justify-between w-full">
                         <div
                             class="flex justify-center gap-[5px] items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
                         >
@@ -120,8 +120,6 @@ the_post(); ?>
                     <div
                         class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
-
-                        <div id="finish-content"></div>
                     </div>
 
 
@@ -147,6 +145,8 @@ the_post(); ?>
                                 </h3>
                             </div>
                         </div>
+
+                        <div id="finish-content"></div>
 
                         <div class="lg:hidden flex flex-col items-center gap-[10px] justify-center lg:w-3/5">
                             <p class="font-semibold text-[14px]">مطلب را به اشتراک بگذارید</p>
@@ -236,7 +236,7 @@ the_post(); ?>
         </div>
 
 
-        <div class="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-[20px]">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3  grid-cols-1 gap-5 mt-[20px]">
 
             <?php
             $categories = get_the_category($post->ID);

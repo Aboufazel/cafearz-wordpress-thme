@@ -179,7 +179,7 @@
                 htm.scrollTop > 90 ? "115px" : "";
 
             doc.getElementById("shareSocial").style.display =
-                 content > yElement
+                 content > yElement - content
                     ? "none"
                     : "";
         });
