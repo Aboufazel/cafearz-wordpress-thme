@@ -4,11 +4,11 @@
         <a href="<?php echo custom_permalink($post->ID); ?>"
            title="<?php the_title(); ?>"
            target="<?php echo custom_permalink_target($post->ID); ?>"
-           class="flex shadow-xl flex-grow items-center relative justify-center w-full lazy-box ">
+           class="flex flex-grow items-center relative justify-center w-full lazy-box ">
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
-                class="rounded-[10px] w-[278px] h-[178px]"
+                class="shadow-xl rounded-[10px] w-[278px] h-[178px]"
             />
         </a>
     </div>

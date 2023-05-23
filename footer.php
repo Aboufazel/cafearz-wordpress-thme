@@ -107,12 +107,19 @@
     </footer>
 </footer>
 
+
+<?php if(isset($GLOBALS['singleVarables']['finishContent'])): ?>
+<script>
+    document.getElementById("header").classList.add('bg-white');
+</script>
+<?php endif; ?>
+
 <script>
     let doc, bod, htm;
     let mediaBreakpointSize = 1000;
 
 
-<?php if(isset($GLOBALS['finish_content'])): ?>
+<?php if(isset($GLOBALS['singleVarables']['finishContent'])): ?>
     addEventListener("scroll" , function (){
         const content= window.scrollY;
         const abbas = document.getElementById("finish-content");
@@ -206,20 +213,20 @@
 
 
 
-    $(".lazy-box img").prepend(function () {
-        $(this).attr('src', $(this).data('src'));
-        $(this).closest('.lazy-box').removeClass('lazy-box');
-    });
-
-    $(".single-lazy-box img").prepend(function () {
-        $(this).attr('src', $(this).data('src'));
-        $(this).closest('.single-lazy-box').removeClass('single-lazy-box');
-    });
-
-    $(".lazy-box-index img").prepend(function () {
-        $(this).attr('src', $(this).data('src'));
-        $(this).closest('.lazy-box-index').removeClass('lazy-box-index');
-    });
+    // $(".lazy-box img").prepend(function () {
+    //     $(this).attr('src', $(this).data('src'));
+    //     $(this).closest('.lazy-box').removeClass('lazy-box');
+    // });
+    //
+    // $(".single-lazy-box img").prepend(function () {
+    //     $(this).attr('src', $(this).data('src'));
+    //     $(this).closest('.single-lazy-box').removeClass('single-lazy-box');
+    // });
+    //
+    // $(".lazy-box-index img").prepend(function () {
+    //     $(this).attr('src', $(this).data('src'));
+    //     $(this).closest('.lazy-box-index').removeClass('lazy-box-index');
+    // });
 
 </script>
 

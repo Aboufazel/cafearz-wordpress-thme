@@ -46,12 +46,12 @@
         </div>
     </div>
 
-    <div class="relative lazy-box-index shadow-xl lg:flex hidden justify-center w-full z-10">
+    <div class="relative lazy-box-index lg:flex hidden justify-center w-full z-10">
         <a href="<?php echo custom_permalink($post->ID); ?>">
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
-                class="lg:mt-[35px] rounded-[15px] w-[575px] h-[360px] relative left-[-95px]"
+                class="lg:mt-[35px] rounded-[15px] shadow-xl  w-[575px] h-[360px] relative left-[-95px]"
             />
         </a>
     </div>

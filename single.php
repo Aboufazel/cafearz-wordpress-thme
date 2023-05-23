@@ -1,14 +1,17 @@
 <?php get_header('blog'); ?>
 <?php if (have_posts()) : ?>
-
+<?php
+$GLOBALS['singleVarables'] = [
+    'finishContent' => true,
+    'changeHeader' => true,
+];
+?>
 <?php while (have_posts()) :
 the_post(); ?>
 <?php setPostViews($post->ID); ?>
-    <script>
-        document.getElementById("header").classList.add('bg-white');
-    </script>
 
-    <div id="content" class="container lg:w-[800px] mt-[40px] mx-auto">
+
+    <div id="content" class="container lg:w-[800px] mt-[15px] lg:mt-[40px] mx-auto">
 
         <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[20px]">
             <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
@@ -121,10 +124,8 @@ the_post(); ?>
                         class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
                     </div>
-                    <?php $GLOBALS['finish_content'] = true;  ?>
+
                     <div id="finish-content"></div>
-
-
 
 
                     <div class="bg-dataBg mt-[22px] mb-[32px] w-full h-[2px]"></div>
@@ -145,7 +146,6 @@ the_post(); ?>
                                 </h3>
                             </div>
                         </div>
-
 
 
                         <div class="lg:hidden flex flex-col items-center gap-[10px] justify-center lg:w-3/5">
@@ -175,7 +175,8 @@ the_post(); ?>
                                 <a title="telegram" href="https://t.me/cafearzz" target="_blank"
                                    class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
-                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="30" height="26" viewBox="0 0 30 26"
+                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="30" height="26"
+                                         viewBox="0 0 30 26"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M29.9145 2.29042L25.3873 23.6405C25.0458 25.1474 24.1551 25.5224 22.8893 24.8125L15.9914 19.7295L12.663 22.9307C12.2946 23.299 11.9866 23.6071 11.2767 23.6071L11.7723 16.5819L24.5569 5.02951C25.1128 4.53393 24.4363 4.25935 23.693 4.75493L7.888 14.7067L1.08382 12.5771C-0.396218 12.115 -0.423006 11.097 1.39189 10.3871L28.0059 0.133981C29.2381 -0.328114 30.3163 0.408558 29.9145 2.29042Z"/>
@@ -187,7 +188,8 @@ the_post(); ?>
                                    target="_blank"
                                    class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
-                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36" viewBox="0 0 35 36"
+                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36"
+                                         viewBox="0 0 35 36"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M29.0847 11.7186C29.1032 11.9777 29.1032 12.2368 29.1032 12.4959C29.1032 20.3983 23.0885 29.5037 12.0954 29.5037C8.70864 29.5037 5.5625 28.5228 2.91602 26.8202C3.39721 26.8757 3.85983 26.8942 4.35954 26.8942C7.15403 26.8942 9.72652 25.9504 11.7808 24.3403C9.15281 24.2847 6.95049 22.5636 6.1917 20.1947C6.56186 20.2502 6.93197 20.2872 7.32066 20.2872C7.85734 20.2872 8.39407 20.2132 8.89373 20.0837C6.15472 19.5285 4.1004 17.1226 4.1004 14.217V14.143C4.89617 14.5872 5.82159 14.8648 6.80238 14.9018C5.19228 13.8283 4.13743 11.9962 4.13743 9.92341C4.13743 8.81302 4.43349 7.79515 4.95171 6.90682C7.89431 10.5341 12.3175 12.903 17.2772 13.1621C17.1847 12.718 17.1292 12.2553 17.1292 11.7927C17.1292 8.4984 19.7942 5.81494 23.1069 5.81494C24.828 5.81494 26.3826 6.53671 27.4745 7.70264C28.8255 7.44355 30.1209 6.94384 31.2684 6.25911C30.8242 7.64715 29.8804 8.81308 28.6404 9.5533C29.8434 9.42382 31.0093 9.09062 32.0827 8.628C31.2685 9.81238 30.2506 10.8672 29.0847 11.7186Z"/>
@@ -200,7 +202,8 @@ the_post(); ?>
                                    target="_blank"
                                    class="hover:translate-y-[-8px] hover:scale-105 transition-all">
 
-                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36" viewBox="0 0 35 36"
+                                    <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36"
+                                         viewBox="0 0 35 36"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M29.9994 3.07568H4.99284C3.84701 3.07568 2.91602 4.01969 2.91602 5.17855V30.1395C2.91602 31.2983 3.84701 32.2424 4.99284 32.2424H29.9994C31.1452 32.2424 32.0827 31.2983 32.0827 30.1395V5.17855C32.0827 4.01969 31.1452 3.07568 29.9994 3.07568ZM11.7311 28.0757H7.4082V14.1564H11.7376V28.0757H11.7311ZM9.56966 12.2554C8.18294 12.2554 7.06315 11.1291 7.06315 9.74886C7.06315 8.36865 8.18294 7.24235 9.56966 7.24235C10.9499 7.24235 12.0762 8.36865 12.0762 9.74886C12.0762 11.1356 10.9564 12.2554 9.56966 12.2554ZM27.9355 28.0757H23.6126V21.3049C23.6126 19.6903 23.5801 17.6134 21.3665 17.6134C19.1139 17.6134 18.7689 19.3713 18.7689 21.1877V28.0757H14.446V14.1564H18.5931V16.0575H18.6517C19.2311 14.9637 20.6439 13.8114 22.7467 13.8114C27.1217 13.8114 27.9355 16.6955 27.9355 20.4455V28.0757Z"/>
@@ -261,7 +264,7 @@ the_post(); ?>
                     <?php while ($rel_posts->have_posts()) : $rel_posts->the_post(); ?>
 
 
-                        <?php include "Loop.php"?>
+                        <?php include "Loop.php" ?>
 
 
                     <?php

@@ -81,7 +81,7 @@ $selected_counter = 0;
                 </div>
 
             </div>
-            <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
+            <div class="grid md:grid-cols-2  lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
 
 
                 <?php foreach ($pageposts as $post): ?>
@@ -91,7 +91,7 @@ $selected_counter = 0;
                         >
                             <div class="flex flex-col relative items-center lg:items-start">
 
-                                <div class="lazy-box  shadow-xl relative">
+                                <div class="lazy-box  relative">
 
                                     <a href="<?php echo custom_permalink($post->ID); ?>"
                                        title="<?php the_title(); ?>"
@@ -99,7 +99,7 @@ $selected_counter = 0;
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
                                             alt="<?php the_title(); ?>"
-                                            class="bg-none rounded-[10px] h-[178px]"
+                                            class="bg-none shadow-xl rounded-[10px] h-[178px]"
                                         />
                                     </a>
                                 </div>
@@ -157,7 +157,7 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[70px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[70px]">
 
             <?php
 
@@ -220,57 +220,55 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="flex flex-row items-center mt-5 lg:mt-[70px]">
-            <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto gap-[20px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]  mt-5 lg:mt-[70px]">
 
-                <?php
+            <?php
 
-                $popularpost = new WP_Query(array(
-                    'posts_per_page' => -3,
-                    'meta_key' => 'post_views_count',
-                    'orderby' => 'meta_value_num',
-                    'order' => 'DESC',
-                    'date_query' => array(
-                        array(
-                            'after' => '4 week ago'
-                        )
+            $popularpost = new WP_Query(array(
+                'posts_per_page' => -3,
+                'meta_key' => 'post_views_count',
+                'orderby' => 'meta_value_num',
+                'order' => 'DESC',
+                'date_query' => array(
+                    array(
+                        'after' => '4 week ago'
                     )
+                )
 
-                ));
+            ));
 
-                while ($popularpost->have_posts()) : $popularpost->the_post();
-                    include 'Loop.php';
-                endwhile;
+            while ($popularpost->have_posts()) : $popularpost->the_post();
+                include 'Loop.php';
+            endwhile;
 
-                ?>
+            ?>
 
-                <a href="https://www.instagram.com/cafearz_com"
-                   target="_blank"
-                   class="lg:flex lg:flex-col hidden relative text-right items-center"
+            <a href="https://www.instagram.com/cafearz_com"
+               target="_blank"
+               class="lg:flex lg:flex-col hidden relative text-right items-center"
+            >
+                <div
+                    class="instagramCard text-white p-[25px] flex flex-col items-center lg:w-[287px] lg:h-[413px] h-[25px]"
                 >
-                    <div
-                        class="instagramCard text-white p-[25px] flex flex-col items-center lg:w-[287px] lg:h-[413px] h-[25px]"
-                    >
-                        <img
-                            src="<?php echo get_template_directory_uri(); ?>/src/assets/img/instagram.png"
-                            class="mt-[30px]"
-                            alt="اینستاگرام کافه ارز"
-                        />
+                    <img
+                        src="<?php echo get_template_directory_uri(); ?>/src/assets/img/instagram.png"
+                        class="mt-[30px]"
+                        alt="اینستاگرام کافه ارز"
+                    />
 
-                        <p class="text-[18px] font-bold mb-[9px] mt-[29px]">
-                            اینستاگرام کافه ارز
-                        </p>
-                        <p class="text-[14px]">مطالب بروز در اینستاگرام کافه ارز</p>
-                    </div>
+                    <p class="text-[18px] font-bold mb-[9px] mt-[29px]">
+                        اینستاگرام کافه ارز
+                    </p>
+                    <p class="text-[14px]">مطالب بروز در اینستاگرام کافه ارز</p>
+                </div>
 
-                    <div
-                        class="relative top-[-80px] w-full flex flex-row justify-center bg-white items-center mt-[21px] font-bold text-[14px]"
-                    >
-                        <button href="https://www.instagram.com/cafearz_com" class="category-btn bg-white">کلیک کنید
-                        </button>
-                    </div>
-                </a>
-            </div>
+                <div
+                    class="relative top-[-80px] w-full flex flex-row justify-center bg-white items-center mt-[21px] font-bold text-[14px]"
+                >
+                    <button href="https://www.instagram.com/cafearz_com" class="category-btn bg-white">کلیک کنید
+                    </button>
+                </div>
+            </a>
         </div>
     </div>
 </section>
