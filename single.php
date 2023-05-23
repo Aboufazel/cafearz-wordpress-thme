@@ -25,9 +25,11 @@ the_post(); ?>
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
 
                 <div class="flex w-full items-center justify-center relative lg:px-0 px-3">
-                    <img width="656px" height="410px" class="rounded-[15px] shadow-xl"
-                         src="<?php the_post_thumbnail_url('large'); ?>"
-                         alt="<?php the_title(); ?>"/>
+                    <div class="lazy-box">
+                        <img width="656px" height="410px" class="rounded-[15px] shadow-xl"
+                             data-src="<?php the_post_thumbnail_url('large'); ?>"
+                             alt="<?php the_title(); ?>"/>
+                    </div>
 
                     <div id="shareSocial"
                          class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-15px] top-[20px]">
@@ -258,7 +260,7 @@ the_post(); ?>
         </svg>
     </a>
 
-    <div class="container lg:w-[800px] px-[15px] mx-auto">
+    <div class="container lg:w-[950px] px-[15px] mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
             <div class="flex flex-row items-center justify-between">
@@ -282,7 +284,7 @@ the_post(); ?>
         </div>
 
 
-        <div class="grid lg:grid-cols-3 grid-cols-1 gap-[20px] mt-[20px]">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-[20px]">
 
             <?php
             $categories = get_the_category($post->ID);
@@ -307,26 +309,7 @@ the_post(); ?>
                     <?php while ($rel_posts->have_posts()) : $rel_posts->the_post(); ?>
 
 
-                        <div class="flex flex-col">
-                            <a href="<?php the_permalink() ?>"
-                               title="<?php the_title(); ?>"
-                               class="flex flex-col lazy-box hover:translate-y-[-16px] transition relative  mb-[32px] gap-[12px] items-center lg:items-start">
-                                <div class="absolute flex items-center justify-center w-full">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <img
-                                    data-src="<?php the_post_thumbnail_url('large'); ?>"
-                                    alt="<?php the_title(); ?>"
-                                    class="w-full lg:h-[173px] rounded-[10px] shadow-xl"
-                                />
-                                <h3 class="text-[14px] px-1 overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis"><?php the_title(); ?></h3>
-                            </a>
-                        </div>
+                        <?php include "Loop.php"?>
 
 
                     <?php

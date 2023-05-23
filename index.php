@@ -91,21 +91,12 @@ $selected_counter=0;
                             >
                                 <div class="flex flex-col relative items-center lg:items-start">
 
-                                    <div class="lazy-box relative">
-
-                                        <div class="absolute flex items-center justify-center w-full">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                    <div class="lazy-box  shadow-xl relative">
 
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
                                             alt="<?php the_title(); ?>"
-                                            class="w-[95%] bg-none rounded-[10px] shadow-xl h-[178px]"
+                                            class="w-[95%] bg-none rounded-[10px] h-[178px]"
                                         />
                                     </div>
 

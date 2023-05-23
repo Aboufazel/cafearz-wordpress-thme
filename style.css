@@ -746,9 +746,6 @@ video {
 .max-w-\[100px\]{
   max-width: 100px;
 }
-.max-w-\[200px\]{
-  max-width: 200px;
-}
 .max-w-\[280px\]{
   max-width: 280px;
 }
@@ -809,6 +806,9 @@ video {
 }
 .gap-4{
   gap: 1rem;
+}
+.gap-5{
+  gap: 1.25rem;
 }
 .gap-\[10px\]{
   gap: 10px;
@@ -1849,80 +1849,59 @@ ol li, ul li {
 }
 
 .lazy-box {
-  background: #0A2647;
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 278px;
   height: 173px;
+  position: relative;
   border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.11);
 }
 .lazy-box img {
   text-indent: -9999px;
 }
-
-.lazy-box span {
-  height: 18px;
-  width: 10px;
-  border-radius: 8px;
-  background: orange;
-  animation: audio-wave 2.2s infinite ease-in-out;
+.lazy-box::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: loading 1.5s infinite;
 }
-
-@keyframes audio-wave {
-  0% {
-    height: 10px;
-    trnsform: translateY(0px);
-    background: #FF55BB;
-  }
-  25% {
-    height: 40px;
-    trnsform: translateY(-5px);
-    scaleY: 1.7;
-    background: #FFD3A3;
-  }
-  50% {
-    height: 10px;
-    trnsform: translateY(0px);
-    scaleY: 1.7;
-    background: #FCFFB2;
-  }
+@keyframes loading {
   100% {
-    height: 10px;
-    trnsform: translateY(0px);
-    scaleY: 1.7;
-    background: #B6EAFA;
+    transform: translateX(100%);
   }
-}
-.lazy-box span:nth-child(2) {
-  left: 11px;
-  background: red;
-  animation-delay: 0.2s;
-}
-
-.lazy-box span:nth-child(3) {
-  left: 22px;
-  animation-delay: 0.4s;
-}
-
-.lazy-box span:nth-child(4) {
-  left: 33px;
-  animation-delay: 0.6s;
-}
-
-.lazy-box span:nth-child(5) {
-  left: 44px;
-  animation-delay: 0.8s;
-}
-
-.lazy-box span:nth-child(6) {
-  left: 55px;
-  animation-delay: 1s;
 }
 
 .lazy-box-index {
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.11);
+  border-radius: 15px;
+  position: relative;
   width: 575px !important;
   height: 359px !important;
+}
+.lazy-box-index::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: loading 1.5s infinite;
+}
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 header {
@@ -1972,11 +1951,6 @@ header {
   border-radius: 25px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
   margin: 15px 0 0 0;
-}
-
-.hover\:translate-y-\[-16px\]:hover{
-  --tw-translate-y: -16px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:translate-y-\[-5px\]:hover{
@@ -2081,6 +2055,9 @@ header {
   .lg\:mb-\[30px\]{
     margin-bottom: 30px;
   }
+  .lg\:mr-2{
+    margin-right: 0.5rem;
+  }
   .lg\:mr-\[17px\]{
     margin-right: 17px;
   }
@@ -2117,14 +2094,14 @@ header {
   .lg\:block{
     display: block;
   }
+  .lg\:inline-block{
+    display: inline-block;
+  }
   .lg\:flex{
     display: flex;
   }
   .lg\:hidden{
     display: none;
-  }
-  .lg\:h-\[173px\]{
-    height: 173px;
   }
   .lg\:h-\[413px\]{
     height: 413px;
@@ -2149,6 +2126,9 @@ header {
   }
   .lg\:w-\[800px\]{
     width: 800px;
+  }
+  .lg\:w-\[950px\]{
+    width: 950px;
   }
   .lg\:w-full{
     width: 100%;
@@ -2284,6 +2264,10 @@ header {
   .lg\:hover\:bg-gold:hover{
     --tw-bg-opacity: 1;
     background-color: rgb(240 185 11 / var(--tw-bg-opacity));
+  }
+  .lg\:hover\:text-white:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
   .lg\:hover\:drop-shadow-xl:hover{
     --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));

@@ -1,16 +1,6 @@
 <div class="first-blog grid grid-cols-1 lg:grid-cols-2 lg:place-items-center lg:py-5 lg:px-8 rounded-[25px] lg:pb-[70px]">
 
     <div class="flex lazy-box lg:hidden justify-start w-full z-10">
-
-        <div class="absolute flex items-center justify-center w-full">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
         <img
             data-src="<?php the_post_thumbnail_url('small'); ?>"
             alt="<?php the_title(); ?>"
@@ -43,26 +33,19 @@
             <a href="<?php echo custom_permalink($post->ID); ?>"
                title="<?php the_title(); ?>"
                target="<?php echo custom_permalink_target($post->ID); ?>"
-               class="read-more text-gold text-[12px] lg:text-[14px] hover:scale-110 hover:text-white hover:shadow-lg transition rounded-[25px] font-semibold">
-                ادامه مطلب ...
+               class="read-more text-gold text-[12px] lg:text-[14px] hover:scale-110  lg:hover:text-white hover:shadow-lg transition rounded-[25px] font-semibold">
+                ادامه مطلب<span class="lg:inline-block hidden lg:mr-2"> ...</span>
             </a>
         </div>
     </div>
 
-    <div class="lazy-box-index relative lg:flex hidden justify-start w-full z-10">
-
-        <div class="absolute flex items-center justify-center w-full">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="relative lg:flex hidden justify-start w-full z-10">
+        <div class="lazy-box">
+            <img
+                data-src="<?php the_post_thumbnail_url('small'); ?>"
+                alt="<?php the_title(); ?>"
+                class="lg:mt-[35px] rounded-[15px] shadow-xl  w-[575px] h-[360px] relative left-[-95px]"
+            />
         </div>
-        <img
-            data-src="<?php the_post_thumbnail_url('small'); ?>"
-            alt="<?php the_title(); ?>"
-            class="lg:mt-[35px] shadow-xl rounded-[15px] w-[575px] h-[360px] relative left-[-95px]"
-        />
     </div>
 </div>

@@ -2,14 +2,6 @@
 
     <div class="flex flex-col mb-[15px] relative items-center ">
         <div class="flex shadow-xl flex-grow items-center relative justify-center w-full lazy-box ">
-            <div class="absolute flex items-center justify-center w-full">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
