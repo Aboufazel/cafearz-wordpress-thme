@@ -1,6 +1,5 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
-
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>">

@@ -32,7 +32,7 @@ the_post(); ?>
                     </div>
 
                     <div id="shareSocial"
-                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-15px] top-[20px]">
+                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-35px] top-[20px]">
 
                         <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
                            class="hover:scale-105 transition-all">
@@ -121,8 +121,8 @@ the_post(); ?>
                         class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
                     </div>
-
-
+                    <?php $GLOBALS['finish_content'] = true;  ?>
+                    <div id="finish-content"></div>
 
 
 
@@ -146,7 +146,7 @@ the_post(); ?>
                             </div>
                         </div>
 
-                        <div id="finish-content"></div>
+
 
                         <div class="lg:hidden flex flex-col items-center gap-[10px] justify-center lg:w-3/5">
                             <p class="font-semibold text-[14px]">مطلب را به اشتراک بگذارید</p>

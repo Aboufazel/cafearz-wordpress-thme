@@ -107,26 +107,33 @@
     </footer>
 </footer>
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
 <script>
     let doc, bod, htm;
-    let mediaBreakpointSize = 1000
+    let mediaBreakpointSize = 1000;
+
+
+<?php if(isset($GLOBALS['finish_content'])): ?>
+    addEventListener("scroll" , function (){
+        const content= window.scrollY;
+        const abbas = document.getElementById("finish-content");
+        const yElement = abbas.offsetTop;
+
+        doc.getElementById("shareSocial").style.display =
+            content > yElement
+                ? "none"
+                : "";
+    })
+    <?php endif; ?>
+
     addEventListener("load", function () {
         doc = document;
         bod = doc.body;
         htm = doc.documentElement;
 
-        const element = document.getElementById("finish-content");
-
-        const yElement = element.offsetTop;
-
 
         addEventListener("scroll", function () {
 
-            const content= window.scrollY;
+
 
             if (document.documentElement.clientWidth < mediaBreakpointSize) {
 
@@ -173,19 +180,19 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "370px" : "";
+                htm.scrollTop > 90 ? "350px" : "";
 
             doc.getElementById("shareSocial").style.top =
                 htm.scrollTop > 90 ? "115px" : "";
-
-            doc.getElementById("shareSocial").style.display =
-                 content > yElement - content
-                    ? "none"
-                    : "";
         });
     });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
+
+
+<script>
     function scrollTopBody() {
         var rootElement = document.documentElement;
 
@@ -204,9 +211,16 @@
         $(this).closest('.lazy-box').removeClass('lazy-box');
     });
 
-    $(".lazy-box").prepend(function () {
+    $(".single-lazy-box img").prepend(function () {
         $(this).attr('src', $(this).data('src'));
+        $(this).closest('.single-lazy-box').removeClass('single-lazy-box');
     });
+
+    $(".lazy-box-index img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.lazy-box-index').removeClass('lazy-box-index');
+    });
+
 </script>
 
 <script>
