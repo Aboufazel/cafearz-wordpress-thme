@@ -100,7 +100,7 @@
             </div>
             <div class="w-full hidden lg:flex flex-col items-end gap-[8px]">
                 <p class="text-blogText text-[14px]">
-                    Copyright © 2022 Cafearz | Designed by
+                    Copyright © 2022 Cafearz
                 </p>
             </div>
         </div>
@@ -145,14 +145,14 @@
                     htm.scrollTop > 5 ? "rgba(255, 255, 255, 0.85)" : ""
 
 
-                doc.getElementById("header").style.boxShadow =
-                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
+                // doc.getElementById("header").style.boxShadow =
+                //     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
 
             } else {
 
 
-                doc.getElementById("header").style.boxShadow =
-                    htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
+                // doc.getElementById("header").style.boxShadow =
+                //     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
 
                 doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""
@@ -173,7 +173,7 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "378px" : "";
+                htm.scrollTop > 90 ? "370px" : "";
 
             doc.getElementById("shareSocial").style.top =
                 htm.scrollTop > 90 ? "115px" : "";
@@ -195,6 +195,9 @@
             behavior: "smooth",
         });
     }
+
+
+
 
     $(".lazy-box img").prepend(function () {
         $(this).attr('src', $(this).data('src'));

@@ -10,7 +10,7 @@ the_post(); ?>
 
     <div id="content" class="container lg:w-[800px] mt-[40px] mx-auto">
 
-        <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[55px]">
+        <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[20px]">
             <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
             <p>/</p>
             <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
@@ -25,7 +25,7 @@ the_post(); ?>
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
 
                 <div class="flex w-full items-center justify-center relative lg:px-0 px-3">
-                    <div class="lazy-box">
+                    <div class="single-lazy-box">
                         <img width="656px" height="410px" class="rounded-[15px] shadow-xl"
                              data-src="<?php the_post_thumbnail_url('large'); ?>"
                              alt="<?php the_title(); ?>"/>
@@ -45,7 +45,7 @@ the_post(); ?>
 
                         </a>
 
-                        <a title="whatsApp" href="https://www.instagram.com/cafearz_com" target="_blank"
+                        <a title="whatsApp" href="whatsapp://send?text=<?php the_permalink(); ?>" target="_blank"
                            class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#4ade80]" id="whatsdetailSocial" width="35"
@@ -113,12 +113,12 @@ the_post(); ?>
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-black mt-7 px-3 lg:mt-[46px] mb-3 lg:mb-[30px] lg:text-[25px]">
+                    <h1 class="font-bold text-black mt-7 lg:mt-[46px] mb-3 lg:mb-[30px] lg:text-[25px]">
                         <?php the_title(); ?>
                     </h1>
 
                     <div
-                        class="flex flex-col w-full gap-[30px] detail-post px-[13px] text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
+                        class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
 
                         <div id="finish-content"></div>
@@ -218,12 +218,6 @@ the_post(); ?>
 
 <div id="other-blog">
 
-    <a href="#other-blog">
-        <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
-            <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
-        </svg>
-    </a>
-
     <div class="container lg:w-[950px] px-[15px] mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
@@ -237,12 +231,6 @@ the_post(); ?>
                     <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
                         مطالب مرتبط
                     </p>
-                </div>
-
-                <div
-                    class="read-more-btn flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                >
-                    مشاهده همه
                 </div>
             </div>
         </div>
@@ -296,12 +284,6 @@ the_post(); ?>
 
 <section id="comment-block">
 
-    <a href="#comment-block">
-        <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[45%] z-10 top-[46px]">
-            <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
-        </svg>
-    </a>
-
     <div class="new-comment-block  mx-auto relative p-3 lg:p-0">
         <?php
         if (comments_open() || get_comments_number()) :
@@ -309,6 +291,7 @@ the_post(); ?>
         endif;
         ?>
     </div>
+
 </section>
 
 

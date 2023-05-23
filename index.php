@@ -2,10 +2,10 @@
 
 
 <section id="blog-banner">
-    <div class="container lg:mt-[80px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
+    <div class="container lg:mt-[50px] p-3 lg:p-[0] lg:w-[1200px] mx-auto">
         <?php
 
-        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         $custom_args = array(
             'post_type' => 'post',
@@ -13,14 +13,14 @@
             'paged' => $paged
         );
 
-        $custom_query = new WP_Query( $custom_args ); ?>
+        $custom_query = new WP_Query($custom_args); ?>
 
-        <?php if ( $custom_query->have_posts() ) : ?>
+        <?php if ($custom_query->have_posts()) : ?>
 
             <!-- the loop -->
-            <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+            <?php while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
 
-                <?php include 'RandomBlog.php'?>
+                <?php include 'RandomBlog.php' ?>
 
             <?php endwhile; ?>
             <!-- end of the loop -->
@@ -29,8 +29,8 @@
 
             <?php wp_reset_postdata(); ?>
 
-        <?php else:  ?>
-            <p><?php _e( 'No content available' ); ?></p>
+        <?php else: ?>
+            <p><?php _e('No content available'); ?></p>
         <?php endif; ?>
     </div>
 </section>
@@ -50,8 +50,8 @@ $querystr = "
          ";
 
 $pageposts = $wpdb->get_results($querystr, OBJECT);
-$selected_count= count($pageposts);
-$selected_counter=0;
+$selected_count = count($pageposts);
+$selected_counter = 0;
 
 
 ?>
@@ -60,81 +60,74 @@ $selected_counter=0;
 <?php if ($pageposts): ?>
 
 
+    <?php if ($selected_count >= 4): ?>
+        <section id="selectBlog" class="container lg:w-[1200px] mx-auto">
+            <div class="selectBlog mt-5 lg:mt-[105px]">
+                <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
+                    FAVORATE NEWS
+                </p>
 
-        <?php if ($selected_count>=4): ?>
-            <section id="selectBlog" class="container lg:w-[1200px] mx-auto">
-                <div class="selectBlog mt-[105px]">
-                    <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
-                        FAVORATE NEWS
-                    </p>
-
-                    <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
-                        <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
-                            <div
-                                class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
-                            >
-                                #
-                            </div>
-                            <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
-                                منتخب سر دبیر
-                            </p>
+                <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
+                    <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
+                        <div
+                            class="flex flex-row mt-[21px] text-white pt-1 justify-center items-center text-[25px] sharp-icon"
+                        >
+                            #
                         </div>
+                        <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                            منتخب سر دبیر
+                        </p>
                     </div>
-
                 </div>
-                <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
+
+            </div>
+            <div class="grid lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
 
 
-                    <?php foreach ($pageposts as $post): ?>
-                        <div class="col-span-3 ">
-                            <div title=" <?php the_title(); ?>"
-                               class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
-                            >
-                                <div class="flex flex-col relative items-center lg:items-start">
+                <?php foreach ($pageposts as $post): ?>
+                    <div class="col-span-3 ">
+                        <div title=" <?php the_title(); ?>"
+                             class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
+                        >
+                            <div class="flex flex-col relative items-center lg:items-start">
 
-                                    <div class="lazy-box  shadow-xl relative">
+                                <div class="lazy-box  shadow-xl relative">
 
+                                    <a href="<?php echo custom_permalink($post->ID); ?>"
+                                       title="<?php the_title(); ?>"
+                                       target="<?php echo custom_permalink_target($post->ID); ?>">
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
                                             alt="<?php the_title(); ?>"
-                                            class="w-[95%] bg-none rounded-[10px] h-[178px]"
+                                            class="bg-none rounded-[10px] h-[178px]"
                                         />
-                                    </div>
-
-                                    <div
-                                        class="category-btn bottom-[-18px] left-[40px] bg-white flex flex-row items-center mt-[21px] font-bold text-[14px]"
-                                    >
-                                        <?php get_category_post(); ?>
-                                    </div>
-                                </div>
-
-                                <div class="flex w-full flex-col mt-2 px-3 lg:px-0 items-start">
-                                    <h2
-                                        class="font-bold text-[13px] lg:text-[16px] lg:mt-[14px] mt-[25px]"
-                                    >
-                                        <?php the_title(); ?>
-                                    </h2>
-                                    <p class="flex flex-row items-center justify-between w-full text-[14px] mt-[5px] data-color">
-                                        <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
-
-                                        <a href="<?php echo custom_permalink($post->ID); ?>"
-                                           target="<?php echo custom_permalink_target($post->ID); ?>"
-                                           class="bg-dataBg  px-5 py-1 text-blue text-[12px] hover:scale-110 hover:bg-blue hover:text-white  transition rounded-[25px] font-semibold">
-                                            مطالعه
-                                        </a>
-                                    </p>
+                                    </a>
                                 </div>
                             </div>
+
+                            <div class="flex w-full flex-col mt-2 px-3 lg:px-0 items-start">
+                                <h2
+                                    class="font-bold text-[13px] transition hover:text-blue lg:text-[16px] lg:mt-[14px] mt-[25px]"
+                                >
+                                    <a href="<?php echo custom_permalink($post->ID); ?>"
+                                       target="<?php echo custom_permalink_target($post->ID); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h2>
+                                <p class="flex flex-row items-center justify-between w-full text-[14px] mt-[5px] data-color">
+                                    <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
+                                </p>
+                            </div>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+                <?php endforeach; ?>
 
 
-                </div>
-            </section>
+            </div>
+        </section>
 
 
-        <?php endif; ?>
-
+    <?php endif; ?>
 
 
     <?php wp_reset_postdata(); ?>
@@ -143,11 +136,6 @@ $selected_counter=0;
 
 <section id="newBlogPost">
     <div class="container relative lg:w-[1200px] mx-auto">
-        <a href="#newBlogPost">
-            <svg class="w-[147px] h-[70px] absolute hidden lg:block right-[41%] z-10 top-[46px]">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/sprite.svg#arrowbottom"></use>
-            </svg>
-        </a>
 
         <div class="selectBlog relative lg:pt-[120px]">
             <p
@@ -169,11 +157,11 @@ $selected_counter=0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-[70px]">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[70px]">
 
             <?php
 
-            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
             $custom_args = array(
                 'post_type' => 'post',
@@ -181,34 +169,33 @@ $selected_counter=0;
                 'paged' => $paged
             );
 
-            $custom_query = new WP_Query( $custom_args ); ?>
+            $custom_query = new WP_Query($custom_args); ?>
 
-            <?php if ( $custom_query->have_posts() ) : ?>
+            <?php if ($custom_query->have_posts()) : ?>
 
                 <!-- the loop -->
-                <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+                <?php while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
 
-                    <?php include 'Loop.php'?>
+                    <?php include 'Loop.php' ?>
 
                 <?php endwhile; ?>
                 <!-- end of the loop -->
 
                 <?php wp_reset_postdata(); ?>
 
-            <?php else:  ?>
-                <p><?php _e( 'No content available' ); ?></p>
+            <?php else: ?>
+                <p><?php _e('No content available'); ?></p>
             <?php endif; ?>
 
 
         </div>
         <!-- pagination here -->
         <?php
-        custom_pagination($custom_query->max_num_pages,"",$paged);
+        custom_pagination($custom_query->max_num_pages, "", $paged);
         ?>
 
     </div>
 </section>
-
 
 
 <section id="bestArticle">
@@ -233,17 +220,17 @@ $selected_counter=0;
             </div>
         </div>
 
-        <div class="flex flex-row items-center mt-[70px]">
+        <div class="flex flex-row items-center mt-5 lg:mt-[70px]">
             <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto gap-[20px]">
 
                 <?php
 
                 $popularpost = new WP_Query(array(
-                    'posts_per_page' =>-3,
+                    'posts_per_page' => -3,
                     'meta_key' => 'post_views_count',
                     'orderby' => 'meta_value_num',
                     'order' => 'DESC',
-                    'date_query'     => array(
+                    'date_query' => array(
                         array(
                             'after' => '4 week ago'
                         )
@@ -251,7 +238,7 @@ $selected_counter=0;
 
                 ));
 
-                while ( $popularpost->have_posts() ) : $popularpost->the_post();
+                while ($popularpost->have_posts()) : $popularpost->the_post();
                     include 'Loop.php';
                 endwhile;
 
@@ -279,7 +266,8 @@ $selected_counter=0;
                     <div
                         class="relative top-[-80px] w-full flex flex-row justify-center bg-white items-center mt-[21px] font-bold text-[14px]"
                     >
-                        <button href="https://www.instagram.com/cafearz_com" class="category-btn bg-white">کلیک کنید</button>
+                        <button href="https://www.instagram.com/cafearz_com" class="category-btn bg-white">کلیک کنید
+                        </button>
                     </div>
                 </a>
             </div>
@@ -301,7 +289,7 @@ $selected_counter=0;
 
         addEventListener("scroll", function () {
 
-            const content= window.scrollY;
+            const content = window.scrollY;
 
             if (document.documentElement.clientWidth < mediaBreakpointSize) {
 
@@ -359,7 +347,6 @@ $selected_counter=0;
         });
     });
 </script>
-
 
 
 <?php get_footer(); ?>
