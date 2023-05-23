@@ -51,7 +51,7 @@ body {
 }
 
 :root {
-  --color-primary: #3377e8;
+  --color-primary: #3377E8;
   --color-secondary: #f3f6fd;
   --color-white: #ffff;
   --third-color: #f2f5fc;
@@ -79,9 +79,10 @@ body {
 }
 
 .secondary-button {
-  background: var(--color-secondary);
+  background: rgb(239,244,254);
   cursor: pointer;
   color: var(--primary-text-color);
+  border: 1px solid #cbdbf6;
   font-size: 14px;
 }
 
@@ -206,6 +207,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--third-color);
 }
 
+
 .header-box {
   border-radius: 0 0 25px 25px;
   backdrop-filter: blur(4px);
@@ -244,13 +246,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header-box::before {
-    right: 32px;
+    right: 9px;
+    top: -2px;
   }
 }
 
 .search-box {
   padding: 12px 21px;
   border-radius: 80px;
+  border: 1px solid #cbdbf6;
+}
+
+.burger-menu{
   border: 1px solid #cbdbf6;
 }
 
@@ -704,7 +711,14 @@ ol li, ul li {
 
 .menu-item {
   width: 100%;
-  border-bottom: 2px solid rgba(51, 119, 232, 0.05);
+  font-size: 12px;
+   transition: 0.25s;
+  &:hover{
+    background: rgb(239, 244, 254);
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 0 8px !important;
+  }
 }
 
 

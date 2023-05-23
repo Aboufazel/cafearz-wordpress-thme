@@ -32,7 +32,7 @@
     class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-[0px] lg:right-[0px] w-full mx-auto transition-all lg:w-[1350px] z-30"
 >
     <div
-        class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-[23px] py-[15px]"
+        class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-3 lg:px-[23px] py-[15px]"
     >
         <div class="flex flex-row justify-start items-center w-full">
             <a href="http://cblog.test/">
@@ -41,7 +41,7 @@
                     width="124px"
                     height="54px"
                     alt="کافه-ارز"
-                    class="lg:mr-[17px] mr-[12px]"
+                    class="lg:mr-[17px] lg:mr-[12px]"
                 />
             </a>
         </div>
@@ -50,7 +50,7 @@
 
                 <div
                     title="menu-btn"
-                    class=" gap-[12px] relative w-[42px] h-[42px] flex flex-row items-center justify-center bg-dataBg p-3 rounded-[13px]"
+                    class="burger-menu gap-[12px] relative w-[42px] h-[42px] flex flex-row items-center justify-center p-3 rounded-[13px]"
                 >
                     <div onclick="myFunction()" class="dropbtn absolute cursor-pointer w-[42px] h-[42px]  rounded-[13px] z-50"></div>
                     <svg  width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,22 +64,45 @@
 
                 <div
                     id="myDropdown"
-                    class="dropdown-content rounded-[5px] max-w-[280px] lg:w-full shadow-md items-start bg-white top-[68px] left-0 lg:left-auto px-3 py-5 absolute"
+                    class="dropdown-content rounded-[5px] max-w-[280px] lg:w-full py-3 shadow-md items-start bg-white top-[68px] left-0 lg:left-auto absolute"
                 >
                     <?php include 'menu.php'; ?>
 
                     <div
-                        class="flex flex-row lg:hidden mt-[30px] items-center justify-center gap-3 w-full"
+                        class="flex flex-row border-t-2 border-slate-100 pt-3 lg:hidden px-3 items-center justify-center gap-3 w-full"
                     >
-                        <button
-                            class="secondary-button lg:hidden flex items-center gap-[12px] justify-start font-semibold"
-                        >
-                            <i class="fa-solid fa-download"></i>
-                            <p class="font-semibold">اپلیکیشن</p>
-                        </button>
-                        <button class="primary-button w-[125px] lg:hidden font-semibold">
-                            کافه ارز
-                        </button>
+                        <div class="flex w-1/2">
+                            <a href="http://127.0.0.1:8000/mobile-application"
+                               target="_blank"
+                               class="secondary-button h-[42px] lg:hidden flex items-center w-full gap-[5px] justify-start font-semibold"
+                            >
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M13.3827 17.5469C13.4643 17.6285 13.5577 17.6869 13.6627 17.7335C13.7677 17.7802 13.8843 17.8035 14.001 17.8035C14.1177 17.8035 14.2227 17.7802 14.3393 17.7335C14.4443 17.6869 14.5377 17.6285 14.6193 17.5469L18.1193 14.0469C18.4577 13.7085 18.4577 13.1486 18.1193 12.8102C17.781 12.4719 17.221 12.4719 16.8827 12.8102L14.876 14.8169V7.59521C14.876 7.11688 14.4793 6.72021 14.001 6.72021C13.5227 6.72021 13.126 7.11688 13.126 7.59521V14.8169L11.1193 12.8102C10.781 12.4719 10.221 12.4719 9.88266 12.8102C9.54432 13.1486 9.54432 13.7085 9.88266 14.0469L13.3827 17.5469Z"
+                                        fill="#4A517D"
+                                    />
+                                    <path
+                                        d="M21.8285 18.9936C21.6768 18.5386 21.1868 18.2936 20.7201 18.4453C16.3801 19.892 11.6085 19.892 7.26847 18.4453C6.81347 18.2936 6.31179 18.5386 6.16013 18.9936C6.00846 19.4486 6.25346 19.9503 6.70846 20.102C9.05346 20.8836 11.5151 21.2803 13.9885 21.2803C16.4618 21.2803 18.9235 20.8836 21.2685 20.102C21.7351 19.9386 21.9801 19.4486 21.8285 18.9936Z"
+                                        fill="#4A517D"
+                                    />
+                                </svg>
+                                <p class="font-semibold">اپلیکیشن</p>
+                            </a>
+                        </div>
+
+
+                        <div class="flex w-1/2">
+                            <a target="_blank" href="https://cafearz.com/"
+                               class="bg-blue px-[23px] h-[42px]  rounded-[13px] text-white items-center justify-center flex flex-row w-full lg:hidden font-semibold">
+                                کافه ارز
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -87,6 +110,7 @@
                 <div class="search-box hidden relative lg:flex items-center mr-[49px]">
                     <button
                         title="search-btn bg-black"
+                        type="submit"
                         class="absolute left-[21px] top-[15px]"
                         onclick="show_mask('mask_search')"
                     >
@@ -104,7 +128,8 @@
             </div>
         </div>
         <div class="lg:col-span-2 flex flex-row items-center justify-end w-full">
-            <div
+            <a href="http://127.0.0.1:8000/mobile-application"
+               target="_blank"
                 class="secondary-button hidden lg:flex items-center gap-[10px] justify-center font-semibold"
             >
                 <svg
@@ -125,7 +150,7 @@
                 </svg>
 
                 <p class="font-semibold">اپلیکیشن</p>
-            </div>
+            </a>
             <a href="https://cafearz.com/" target="_blank" class="primary-button hidden lg:block font-semibold mr-[14px]">
                 ورود به کافه ارز
             </a>

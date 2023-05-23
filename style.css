@@ -590,9 +590,6 @@ video {
 .ml-4{
   margin-left: 1rem;
 }
-.mr-\[12px\]{
-  margin-right: 12px;
-}
 .mr-\[14px\]{
   margin-right: 14px;
 }
@@ -704,8 +701,8 @@ video {
 .min-h-\[300px\]{
   min-height: 300px;
 }
-.w-\[125px\]{
-  width: 125px;
+.w-1\/2{
+  width: 50%;
 }
 .w-\[147px\]{
   width: 147px;
@@ -804,9 +801,6 @@ video {
 .gap-3{
   gap: 0.75rem;
 }
-.gap-4{
-  gap: 1rem;
-}
 .gap-5{
   gap: 1.25rem;
 }
@@ -852,9 +846,6 @@ video {
 .rounded-\[10px\]{
   border-radius: 10px;
 }
-.rounded-\[11px\]{
-  border-radius: 11px;
-}
 .rounded-\[13px\]{
   border-radius: 13px;
 }
@@ -873,9 +864,6 @@ video {
 .rounded-\[7px\]{
   border-radius: 7px;
 }
-.rounded-\[80px\]{
-  border-radius: 80px;
-}
 .rounded-b-\[25px\]{
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -883,6 +871,13 @@ video {
 .rounded-l-lg{
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+}
+.border-t-2{
+  border-top-width: 2px;
+}
+.border-slate-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(241 245 249 / var(--tw-border-opacity));
 }
 .bg-\[\#0051FF\]{
   --tw-bg-opacity: 1;
@@ -970,9 +965,9 @@ video {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-5{
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .py-\[100px\]{
   padding-top: 100px;
@@ -985,10 +980,6 @@ video {
 .py-\[17px\]{
   padding-top: 17px;
   padding-bottom: 17px;
-}
-.py-\[25px\]{
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 .py-\[37px\]{
   padding-top: 37px;
@@ -1008,6 +999,9 @@ video {
 }
 .pt-1{
   padding-top: 0.25rem;
+}
+.pt-3{
+  padding-top: 0.75rem;
 }
 .pt-\[50px\]{
   padding-top: 50px;
@@ -1059,9 +1053,6 @@ video {
 }
 .font-semibold{
   font-weight: 600;
-}
-.font-thin{
-  font-weight: 100;
 }
 .leading-6{
   line-height: 1.5rem;
@@ -1194,7 +1185,7 @@ body {
 }
 
 :root {
-  --color-primary: #3377e8;
+  --color-primary: #3377E8;
   --color-secondary: #f3f6fd;
   --color-white: #ffff;
   --third-color: #f2f5fc;
@@ -1223,9 +1214,10 @@ body {
 }
 
 .secondary-button {
-  background: var(--color-secondary);
+  background: rgb(239, 244, 254);
   cursor: pointer;
   color: var(--primary-text-color);
+  border: 1px solid #cbdbf6;
   font-size: 14px;
 }
 
@@ -1378,12 +1370,17 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
   }
   .header-box::before {
-    right: 32px;
+    right: 9px;
+    top: -2px;
   }
 }
 .search-box {
   padding: 12px 21px;
   border-radius: 80px;
+  border: 1px solid #cbdbf6;
+}
+
+.burger-menu {
   border: 1px solid #cbdbf6;
 }
 
@@ -1824,7 +1821,14 @@ ol li, ul li {
 
 .menu-item {
   width: 100%;
-  border-bottom: 2px solid rgba(51, 119, 232, 0.05);
+  font-size: 12px;
+  transition: 0.25s;
+}
+.menu-item:hover {
+  background: rgb(239, 244, 254);
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 0 8px !important;
 }
 
 .top-nav {
@@ -2040,6 +2044,9 @@ header {
   .lg\:mr-2{
     margin-right: 0.5rem;
   }
+  .lg\:mr-\[12px\]{
+    margin-right: 12px;
+  }
   .lg\:mr-\[17px\]{
     margin-right: 17px;
   }
@@ -2060,12 +2067,6 @@ header {
   }
   .lg\:mt-\[50px\]{
     margin-top: 50px;
-  }
-  .lg\:mt-\[56px\]{
-    margin-top: 56px;
-  }
-  .lg\:mt-\[65px\]{
-    margin-top: 65px;
   }
   .lg\:mt-\[70px\]{
     margin-top: 70px;
@@ -2154,9 +2155,6 @@ header {
   .lg\:justify-start{
     justify-content: flex-start;
   }
-  .lg\:gap-0{
-    gap: 0px;
-  }
   .lg\:rounded-\[7px\]{
     border-radius: 7px;
   }
@@ -2181,13 +2179,13 @@ header {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  .lg\:px-\[23px\]{
+    padding-left: 23px;
+    padding-right: 23px;
+  }
   .lg\:px-\[30px\]{
     padding-left: 30px;
     padding-right: 30px;
-  }
-  .lg\:px-\[32px\]{
-    padding-left: 32px;
-    padding-right: 32px;
   }
   .lg\:py-5{
     padding-top: 1.25rem;
@@ -2242,10 +2240,6 @@ header {
   .lg\:text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-  .lg\:hover\:bg-gold:hover{
-    --tw-bg-opacity: 1;
-    background-color: rgb(240 185 11 / var(--tw-bg-opacity));
   }
   .lg\:hover\:text-white:hover{
     --tw-text-opacity: 1;

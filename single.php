@@ -16,7 +16,7 @@ the_post(); ?>
             <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
             <p>/</p>
             <div
-                class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
+                class="text-hint text-[14px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
             ><?php the_title(); ?></div>
         </div>
 
@@ -35,7 +35,7 @@ the_post(); ?>
                          class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-15px] top-[20px]">
 
                         <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
-                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                           class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#FF7E0D]" id="instadetailSocial" width="35"
                                  height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ the_post(); ?>
                         </a>
 
                         <a title="whatsApp" href="https://www.instagram.com/cafearz_com" target="_blank"
-                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                           class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#4ade80]" id="whatsdetailSocial" width="35"
                                  height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ the_post(); ?>
                         </a>
 
                         <a title="telegram" href="https://t.me/share/url?url=<?php the_permalink(); ?>" target="_blank"
-                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                           class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#3b82f6]" width="30" height="26" viewBox="0 0 30 26"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@ the_post(); ?>
 
                         <a title="twitter" href="http://www.twitter.com/share?url=<?php the_permalink(); ?>"
                            target="_blank"
-                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                           class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#3b82f6]" width="35" height="36" viewBox="0 0 35 36"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@ the_post(); ?>
                         <a title="linkedIn"
                            href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"
                            target="_blank"
-                           class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                           class="hover:scale-105 transition-all">
 
                             <svg class="fill-[#b0bed6] hover:fill-[#3b82f6]" width="35" height="36" viewBox="0 0 35 36"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,50 +120,14 @@ the_post(); ?>
                     <div
                         class="flex flex-col w-full gap-[30px] detail-post px-[13px] text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
+
+                        <div id="finish-content"></div>
                     </div>
 
 
 
-                    <div id="finish-content"></div>
-
-                    <div
-                        class="flex lg:flex-row lg:px-[32px] py-[25px] px-[10px] items-center gap-4 lg:gap-0 flex-col rounded-[11px] lg:mt-[65px] text-white justify-between bg-blue"
-                    >
-                        <h3
-                            class="flex flex-col text-center lg:text-start font-semibold lg:text-[18px] gap-3"
-                        >
-                            یک تیتر جذاب و جذب کننده
-                            <span class="text-[12px] font-thin text-center">
-                  توضیحات کوتاه برای هدایت کاربر و جذب آن برای کلیک روی دکمه
-                </span>
-                        </h3>
-
-                        <a
-                            href="https://cafearz.com/" target="_blank"
-                            class="bg-white px-[23px] py-[8px] lg:hover:bg-gold text-black font-semibold text-[14px] rounded-[80px]"
-                        >
-                            ورود به کافه ارز
-                        </a>
-                    </div>
-
-                    <div class="flex lg:flex-row flex-col items-center justify-between mt-7 lg:mt-[56px]">
-                        <p class="font-semibold text-[14px]">امتیاز دهید</p>
 
 
-                        <div class="rate flex items-center">
-                            <input type="radio" id="star5" name="rate" value="5"/>
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4"/>
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3"/>
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2"/>
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1"/>
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-
-                    </div>
 
                     <div class="bg-dataBg mt-[22px] mb-[32px] w-full h-[2px]"></div>
 

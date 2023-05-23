@@ -177,7 +177,7 @@ $selected_counter=0;
 
             $custom_args = array(
                 'post_type' => 'post',
-                'posts_per_page' => 8,
+                'posts_per_page' => 12,
                 'paged' => $paged
             );
 
