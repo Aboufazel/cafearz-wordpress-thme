@@ -11,7 +11,7 @@ the_post(); ?>
 <?php setPostViews($post->ID); ?>
 
 
-    <div id="content" class="container lg:w-[800px] mt-[15px] lg:mt-[40px] mx-auto">
+    <div id="content" class="container lg:w-[800px] mt-[15px] px-3 lg:mt-[40px] mx-auto">
 
         <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[20px]">
             <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
@@ -27,15 +27,15 @@ the_post(); ?>
 
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
 
-                <div class="flex w-full items-center justify-center relative lg:px-0 px-3">
+                <div class="flex w-full items-center justify-center relative">
                     <div class="single-lazy-box">
-                        <img width="656px" height="410px" class="rounded-[15px] shadow-xl"
+                        <img class="rounded-[15px] w-full shadow-xl"
                              data-src="<?php the_post_thumbnail_url('large'); ?>"
                              alt="<?php the_title(); ?>"/>
                     </div>
 
                     <div id="shareSocial"
-                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-35px] top-[20px]">
+                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-65px] top-[20px]">
 
                         <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
                            class="hover:scale-105 transition-all">
@@ -95,9 +95,9 @@ the_post(); ?>
                     </div>
                 </div>
 
-                <div class="flex-col w-full lg:px-[30px] px-3">
+                <div class="flex-col w-full">
 
-                    <div class="flex flex-row items-center px-3 lg:px-3 mt-8 justify-between w-full">
+                    <div class="flex flex-row items-center mt-8 justify-between w-full">
                         <div
                             class="flex justify-center gap-[5px] items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
                         >
@@ -110,7 +110,7 @@ the_post(); ?>
                             </p>
                         </div>
                         <div
-                            class="bg-black font-bold text-[10px] text-white px-[15px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px]"
+                            class="bg-black font-bold text-[10px] text-white px-[30px] text-center lg:mt-0 py-[5px] w-auto rounded-[25px]"
                         >
                             <?php get_category_post(); ?>
                         </div>
@@ -152,7 +152,7 @@ the_post(); ?>
                             <p class="font-semibold text-[14px]">مطلب را به اشتراک بگذارید</p>
                             <div class="flex flex-row w-full items-center gap-[10px] justify-center">
                                 <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
-                                   class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                                   class="hover:scale-105 transition-all">
 
                                     <svg class="fill-[#989898] hover:fill-[#FF7E0D]" id="instadetailSocial" width="35"
                                          height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,7 +163,7 @@ the_post(); ?>
                                 </a>
 
                                 <a title="whatsApp" href="https://www.instagram.com/cafearz_com" target="_blank"
-                                   class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                                   class="hover:scale-105 transition-all">
 
                                     <svg class="fill-[#989898] hover:fill-[#4ade80]" id="whatsdetailSocial" width="35"
                                          height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +173,7 @@ the_post(); ?>
                                 </a>
 
                                 <a title="telegram" href="https://t.me/cafearzz" target="_blank"
-                                   class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                                   class="hover:scale-105 transition-all">
 
                                     <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="30" height="26"
                                          viewBox="0 0 30 26"
@@ -186,7 +186,7 @@ the_post(); ?>
 
                                 <a title="twitter" href="http://www.twitter.com/share?url=<?php the_permalink(); ?>"
                                    target="_blank"
-                                   class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                                   class="hover:scale-105 transition-all">
 
                                     <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36"
                                          viewBox="0 0 35 36"
@@ -200,7 +200,7 @@ the_post(); ?>
                                 <a title="linkedIn"
                                    href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"
                                    target="_blank"
-                                   class="hover:translate-y-[-8px] hover:scale-105 transition-all">
+                                   class="hover:scale-105 transition-all">
 
                                     <svg class="fill-[#989898] hover:fill-[#3b82f6]" width="35" height="36"
                                          viewBox="0 0 35 36"

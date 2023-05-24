@@ -61,7 +61,7 @@ $selected_counter = 0;
 
 
     <?php if ($selected_count >= 4): ?>
-        <section id="selectBlog" class="container lg:w-[1200px] mx-auto">
+        <section id="selectBlog" class="container px-2 lg:w-[1200px] mx-auto">
             <div class="selectBlog mt-5 lg:mt-[105px]">
                 <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
                     FAVORATE NEWS
@@ -81,13 +81,13 @@ $selected_counter = 0;
                 </div>
 
             </div>
-            <div class="grid md:grid-cols-2  lg:grid-cols-12 grid-cols-1  justify-between items-center gap-[20px] lg:mt-[50px]">
+            <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-12 justify-between items-center gap-[20px] lg:mt-[50px]">
 
 
                 <?php foreach ($pageposts as $post): ?>
-                    <div class="col-span-3 ">
+                    <div class="lg:col-span-3 md:col-span-1 mt-5 lg:mt-0">
                         <div title=" <?php the_title(); ?>"
-                             class="min-h-[300px] block w-full relative my-[10px] lg:my-0 text-right items-center"
+                             class="block w-full min-h-[330px] relative text-right items-center"
                         >
                             <div class="flex flex-col relative items-center lg:items-start">
 
@@ -95,6 +95,7 @@ $selected_counter = 0;
 
                                     <a href="<?php echo custom_permalink($post->ID); ?>"
                                        title="<?php the_title(); ?>"
+                                       class="w-full"
                                        target="<?php echo custom_permalink_target($post->ID); ?>">
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
@@ -135,7 +136,7 @@ $selected_counter = 0;
 
 
 <section id="newBlogPost">
-    <div class="container relative lg:w-[1200px] mx-auto">
+    <div class="container relative px-2 lg:w-[1200px] mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
             <p
@@ -157,7 +158,7 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[70px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[50px]">
 
             <?php
 
@@ -199,7 +200,7 @@ $selected_counter = 0;
 
 
 <section id="bestArticle">
-    <div class="container relative lg:w-[1200px] mx-auto">
+    <div class="container relative px-2 lg:w-[1200px] mx-auto">
         <div class="selectBlog relative lg:pt-[50px]">
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[37px] right-[140px]"
@@ -220,7 +221,7 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]  mt-5 lg:mt-[70px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]  mt-5 lg:mt-[50px]">
 
             <?php
 

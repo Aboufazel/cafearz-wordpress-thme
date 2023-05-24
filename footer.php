@@ -125,8 +125,11 @@
         const abbas = document.getElementById("finish-content");
         const yElement = abbas.offsetTop;
 
+        console.log("content" + content)
+        console.log("yElement" + yElement)
+
         doc.getElementById("shareSocial").style.display =
-            content > yElement
+            content > yElement - 400
                 ? "none"
                 : "";
     })
@@ -187,10 +190,10 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "350px" : "";
+                htm.scrollTop > 90 ? "330px" : "";
 
             doc.getElementById("shareSocial").style.top =
-                htm.scrollTop > 90 ? "115px" : "";
+                htm.scrollTop > 90 ? "100px" : "";
         });
     });
 </script>
