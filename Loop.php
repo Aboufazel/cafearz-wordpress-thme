@@ -16,13 +16,13 @@
     <div
         class="flex flex-col w-full  gap-[12px] lg:text-start text-center items-center lg:items-start"
     >
-        <h2 title="<?php the_title(); ?>" class="lg:text-[14px] transition hover:text-blue">
+        <h3 title="<?php the_title(); ?>" class="lg:text-[16px] text-[13px] transition hover:text-blue">
             <a href="<?php echo custom_permalink($post->ID); ?>"
                title="<?php the_title(); ?>"
                target="<?php echo custom_permalink_target($post->ID); ?>">
                 <?php the_title(); ?>
             </a>
-        </h2>
+        </h3>
         <div
             class="text-[14px] leading-6 text-blogDetail text-center
                 lg:text-justify font-light]"

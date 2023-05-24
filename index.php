@@ -107,14 +107,14 @@ $selected_counter = 0;
                             </div>
 
                             <div class="flex w-full flex-col mt-2 lg:text-start text-center items-center px-3 lg:px-0 lg:items-start">
-                                <h2
+                                <h3
                                     class="font-bold text-[13px] transition hover:text-blue lg:text-[16px] lg:mt-[14px] mt-[25px]"
                                 >
                                     <a href="<?php echo custom_permalink($post->ID); ?>"
                                        target="<?php echo custom_permalink_target($post->ID); ?>">
                                         <?php the_title(); ?>
                                     </a>
-                                </h2>
+                                </h3>
                                 <p class="flex flex-row items-center lg:justify-start justify-center w-full text-[14px] mt-[5px] data-color">
                                     <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
                                 </p>
