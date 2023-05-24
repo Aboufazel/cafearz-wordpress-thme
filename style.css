@@ -495,8 +495,8 @@ video {
 .left-\[-95px\]{
   left: -95px;
 }
-.left-\[21px\]{
-  left: 21px;
+.left-\[5px\]{
+  left: 5px;
 }
 .right-\[-65px\]{
   right: -65px;
@@ -513,11 +513,11 @@ video {
 .top-\[0px\]{
   top: 0px;
 }
-.top-\[15px\]{
-  top: 15px;
-}
 .top-\[20px\]{
   top: 20px;
+}
+.top-\[5px\]{
+  top: 5px;
 }
 .top-\[68px\]{
   top: 68px;
@@ -1830,6 +1830,14 @@ ol, ul {
 
 .top-nav {
   width: 100%;
+}
+
+.search-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .first-blog {

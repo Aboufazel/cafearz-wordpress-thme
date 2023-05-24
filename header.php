@@ -107,22 +107,24 @@
 
 
                 <div class="search-box hidden relative lg:flex items-center mr-[49px]">
-                    <button
-                        title="search-btn bg-black"
-                        type="submit"
-                        class="absolute left-[21px] top-[15px]"
-                        onclick="show_mask('mask_search')"
-                    >
-                        <svg class="w-[17px] h-[16px]">
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#search"></use>
-                        </svg>
-                    </button>
 
                     <form class="search-form clearfix" action="<?php echo home_url(); ?>">
                         <input name="s"  type="text" placeholder="جستجو"/>
 
                         <input type="hidden" value="submit" />
+
+                        <button
+                            title="search-btn bg-black"
+                            type="submit"
+                            class="absolute search-btn left-[5px] top-[5px]"
+                            onclick="show_mask('mask_search')"
+                        >
+                            <svg class="w-[17px] h-[16px]">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/src/assets/svg/sprite.svg#search"></use>
+                            </svg>
+                        </button>
                     </form>
+
                 </div>
             </div>
         </div>

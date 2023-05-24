@@ -795,11 +795,19 @@ ol, ul {
   }
 }
 
-
 .top-nav {
   width: 100%;
 }
 
+
+
+.search-btn{
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .first-blog {
   background-image: url(./src/assets/img/bg-pattern.png), linear-gradient(301deg, rgb(9 25 51) 0%, rgb(75 71 36) 100%) !important;

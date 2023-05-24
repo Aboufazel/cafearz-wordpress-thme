@@ -128,10 +128,10 @@
         console.log("content" + content)
         console.log("yElement" + yElement)
 
-        doc.getElementById("shareSocial").style.display =
+        doc.getElementById("shareSocial").style.opacity =
             content > yElement - 400
-                ? "none"
-                : "";
+                ? 0
+                : 1;
     })
     <?php endif; ?>
 
