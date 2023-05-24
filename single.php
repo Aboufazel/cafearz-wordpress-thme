@@ -19,7 +19,7 @@ the_post(); ?>
             <div class="text-blue lg:text-[14px] text-[12px] font-bold"><?php get_category_post(); ?></div>
             <p>/</p>
             <div
-                class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
+                class="text-hint font-bold  lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
             ><?php the_title(); ?></div>
         </div>
 
@@ -29,13 +29,13 @@ the_post(); ?>
 
                 <div class="flex w-full items-center justify-center relative">
                     <div class="single-lazy-box">
-                        <img class="rounded-[15px] lg:w-[750px] w-full shadow-xl"
+                        <img class="rounded-[15px] w-full md:w-[750px] lg:w-[750px] shadow-xl"
                              data-src="<?php the_post_thumbnail_url('large'); ?>"
                              alt="<?php the_title(); ?>"/>
                     </div>
 
                     <div id="shareSocial"
-                         class="hidden lg:flex lg:flex-col transition items-center gap-[20px] absolute right-[-65px] top-[20px]">
+                         class="hidden lg:flex lg:flex-col transition duration-500 items-center gap-[20px] absolute right-[-65px] top-[20px]">
 
                         <a title="instagram" href="https://www.instagram.com/cafearz_com" target="_blank"
                            class="hover:scale-105 transition-all">

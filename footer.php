@@ -190,7 +190,7 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "320px" : "";
+                htm.scrollTop > 90 ? "328px" : "";
 
             doc.getElementById("shareSocial").style.top =
                 htm.scrollTop > 90 ? "100px" : "";

@@ -15,7 +15,7 @@
     </div>
 
     <div class="flex flex-col gap-[12px] mt-5 lg:mt-0 lg:pr-[20px] items-start justify-center w-full z-10">
-        <h1 title="<?php the_title(); ?>" class="lg:text-[28px] lg:text-white font-black blog-title">
+        <h1 title="<?php the_title(); ?>" class="lg:text-[28px] lg:text-white font-black">
             <a href="<?php echo custom_permalink($post->ID); ?>">
                 <?php the_title(); ?>
             </a>

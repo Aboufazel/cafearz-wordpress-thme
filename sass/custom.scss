@@ -816,7 +816,7 @@ ol, ul {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .first-blog {
     background: none !important;
     color: #21294D !important;
@@ -824,6 +824,7 @@ ol, ul {
 }
 
 .logged-in-as {
+  display: none !important;
   font-family: 'bakh-light';
   color: #c4c4c4 !important;
   margin: 12px 0;

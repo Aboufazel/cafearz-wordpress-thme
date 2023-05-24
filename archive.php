@@ -23,8 +23,8 @@ $GLOBALS['singleVarables'] = [
         <?php get_category_post(); ?>
     </h2>
 
-    <div class="container relative lg:w-[1200px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-30px]">
+    <div class="container relative px-3 lg:w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-30px]">
 
             <?php if (have_posts()) : ?>
                 <!-- the loop -->

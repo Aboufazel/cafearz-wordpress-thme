@@ -87,7 +87,7 @@ $selected_counter = 0;
                 <?php foreach ($pageposts as $post): ?>
                     <div class="lg:col-span-3 md:col-span-1 mt-5 lg:mt-0">
                         <div title=" <?php the_title(); ?>"
-                             class="block w-full min-h-[330px] relative text-right items-center"
+                             class="block w-full lg:min-h-[330px] relative text-right items-center"
                         >
                             <div class="flex flex-col relative items-center lg:items-start">
 

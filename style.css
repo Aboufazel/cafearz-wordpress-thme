@@ -661,9 +661,6 @@ video {
 .min-h-\[300px\]{
   min-height: 300px;
 }
-.min-h-\[330px\]{
-  min-height: 330px;
-}
 .w-1\/2{
   width: 50%;
 }
@@ -1068,6 +1065,9 @@ video {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+.duration-500{
+  transition-duration: 500ms;
 } /*!
 Theme Name: Cafearz
 Theme URI: https://cafearz.com/
@@ -1842,13 +1842,14 @@ ol, ul {
   background-size: contain;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .first-blog {
     background: none !important;
     color: #21294D !important;
   }
 }
 .logged-in-as {
+  display: none !important;
   font-family: "bakh-light";
   color: #c4c4c4 !important;
   margin: 12px 0;
@@ -2069,6 +2070,9 @@ header {
   .md\:col-span-1{
     grid-column: span 1 / span 1;
   }
+  .md\:w-\[750px\]{
+    width: 750px;
+  }
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2155,6 +2159,9 @@ header {
   }
   .lg\:h-\[413px\]{
     height: 413px;
+  }
+  .lg\:min-h-\[330px\]{
+    min-height: 330px;
   }
   .lg\:w-2\/5{
     width: 40%;

@@ -9,8 +9,8 @@
         </h1>
     </div>
 
-    <div class="container relative lg:w-[1200px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
+    <div class="container relative px-3 lg:w-[1200px] mx-auto">
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-[20px] mt-10 lg:mt-[70px]">
 
 
             <?php if ( have_posts() ) : ?>
