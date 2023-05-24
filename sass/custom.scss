@@ -770,20 +770,13 @@ ol, ul {
 .menu-item {
   width: 100%;
   font-size: 12px;
-  transition: 0.25s;
+  transition: 0.12s;
   padding-right: 7px !important;
   padding-left: 7px !important;
+
   &:hover{
-    border-radius: 10px 0 0 10px !important;
-    &:before{
-      content: "";
-      width: 2px;
-      height: 100%;
-      margin-left: 100px !important;
-      background: var(--color-primary);
-      position: absolute;
-      right: 0;
-    }
+    border-radius: 10px !important;
+    border-right: 3px solid var(--color-primary);
     position: relative;
     background: rgba(51, 119, 232, 0.05);
     cursor: pointer;

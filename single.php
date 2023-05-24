@@ -29,9 +29,15 @@ the_post(); ?>
 
                 <div class="flex w-full items-center justify-center relative">
                     <div class="single-lazy-box">
+                        <a href="<?php echo custom_permalink($post->ID); ?>"
+                           title="<?php the_title(); ?>"
+                           class="w-full"
+                           target="<?php echo custom_permalink_target($post->ID); ?>">
                         <img class="rounded-[15px] w-full md:w-[750px] lg:w-[750px] shadow-xl"
                              data-src="<?php the_post_thumbnail_url('large'); ?>"
                              alt="<?php the_title(); ?>"/>
+
+                        </a>
                     </div>
 
                     <div id="shareSocial"
