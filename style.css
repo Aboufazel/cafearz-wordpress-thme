@@ -658,6 +658,9 @@ video {
 .h-\[66px\]{
   height: 66px;
 }
+.h-full{
+  height: 100%;
+}
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -855,6 +858,9 @@ video {
 .fill-\[\#b0bed6\]{
   fill: #b0bed6;
 }
+.p-2{
+  padding: 0.5rem;
+}
 .p-3{
   padding: 0.75rem;
 }
@@ -946,6 +952,9 @@ video {
 }
 .text-justify{
   text-align: justify;
+}
+.text-start{
+  text-align: start;
 }
 .text-\[10px\]{
   font-size: 10px;
@@ -1050,6 +1059,10 @@ video {
 .shadow-\[\#3b82f6\]{
   --tw-shadow-color: #3b82f6;
   --tw-shadow: var(--tw-shadow-colored);
+}
+.drop-shadow{
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2157,6 +2170,9 @@ header {
   .lg\:hidden{
     display: none;
   }
+  .lg\:h-\[178px\]{
+    height: 178px;
+  }
   .lg\:h-\[413px\]{
     height: 413px;
   }
@@ -2228,6 +2244,9 @@ header {
   }
   .lg\:rounded-\[7px\]{
     border-radius: 7px;
+  }
+  .lg\:bg-inherit{
+    background-color: inherit;
   }
   .lg\:p-0{
     padding: 0px;
