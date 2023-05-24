@@ -141,7 +141,7 @@ the_post(); ?>
                                     <?php echo get_avatar(get_the_author_meta('ID'), 32); ?>
                                 </b>
                                 <h3 class="flex flex-col gap-1 font-semibold text-[14px]">
-                                    <?php the_author_posts_link(); ?>
+                                    <?php the_author(); ?>
                                     <span class="font-normal text-[12px]"> نویسنده </span>
                                 </h3>
                             </div>
@@ -239,7 +239,7 @@ the_post(); ?>
         </div>
 
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3  grid-cols-1 gap-5 mt-[20px]">
+        <div class="grid lg:grid-cols-3 grid-cols-1  md:grid-cols-3 gap-5 mt-[20px]">
 
             <?php
             $categories = get_the_category($post->ID);

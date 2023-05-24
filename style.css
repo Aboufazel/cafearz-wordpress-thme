@@ -667,6 +667,9 @@ video {
 .w-1\/2{
   width: 50%;
 }
+.w-\[150px\]{
+  width: 150px;
+}
 .w-\[162px\]{
   width: 162px;
 }
@@ -1322,16 +1325,6 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
 }
 
-.header-box::before {
-  content: "";
-  position: absolute;
-  background: var(--color-primary);
-  width: 53px;
-  height: 4px;
-  right: 40px;
-  border-radius: 0 0 10px 10px;
-}
-
 @media (max-width: 1000px) {
   .read-more-btn {
     padding: 11px 14px;
@@ -1342,10 +1335,6 @@ h1, h2, h3, h4, h5, h6 {
   .header-box {
     border-radius: 0;
     top: 0;
-  }
-  .header-box::before {
-    right: 9px;
-    top: -2px;
   }
 }
 .search-box {
@@ -1800,6 +1789,9 @@ ol, ul {
   clear: both;
 }
 
+#myDropdown {
+  padding: 15px 7px !important;
+}
 #myDropdown:before {
   content: "";
   width: 100%;
@@ -1807,24 +1799,28 @@ ol, ul {
   background: rgba(51, 119, 232, 0.5);
   position: absolute;
   top: 0;
+  right: 0;
   border-radius: 5px 5px 0 0;
 }
 
 .menu-item {
   width: 100%;
   font-size: 12px;
-  padding: 0 8px !important;
   transition: 0.25s;
+  padding-right: 7px !important;
+  padding-left: 7px !important;
 }
 .menu-item:hover {
+  border-radius: 10px 0 0 10px !important;
   position: relative;
   background: rgba(51, 119, 232, 0.05);
   cursor: pointer;
 }
 .menu-item:hover:before {
   content: "";
-  width: 3px;
+  width: 2px;
   height: 100%;
+  margin-left: 100px !important;
   background: var(--color-primary);
   position: absolute;
   right: 0;
@@ -2083,11 +2079,20 @@ header {
   .md\:col-span-1{
     grid-column: span 1 / span 1;
   }
+  .md\:flex{
+    display: flex;
+  }
   .md\:w-\[750px\]{
     width: 750px;
   }
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .md\:flex-row-reverse{
+    flex-direction: row-reverse;
   }
 }
 
@@ -2187,9 +2192,6 @@ header {
   }
   .lg\:w-\[1200px\]{
     width: 1200px;
-  }
-  .lg\:w-\[1350px\]{
-    width: 1350px;
   }
   .lg\:w-\[287px\]{
     width: 287px;
@@ -2330,5 +2332,14 @@ header {
   .lg\:hover\:drop-shadow-xl:hover{
     --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:block{
+    display: block;
+  }
+  .xl\:w-\[1280px\]{
+    width: 1280px;
   }
 }

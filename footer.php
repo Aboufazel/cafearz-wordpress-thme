@@ -182,7 +182,7 @@
                     htm.scrollTop > 5 ? "0" : "0";
 
                 doc.getElementById("header").style.borderRadius =
-                    htm.scrollTop > 5 ? "0 0 25px 25px" : "0 0 25px 25px";
+                    htm.scrollTop > 5 ? "0" : "0";
             }
 
 

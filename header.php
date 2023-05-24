@@ -28,24 +28,22 @@
 
 <header
     id="header"
-    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-[0px] lg:right-[0px] w-full mx-auto transition-all lg:w-[1350px] z-30"
+    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-[0px] lg:right-[0px] z-30"
 >
     <div
-        class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-3 lg:px-[23px] py-[15px]"
+        class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-3  w-full mx-auto transition-all xl:w-[1280px]  lg:px-[23px] py-[15px]"
     >
         <div class="flex flex-row justify-start items-center w-full">
             <a href="http://cblog.test/">
                 <img
-                    src="<?php echo get_template_directory_uri(); ?>/src/assets/img/logo.png"
-                    width="124px"
-                    height="54px"
+                    src="<?php echo get_template_directory_uri(); ?>/src/assets/img/largeLogo.png"
                     alt="کافه-ارز"
-                    class="lg:mr-[17px] lg:mr-[12px]"
+                    class="lg:mr-[17px] lg:mr-[12px] w-[150px]"
                 />
             </a>
         </div>
         <div class="lg:col-span-2 flex justify-end lg:justify-start w-full">
-            <div class="flex relative gap-3 flex-row items-center" >
+            <div class="flex md:flex-row-reverse lg:flex-row relative gap-3 flex-row items-center" >
 
                 <div
                     title="menu-btn"
@@ -59,7 +57,7 @@
                     </svg>
 
                 </div>
-                <p class="font-semibold text-[12px] hidden lg:block">دسته بندی ها</p>
+                <p class="font-semibold text-[12px] hidden xl:block">دسته بندی ها</p>
 
                 <div
                     id="myDropdown"
@@ -71,7 +69,7 @@
                         class="flex flex-row border-t-2 border-slate-100 pt-3 lg:hidden px-3 items-center justify-center gap-3 w-full"
                     >
                         <div class="flex w-1/2">
-                            <a href="http://127.0.0.1:8000/mobile-application"
+                            <a href="https://cafearz.com/mobile-application?metrix_token=aa4jup&metrix_user_id=dddfbfdc-6540-4651-ac33-0c9fd0a5704b&utm_source=header&utm_campaign=header%20site"
                                target="_blank"
                                class="secondary-button h-[42px] lg:hidden flex items-center w-full gap-[5px] justify-start font-semibold"
                             >
@@ -106,7 +104,7 @@
                 </div>
 
 
-                <div class="search-box hidden relative lg:flex items-center mr-[49px]">
+                <div class="search-box hidden md:flex relative lg:flex items-center mr-[49px]">
 
                     <form class="search-form clearfix" action="<?php echo home_url(); ?>">
                         <input name="s"  type="text" placeholder="جستجو"/>
@@ -129,7 +127,7 @@
             </div>
         </div>
         <div class="lg:col-span-2 flex flex-row items-center justify-end w-full">
-            <a href="http://127.0.0.1:8000/mobile-application"
+            <a href="https://cafearz.com/mobile-application?metrix_token=aa4jup&metrix_user_id=dddfbfdc-6540-4651-ac33-0c9fd0a5704b&utm_source=header&utm_campaign=header%20site"
                target="_blank"
                 class="secondary-button hidden lg:flex items-center gap-[10px] justify-center font-semibold"
             >

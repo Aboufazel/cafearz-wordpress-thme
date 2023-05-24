@@ -254,15 +254,15 @@ h3, h4, h5, h6{
   top: 0;
 }
 
-.header-box::before {
-  content: "";
-  position: absolute;
-  background: var(--color-primary);
-  width: 53px;
-  height: 4px;
-  right: 40px;
-  border-radius: 0 0 10px 10px;
-}
+//.header-box::before {
+//  content: "";
+//  position: absolute;
+//  background: var(--color-primary);
+//  width: 53px;
+//  height: 4px;
+//  right: 40px;
+//  border-radius: 0 0 10px 10px;
+//}
 
 @media (max-width: 1000px) {
   .read-more-btn {
@@ -278,10 +278,10 @@ h3, h4, h5, h6{
     top: 0;
   }
 
-  .header-box::before {
-    right: 9px;
-    top: -2px;
-  }
+  //.header-box::before {
+  //  right: 9px;
+  //  top: -2px;
+  //}
 }
 
 .search-box {
@@ -754,6 +754,7 @@ ol, ul {
 
 
 #myDropdown{
+  padding: 15px 7px !important;
   &:before{
     content:"";
     width: 100%;
@@ -761,6 +762,7 @@ ol, ul {
     background: rgba(51, 119, 232, 0.5);
     position: absolute;
     top: 0;
+    right: 0;
     border-radius: 5px 5px 0 0 ;
   }
 }
@@ -768,14 +770,16 @@ ol, ul {
 .menu-item {
   width: 100%;
   font-size: 12px;
-  padding: 0 8px !important;
   transition: 0.25s;
+  padding-right: 7px !important;
+  padding-left: 7px !important;
   &:hover{
-
+    border-radius: 10px 0 0 10px !important;
     &:before{
       content: "";
-      width: 3px;
+      width: 2px;
       height: 100%;
+      margin-left: 100px !important;
       background: var(--color-primary);
       position: absolute;
       right: 0;
