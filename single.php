@@ -14,12 +14,12 @@ the_post(); ?>
     <div id="content" class="container lg:w-[800px] mt-[15px] px-3 lg:mt-[40px] mx-auto">
 
         <div class="flex flex-row gap-[5px] px-3 lg:px-0  items-center mb-[20px]">
-            <a href="<?php echo site_url(); ?>" class="text-blue l text-[14px] font-bold">وبلاگ</a>
+            <a href="<?php echo site_url(); ?>" class="text-blue lg:text-[14px] text-[12px] font-bold">وبلاگ</a>
             <p>/</p>
-            <div class="text-blue text-[14px] font-bold"><?php get_category_post(); ?></div>
+            <div class="text-blue lg:text-[14px] text-[12px] font-bold"><?php get_category_post(); ?></div>
             <p>/</p>
             <div
-                class="text-hint text-[14px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
+                class="text-hint lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
             ><?php the_title(); ?></div>
         </div>
 
@@ -221,7 +221,7 @@ the_post(); ?>
 
 <div id="other-blog">
 
-    <div class="container lg:w-[950px] px-[15px] mx-auto">
+    <div class="container lg:w-[950px] px-3 mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
             <div class="flex flex-row items-center justify-between">

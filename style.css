@@ -880,10 +880,6 @@ video {
   padding-left: 13px;
   padding-right: 13px;
 }
-.px-\[15px\]{
-  padding-left: 15px;
-  padding-right: 15px;
-}
 .px-\[18px\]{
   padding-left: 18px;
   padding-right: 18px;
@@ -1939,7 +1935,7 @@ ol, ul {
 @media (max-width: 1000px) {
   .single-lazy-box {
     width: 100%;
-    height: auto;
+    height: 196px !important;
   }
 }
 
