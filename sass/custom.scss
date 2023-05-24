@@ -435,6 +435,12 @@ input::placeholder, textarea {
   outline: 0;
 }
 
+#newLoop{
+  h3{
+    font-family: bakh-regular !important;
+  }
+}
+
 @media (max-width: 1000px) {
   #comment-block::before, #footer::before, #other-blog::before, .selectBlog-rectangle {
     display: none;

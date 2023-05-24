@@ -1,4 +1,4 @@
-<div class="flex bg-white  drop-shadow rounded-[5px] p-2 lg:p-0 lg:bg-inherit min-h-[300px] flex-col mb-[32px] gap-[12px] items-center">
+<div class="flex flex-col items-center bg-white drop-shadow rounded-[5px] p-2 lg:p-0 lg:bg-inherit min-h-[300px] mb-[32px] gap-[12px]">
 
     <div class="flex flex-col mb-[15px] lazy-box  relative items-center">
         <a href="<?php echo custom_permalink($post->ID); ?>"
@@ -8,7 +8,7 @@
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
-                class="bg-none shadow-xl rounded-[10px] h-full lg:h-[178px]"
+                class="bg-none shadow-xl rounded-[10px] h-full"
             />
         </a>
     </div>

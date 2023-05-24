@@ -245,7 +245,7 @@ the_post(); ?>
         </div>
 
 
-        <div class="grid lg:grid-cols-3 grid-cols-1  md:grid-cols-3 gap-5 mt-[20px]">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-2 lg:gap-5 mt-[20px]">
 
             <?php
             $categories = get_the_category($post->ID);
@@ -270,7 +270,13 @@ the_post(); ?>
                     <?php while ($rel_posts->have_posts()) : $rel_posts->the_post(); ?>
 
 
-                        <?php include "Loop.php" ?>
+                        <div class="lg:hidden">
+                            <?php include "newLoop.php" ?>
+                        </div>
+
+                        <div class="hidden lg:block">
+                            <?php include "Loop.php" ?>
+                        </div>
 
 
                     <?php

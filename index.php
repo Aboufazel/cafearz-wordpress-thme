@@ -85,7 +85,7 @@ $selected_counter = 0;
 
 
                 <?php foreach ($pageposts as $post): ?>
-                    <div class="lg:col-span-3 md:col-span-1 mt-5 lg:mt-0">
+                    <div class="lg:col-span-3 md:col-span-1 bg-white p-2 rounded-[15px] mt-5 lg:mt-0">
                         <div title=" <?php the_title(); ?>"
                              class="block w-full lg:min-h-[330px] relative text-right items-center"
                         >
@@ -100,22 +100,21 @@ $selected_counter = 0;
                                         <img
                                             data-src="<?php the_post_thumbnail_url('small'); ?>"
                                             alt="<?php the_title(); ?>"
-                                            class="bg-none shadow-xl rounded-[10px] h-[178px]"
+                                            class="bg-none shadow-xl rounded-[10px] h-full lg:h-[178px]"
                                         />
                                     </a>
                                 </div>
                             </div>
 
-                            <div class="flex w-full flex-col mt-2 lg:text-start text-center items-center px-3 lg:px-0 lg:items-start">
-                                <h3
-                                    class="font-bold text-[13px] transition hover:text-blue lg:text-[16px] lg:mt-[14px] mt-[25px]"
-                                >
+                            <div class="flex w-full flex-col mt-2 text-start px-3 lg:px-0 items-start">
+                                <h3 title="<?php the_title(); ?>" class="text-[16px] text-start transition hover:text-blue">
                                     <a href="<?php echo custom_permalink($post->ID); ?>"
+                                       title="<?php the_title(); ?>"
                                        target="<?php echo custom_permalink_target($post->ID); ?>">
                                         <?php the_title(); ?>
                                     </a>
                                 </h3>
-                                <p class="flex flex-row items-center lg:justify-start justify-center w-full text-[14px] mt-[5px] data-color">
+                                <p class="flex flex-row items-center justify-start w-full text-[14px] mt-[5px] data-color">
                                     <?php shamsiDate(get_the_date('Y-m-d', $post->ID)); ?>
                                 </p>
                             </div>
