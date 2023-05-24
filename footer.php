@@ -190,7 +190,7 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "330px" : "";
+                htm.scrollTop > 90 ? "320px" : "";
 
             doc.getElementById("shareSocial").style.top =
                 htm.scrollTop > 90 ? "100px" : "";
@@ -216,20 +216,20 @@
 
 
 
-    // $(".lazy-box img").prepend(function () {
-    //     $(this).attr('src', $(this).data('src'));
-    //     $(this).closest('.lazy-box').removeClass('lazy-box');
-    // });
-    //
-    // $(".single-lazy-box img").prepend(function () {
-    //     $(this).attr('src', $(this).data('src'));
-    //     $(this).closest('.single-lazy-box').removeClass('single-lazy-box');
-    // });
-    //
-    // $(".lazy-box-index img").prepend(function () {
-    //     $(this).attr('src', $(this).data('src'));
-    //     $(this).closest('.lazy-box-index').removeClass('lazy-box-index');
-    // });
+    $(".lazy-box img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.lazy-box').removeClass('lazy-box');
+    });
+
+    $(".single-lazy-box img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.single-lazy-box').removeClass('single-lazy-box');
+    });
+
+    $(".lazy-box-index img").prepend(function () {
+        $(this).attr('src', $(this).data('src'));
+        $(this).closest('.lazy-box-index').removeClass('lazy-box-index');
+    });
 
 </script>
 

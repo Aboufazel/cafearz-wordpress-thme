@@ -600,7 +600,7 @@ input::placeholder, textarea {
 }
 
 ul {
-  padding: 0 10px !important;
+  padding: 0 0 !important;
 }
 
 ol, ul {
@@ -752,16 +752,37 @@ ol, ul {
   clear: both;
 }
 
+
+#myDropdown{
+  &:before{
+    content:"";
+    width: 100%;
+    height: 5px;
+    background: rgba(51, 119, 232, 0.5);
+    position: absolute;
+    top: 0;
+    border-radius: 5px 5px 0 0 ;
+  }
+}
+
 .menu-item {
   width: 100%;
   font-size: 12px;
-   transition: 0.25s;
+  padding: 0 8px !important;
+  transition: 0.25s;
   &:hover{
-    background: rgb(239, 244, 254);
-    box-shadow: inset 0 0 5px rgba(209, 212, 215, 0.87);
+
+    &:before{
+      content: "";
+      width: 3px;
+      height: 100%;
+      background: var(--color-primary);
+      position: absolute;
+      right: 0;
+    }
+    position: relative;
+    background: rgba(51, 119, 232, 0.05);
     cursor: pointer;
-    border-radius: 15px;
-    padding: 0 8px !important;
   }
 
   li{

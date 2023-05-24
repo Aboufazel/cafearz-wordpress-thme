@@ -19,7 +19,7 @@ $GLOBALS['singleVarables'] = [
         </div>
     </div>
 
-    <h2 class="bg-[#0051FF] rounded-l-lg lg:rounded-[7px] text-white text-shadow:[3px 2px 4px 0 rgba(0, 0, 0, 0.25)] lg:text-[35px] font-black max-w-max px-[30px] py-[5px]">
+    <h2 class="bg-blue rounded-l-lg lg:rounded-[7px] text-white text-shadow:[3px 2px 4px 0 rgba(0, 0, 0, 0.25)] lg:text-[35px] font-black max-w-max px-[30px] py-[5px]">
         <?php get_category_post(); ?>
     </h2>
 

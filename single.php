@@ -29,7 +29,7 @@ the_post(); ?>
 
                 <div class="flex w-full items-center justify-center relative">
                     <div class="single-lazy-box">
-                        <img class="rounded-[15px] w-full shadow-xl"
+                        <img class="rounded-[15px] lg:w-[750px] w-full shadow-xl"
                              data-src="<?php the_post_thumbnail_url('large'); ?>"
                              alt="<?php the_title(); ?>"/>
                     </div>
