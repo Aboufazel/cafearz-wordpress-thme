@@ -486,6 +486,9 @@ video {
 .sticky{
   position: sticky;
 }
+.bottom-0{
+  bottom: 0px;
+}
 .bottom-\[-12px\]{
   bottom: -12px;
 }
