@@ -486,9 +486,6 @@ video {
 .sticky{
   position: sticky;
 }
-.bottom-0{
-  bottom: 0px;
-}
 .bottom-\[-12px\]{
   bottom: -12px;
 }
@@ -842,6 +839,10 @@ video {
 .bg-dataBg{
   --tw-bg-opacity: 1;
   background-color: rgb(244 247 254 / var(--tw-bg-opacity));
+}
+.bg-gold{
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 185 11 / var(--tw-bg-opacity));
 }
 .bg-white{
   --tw-bg-opacity: 1;
@@ -2183,6 +2184,9 @@ header {
   }
   .lg\:w-\[287px\]{
     width: 287px;
+  }
+  .lg\:w-\[300px\]{
+    width: 300px;
   }
   .lg\:w-\[750px\]{
     width: 750px;

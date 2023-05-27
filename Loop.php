@@ -8,7 +8,7 @@
             <img
                 data-src="<?php the_post_thumbnail_url('small'); ?>"
                 alt="<?php the_title(); ?>"
-                class="bg-none shadow-xl rounded-[10px] h-full"
+                class="bg-none shadow-xl lg:w-[300px] lg:h-[178px] rounded-[10px] h-full"
             />
         </a>
     </div>
