@@ -41,7 +41,8 @@ Text Domain: cafearz.com
 }
 
 body {
-  font-family: bakh-regular, bakh-light, bakh-bold, bakh-black, bakh-extrablack, bakh-extarbold;
+  //font-family: bakh-regular, bakh-light, bakh-bold, bakh-black, bakh-extrablack, bakh-extarbold;
+  font-family: IRANSansX;
   direction: rtl;
   background-image: url(./src/assets/img/header-bg.png);
   background-repeat: no-repeat;
@@ -112,13 +113,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: bakh-black;
-
-
+  font-family: IRANSansX;
+  font-weight: 900 !important;
 }
 
 .comment-metadata{
-  font-family: 'bakh-regular';
+  font-family: IRANSansX;
 }
 
 h1{
@@ -242,10 +242,9 @@ h3, h4, h5, h6{
 
 
 .header-box {
-  border-radius: 0 0 25px 25px;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid #eeeeee;
   top: 50px;
 }
 
@@ -437,7 +436,7 @@ input::placeholder, textarea {
 
 #newLoop{
   h3{
-    font-family: bakh-regular !important;
+    font-family: IRANSansX !important;
   }
 }
 
@@ -498,7 +497,7 @@ input::placeholder, textarea {
   display: flex;
   flex-direction: column;
   background: var(--color-white);
-  font-family: bakh-regular;
+  font-family: IRANSansX;
   margin-top: 10px;
   height: 290px;
   border-radius: 13px;
@@ -527,7 +526,8 @@ input::placeholder, textarea {
   flex-direction: column;
   width: 800px;
   padding: 15px;
-  font-family: 'bakh-bold';
+  font-family: IRANSansX;
+  font-weight: bold;
   @media(max-width: 1000px) {
     width: 100% !important;
   }
@@ -577,7 +577,7 @@ input::placeholder, textarea {
   padding: 10px 15px !important;
   border-radius: 12px !important;
   width: 100% !important;
-  font-family: bakh-regular;
+  font-family: IRANSansX;
 
   &:focus {
     outline: var(--color-primary) !important;
@@ -611,7 +611,8 @@ ul {
 
 ol, ul {
   font-size: 15px;
-  font-family: bakh-bold;
+  font-family: IRANSansX;
+  font-weight: bold;
   padding: 20px 25px 20px 20px;
   border-radius: 10px
 }
@@ -720,7 +721,7 @@ ol, ul {
 }
 
 .comment-content {
-  font-family: 'bakh-regular';
+  font-family: IRANSansX;
   color: #4a517d;
   padding: 10px 12px 0 12px !important;
 }
@@ -764,7 +765,7 @@ ol, ul {
   &:before{
     content:"";
     width: 100%;
-    height: 5px;
+    height: 3px;
     background: rgba(51, 119, 232, 0.5);
     position: absolute;
     top: 0;
@@ -782,7 +783,6 @@ ol, ul {
 
   &:hover{
     border-radius: 10px !important;
-    border-right: 3px solid var(--color-primary);
     position: relative;
     background: rgba(51, 119, 232, 0.05);
     cursor: pointer;
@@ -828,7 +828,7 @@ ol, ul {
 
 .logged-in-as {
   display: none !important;
-  font-family: 'bakh-light';
+  font-family: IRANSansX;
   color: #c4c4c4 !important;
   margin: 12px 0;
 }

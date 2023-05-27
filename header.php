@@ -28,7 +28,7 @@
 
 <header
     id="header"
-    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box sticky top-[0px] lg:right-[0px] z-30"
+    class=" <?php  isset($header_bg)?" bg-white ":"" ; ?>header-box  sticky top-[0px] lg:right-[0px] z-30"
 >
     <div
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-3  w-full mx-auto transition-all xl:w-[1280px]  lg:px-[23px] py-[15px]"

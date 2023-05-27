@@ -26,7 +26,9 @@ the_post(); ?>
         <div id="blog-detail-text">
 
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
-
+                <h1 class="font-bold text-black mt-7 lg:mt-0 mb-3 lg:mb-[30px] lg:text-[25px]">
+                    <?php the_title(); ?>
+                </h1>
                 <div class="flex w-full items-center justify-center relative">
                     <div class="single-lazy-box">
                         <a href="<?php echo custom_permalink($post->ID); ?>"
@@ -122,9 +124,7 @@ the_post(); ?>
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-black mt-7 lg:mt-[46px] mb-3 lg:mb-[30px] lg:text-[25px]">
-                        <?php the_title(); ?>
-                    </h1>
+
 
                     <div
                         class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">

@@ -1,40 +1,98 @@
+/**
+*
+*	Name:			IRANSansX Fonts
+*	Version:			2.4
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Apr 22, 2021
+*	Updated on:		Jan 22, 2022
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونتایران سنس Xا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANSansX fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- fonts/-
+*	
+**/
+
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 100;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Thin.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Thin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 200;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-UltraLight.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-UltraLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Light.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 500;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Medium.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 600;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-DemiBold.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-DemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 800;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-ExtraBold.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 900;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Black.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Black.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Bold.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../cafearz-blog-2023/assets/fonts/woff/IRANSansX-Regular.woff') format('woff'),
+	url('../cafearz-blog-2023/assets/fonts/woff2/IRANSansX-Regular.woff2') format('woff2');
+}
+
+
+
 @charset "UTF-8";
-@font-face {
-  font-family: "bakh-regular";
-  font-weight: normal;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "bakh-light";
-  font-weight: 100;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "bakh-bold";
-  font-weight: bold;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-Bold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "bakh-black";
-  font-weight: 800;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-Black.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "bakh-extrablack";
-  font-weight: 900;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-ExtraBlack.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "bakh-extarbold";
-  font-weight: 700;
-  src: url("../cafearz-blog-2023/assets/fonts/bakh/YekanBakh-ExtraBold.woff2") format("woff2");
-  font-display: swap;
-}
 /*
 ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
@@ -840,10 +898,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(244 247 254 / var(--tw-bg-opacity));
 }
-.bg-gold{
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 185 11 / var(--tw-bg-opacity));
-}
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1125,7 +1179,7 @@ Text Domain: cafearz.com
 }
 
 body {
-  font-family: bakh-regular, bakh-light, bakh-bold, bakh-black, bakh-extrablack, bakh-extarbold;
+  font-family: IRANSansX;
   direction: rtl;
   background-image: url(./src/assets/img/header-bg.png);
   background-repeat: no-repeat;
@@ -1198,11 +1252,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: bakh-black;
+  font-family: IRANSansX;
+  font-weight: 900 !important;
 }
 
 .comment-metadata {
-  font-family: "bakh-regular";
+  font-family: IRANSansX;
 }
 
 @media (max-width: 1000px) {
@@ -1312,10 +1367,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-box {
-  border-radius: 0 0 25px 25px;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid #eeeeee;
   top: 50px;
 }
 
@@ -1493,7 +1547,7 @@ input::placeholder, textarea {
 }
 
 #newLoop h3 {
-  font-family: bakh-regular !important;
+  font-family: IRANSansX !important;
 }
 
 @media (max-width: 1000px) {
@@ -1549,7 +1603,7 @@ input::placeholder, textarea {
   display: flex;
   flex-direction: column;
   background: var(--color-white);
-  font-family: bakh-regular;
+  font-family: IRANSansX;
   margin-top: 10px;
   height: 290px;
   border-radius: 13px;
@@ -1575,7 +1629,8 @@ input::placeholder, textarea {
   flex-direction: column;
   width: 800px;
   padding: 15px;
-  font-family: "bakh-bold";
+  font-family: IRANSansX;
+  font-weight: bold;
 }
 @media (max-width: 1000px) {
   .comment-respond {
@@ -1624,7 +1679,7 @@ input::placeholder, textarea {
   padding: 10px 15px !important;
   border-radius: 12px !important;
   width: 100% !important;
-  font-family: bakh-regular;
+  font-family: IRANSansX;
 }
 #author:focus, #email:focus, #url:focus {
   outline: var(--color-primary) !important;
@@ -1650,7 +1705,8 @@ ul {
 
 ol, ul {
   font-size: 15px;
-  font-family: bakh-bold;
+  font-family: IRANSansX;
+  font-weight: bold;
   padding: 20px 25px 20px 20px;
   border-radius: 10px;
 }
@@ -1755,7 +1811,7 @@ ol, ul {
 }
 
 .comment-content {
-  font-family: "bakh-regular";
+  font-family: IRANSansX;
   color: #4a517d;
   padding: 10px 12px 0 12px !important;
 }
@@ -1798,7 +1854,7 @@ ol, ul {
 #myDropdown:before {
   content: "";
   width: 100%;
-  height: 5px;
+  height: 3px;
   background: rgba(51, 119, 232, 0.5);
   position: absolute;
   top: 0;
@@ -1815,7 +1871,6 @@ ol, ul {
 }
 .menu-item:hover {
   border-radius: 10px !important;
-  border-right: 3px solid var(--color-primary);
   position: relative;
   background: rgba(51, 119, 232, 0.05);
   cursor: pointer;
@@ -1854,7 +1909,7 @@ ol, ul {
 }
 .logged-in-as {
   display: none !important;
-  font-family: "bakh-light";
+  font-family: IRANSansX;
   color: #c4c4c4 !important;
   margin: 12px 0;
 }
@@ -2142,9 +2197,6 @@ header {
   }
   .lg\:mt-\[40px\]{
     margin-top: 40px;
-  }
-  .lg\:mt-\[46px\]{
-    margin-top: 46px;
   }
   .lg\:mt-\[50px\]{
     margin-top: 50px;
