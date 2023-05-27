@@ -74,7 +74,7 @@ $selected_counter = 0;
                         >
                             #
                         </div>
-                        <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                        <p class="font-black text-black text-[14px] lg:text-[18px] mt-[21px]">
                             منتخب سر دبیر
                         </p>
                     </div>
@@ -150,7 +150,7 @@ $selected_counter = 0;
                     >
                         #
                     </div>
-                    <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                    <p class="font-black text-black text-[14px] lg:text-[18px] mt-[21px]">
                         جدیدترین مطالب
                     </p>
                 </div>
@@ -213,7 +213,7 @@ $selected_counter = 0;
                     >
                         #
                     </div>
-                    <p class="font-bold text-black text-[14px] lg:text-[18px] mt-[21px]">
+                    <p class="font-black text-black text-[14px] lg:text-[18px] mt-[21px]">
                         برترین مطالب
                     </p>
                 </div>
