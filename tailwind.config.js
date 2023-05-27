@@ -19,16 +19,16 @@ module.exports = {
         blogDetail: "#6F6F6F",
       },
     },
-    fontFamily: {
-      sans: [
-        "bakh-regular",
-        "bakh-light",
-        "bakh-bold",
-        "bakh-black",
-        "bakh-extrablack",
-        "bakh-extarbold",
-      ],
-    },
+    // fontFamily: {
+    //   sans: [
+    //     "bakh-regular",
+    //     "bakh-light",
+    //     "bakh-bold",
+    //     "bakh-black",
+    //     "bakh-extrablack",
+    //     "bakh-extarbold",
+    //   ],
+    // },
     fontWeight: {
       thin: "100",
       hairline: "100",

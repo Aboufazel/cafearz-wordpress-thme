@@ -190,10 +190,10 @@
                 htm.scrollTop > 90 ? "fixed" : "";
 
             doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "327px" : "";
+                htm.scrollTop > 90 ? "320px" : "";
 
             doc.getElementById("shareSocial").style.top =
-                htm.scrollTop > 90 ? "100px" : "";
+                htm.scrollTop > 90 ? "200px" : "";
         });
     });
 </script>
