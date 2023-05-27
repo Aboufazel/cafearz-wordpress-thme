@@ -19,7 +19,7 @@ the_post(); ?>
             <div class="text-blue lg:text-[14px] text-[12px] font-bold"><?php get_category_post(); ?></div>
             <p>/</p>
             <div
-                class="text-hint font-bold  lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
+                class="text-hint font-normal  lg:text-[14px] text-[12px] overflow-hidden max-w-[100px] lg:max-w-[250px] whitespace-nowrap text-ellipsis"
             ><?php the_title(); ?></div>
         </div>
 
