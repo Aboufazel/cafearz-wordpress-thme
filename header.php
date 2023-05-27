@@ -34,7 +34,7 @@
         class="grid lg:grid-cols-5 grid-cols-2 place-items-center px-3  w-full mx-auto transition-all xl:w-[1280px]  lg:px-[23px] py-[15px]"
     >
         <div class="flex flex-row justify-start items-center w-full">
-            <a href="http://cblog.test/">
+            <a href="https://cafearz.com/blog">
                 <img
                     src="<?php echo get_template_directory_uri(); ?>/src/assets/img/largeLogo.png"
                     alt="کافه-ارز"

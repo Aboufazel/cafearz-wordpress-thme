@@ -23,7 +23,7 @@ the_post(); ?>
             ><?php the_title(); ?></div>
         </div>
 
-        <div id="blog-detail-text">
+        <div id="blog-detail-text" class="relative">
 
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
                 <h1 class="font-bold text-black mt-7 lg:mt-0 mb-3 lg:mb-[30px] lg:text-[25px]">
@@ -105,7 +105,7 @@ the_post(); ?>
 
                 <div class="flex-col w-full">
 
-                    <div class="flex flex-row items-center mt-8 justify-between w-full">
+                    <div class="flex flex-row items-center  mt-5 mb-3 justify-between w-full">
                         <div
                             class="flex justify-center gap-[5px] items-center px-[18px] py-[8px] rounded-[25px] bg-dataBg w-auto"
                         >
@@ -127,7 +127,7 @@ the_post(); ?>
 
 
                     <div
-                        class="flex flex-col w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
+                        class="flex flex-col display_post w-full gap-[30px] detail-post text-justify lg:leading-9 leading-8 text-[16px] mb-[32px]">
                         <?php the_content(); ?>
                     </div>
 

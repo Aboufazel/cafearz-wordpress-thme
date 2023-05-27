@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center bg-white drop-shadow rounded-[5px] p-2 lg:p-0 lg:bg-inherit min-h-[300px] mb-[32px] gap-[12px]">
 
-    <div class="flex flex-col mb-[15px] lazy-box  relative items-center">
+    <div class="flex flex-col mb-[15px] lazy-box relative items-center">
         <a href="<?php echo custom_permalink($post->ID); ?>"
            title="<?php the_title(); ?>"
            class="w-full"

@@ -36,13 +36,6 @@ $GLOBALS['singleVarables'] = [
                 <!-- end of the loop -->
 
 
-                <!-- pagination here -->
-
-                <?php
-                custom_pagination($wp_query->max_num_pages,"",$paged);
-                ?>
-
-
                 <?php wp_reset_postdata(); ?>
 
             <?php else: ?>
@@ -51,6 +44,7 @@ $GLOBALS['singleVarables'] = [
 
         </div>
 
+        <!-- pagination here -->
         <?php
         custom_pagination($wp_query->max_num_pages,"",$paged);
         ?>

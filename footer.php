@@ -125,9 +125,6 @@
         const abbas = document.getElementById("finish-content");
         const yElement = abbas.offsetTop;
 
-        console.log("content" + content)
-        console.log("yElement" + yElement)
-
         doc.getElementById("shareSocial").style.opacity =
             content > yElement - 400
                 ? 0
@@ -181,10 +178,11 @@
                 doc.getElementById("header").style.top =
                     htm.scrollTop > 5 ? "0" : "0";
 
-                doc.getElementById("header").style.borderRadius =
-                    htm.scrollTop > 5 ? "0" : "0";
-            }
 
+
+                doc.getElementById("header").style.borderBottom =
+                    htm.scrollTop > 5 ? "1px solid #eeeeee" : "none";
+            }
 
             doc.getElementById("shareSocial").style.position =
                 htm.scrollTop > 90 ? "fixed" : "";
