@@ -1,4 +1,4 @@
-<div id="newLoop" class="flex items-center rounded-[15px] p-3 min-h-[100px] bg-white">
+<div id="newLoop" class="flex items-center border rounded-[15px] p-3 min-h-[100px] bg-white">
 
     <div class="lazy-box justify-center w-1/6 relative items-center">
         <a href="<?php echo custom_permalink($post->ID); ?>"

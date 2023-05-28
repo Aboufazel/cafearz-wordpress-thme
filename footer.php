@@ -17,8 +17,8 @@
             </div>
 
             <div class="flex flex-col items-center lg:items-end w-full gap-[12px]">
-                <p class="text-justify text-[14px] font-bold leading-[36px]">
-                    کافه ارز را در شبکه های احتماعی دنبال کنید
+                <p class="text-justify text-[14px] lg:ml-[11px] font-bold leading-[36px]">
+                    کافه ارز را در شبکه های اجتماعی دنبال کنید
                 </p>
 
                 <div class="flex flex-row justify-center items-center gap-[18px]">
@@ -162,21 +162,17 @@
                     htm.scrollTop > 5 ? "0" : "0";
 
                 doc.getElementById("header").style.position =
-                    htm.scrollTop > 5 ? "sticky" : "";
+                    htm.scrollTop > 5 ? "sticky" : "sticky";
 
 
                 doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba(255, 255, 255, 0.85)" : ""
 
 
-                // doc.getElementById("header").style.boxShadow =
-                //     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "0 49px 29px -23px rgba(0, 0, 0, 0.05)";
+                // doc.getElementById("header").style.borderBottom =
+                //     htm.scrollTop > 5 ? "1px solid #eeeeee" : "1px solid #eeeeee";
 
             } else {
-
-
-                // doc.getElementById("header").style.boxShadow =
-                //     htm.scrollTop > 5 ? "0 49px 29px -23px rgba(0, 0, 0, 0.05)" : "";
 
                 doc.getElementById("header").style.background =
                     htm.scrollTop > 5 ? "rgba( 255, 255, 255, 0.85)" : ""

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container lg:w-[1200px] mx-auto">
+<div class="container lg:w-[1200px] mx-auto min-h-[230px]">
 
     <div class="hidden lg:flex  lg:flex-row items-center justify-between mt-[50px]">
         <h1>
@@ -21,9 +21,6 @@
                 <!-- end of the loop -->
 
                 <!-- pagination here -->
-                <?php
-                global $wp_query;
-                ?>
 
                 <?php wp_reset_postdata(); ?>
 
@@ -32,6 +29,10 @@
             <?php endif; ?>
 
         </div>
+
+        <?php
+        global $wp_query;
+        ?>
 
         <?php
         custom_pagination($wp_query->max_num_pages,"",$paged);

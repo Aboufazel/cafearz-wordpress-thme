@@ -246,7 +246,7 @@ the_post(); ?>
         <div id="blog-detail-text" class="relative">
 
             <div class="container flex flex-col w-full lg:w-[750px] mx-auto">
-                <h1 class="font-bold text-black mt-3 lg:mt-0 mb-3 lg:mb-[30px] lg:text-[25px]">
+                <h1 class="font-bold text-black mt-3 text-[18px] lg:mt-0 mb-3 lg:mb-[30px] lg:text-[25px]">
                     <?php the_title(); ?>
                 </h1>
                 <div class="flex w-full items-center justify-center relative">

@@ -87,7 +87,7 @@ $selected_counter = 0;
                 <?php foreach ($pageposts as $post): ?>
                     <div class="lg:col-span-3 md:col-span-1 min-h-[150px] bg-white p-2 rounded-[15px]">
                         <div title=" <?php the_title(); ?>"
-                             class="block w-full lg:min-h-[330px] relative text-right items-center"
+                             class="block loop-card-hover w-full lg:min-h-[330px] relative text-right items-center"
                         >
                             <div class="flex flex-col relative items-center lg:items-start">
 
@@ -97,11 +97,13 @@ $selected_counter = 0;
                                        title="<?php the_title(); ?>"
                                        class="w-full"
                                        target="<?php echo custom_permalink_target($post->ID); ?>">
-                                        <img
-                                            data-src="<?php the_post_thumbnail_url('small'); ?>"
-                                            alt="<?php the_title(); ?>"
-                                            class="bg-none shadow-xl rounded-[10px] h-full lg:h-[178px]"
-                                        />
+                                        <div class="img-box">
+                                            <img
+                                                data-src="<?php the_post_thumbnail_url('small'); ?>"
+                                                alt="<?php the_title(); ?>"
+                                                class="bg-none shadow-xl lg:w-[300px] lg:h-[178px] w-full h-auto rounded-[10px]"
+                                            />
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -141,7 +143,7 @@ $selected_counter = 0;
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
             >
-                LATEST BLOG
+                LATEST CONTENT
             </p>
             <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
                 <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
@@ -157,7 +159,7 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-3 lg:mt-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[50px]">
 
             <?php
 

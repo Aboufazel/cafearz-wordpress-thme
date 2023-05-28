@@ -61,7 +61,7 @@
 
                 <div
                     id="myDropdown"
-                    class="dropdown-content rounded-[5px] max-w-[280px] lg:w-full py-3 shadow-md items-start bg-white top-[68px] left-0 lg:left-auto absolute"
+                    class="dropdown-content rounded-[5px] max-w-[280px] overflow-y-scroll lg:w-full py-3 shadow-md items-start bg-white top-[68px] left-0 lg:left-auto absolute"
                 >
                     <?php include 'menu.php'; ?>
 
