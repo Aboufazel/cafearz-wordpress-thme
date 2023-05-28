@@ -64,7 +64,7 @@ $selected_counter = 0;
         <section id="selectBlog" class="container px-2 lg:w-[1200px] mx-auto">
             <div class="selectBlog mt-5 lg:mt-[105px]">
                 <p class="selectBlog-title absolute text-[18px] top-[-12px] right-[140px]">
-                    FAVORATE NEWS
+                    FAVORITE NEWS
                 </p>
 
                 <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
@@ -81,11 +81,11 @@ $selected_counter = 0;
                 </div>
 
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-12 justify-between items-center gap-[20px] lg:mt-[50px]">
+            <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-12 justify-between items-center gap-[20px] mt-3 lg:mt-[50px]">
 
 
                 <?php foreach ($pageposts as $post): ?>
-                    <div class="lg:col-span-3 md:col-span-1 bg-white p-2 rounded-[15px] mt-5 lg:mt-0">
+                    <div class="lg:col-span-3 md:col-span-1 min-h-[150px] bg-white p-2 rounded-[15px]">
                         <div title=" <?php the_title(); ?>"
                              class="block w-full lg:min-h-[330px] relative text-right items-center"
                         >
@@ -135,13 +135,13 @@ $selected_counter = 0;
 
 
 <section id="newBlogPost">
-    <div class="container relative px-2 lg:w-[1200px] mx-auto">
+    <div class="container relative px-2 lg:max-w-[1200px] mx-auto">
 
         <div class="selectBlog relative lg:pt-[120px]">
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[107px] right-[140px]"
             >
-                CAFEARZ BLOG
+                LATEST BLOG
             </p>
             <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
                 <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">
@@ -157,7 +157,7 @@ $selected_counter = 0;
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-5 lg:mt-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-3 lg:mt-[50px]">
 
             <?php
 
@@ -204,7 +204,7 @@ $selected_counter = 0;
             <p
                 class="text-hint absolute text-[18px] top-[-12px] lg:top-[37px] right-[140px]"
             >
-                CAFEARZ BLOG
+                BEST CONTENT
             </p>
             <div class="flex flex-row items-center justify-between px-[5px] lg:px-0">
                 <div class="flex flex-row px-[5px] lg:px-0 gap-[9px] items-center">

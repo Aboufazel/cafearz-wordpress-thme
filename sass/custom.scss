@@ -793,7 +793,7 @@ ol{
 }
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1024px) {
   .first-blog {
     background: none !important;
     color: #21294D !important;
@@ -989,13 +989,6 @@ header {
 }
 
 
-.wp-block-image {
-  img {
-    border-radius: 15px !important;
-  }
-}
-
-
 .comment-body {
   background: var(--color-white) !important;
   padding: 15px;
@@ -1009,27 +1002,92 @@ header {
 }
 
 .display_post{
+
+  *{
+    line-height: 27px;
+    text-align: justify;
+  }
+
+ul{
+  margin: 10px  !important;
+}
+
+ul,ol{
+  font-size: 15px;
+  background: #f5f5f5;
+  padding: 20px 42px 0 0;
+  border-radius: 10px;
+
+  li{
+    padding: 3px 0 !important;
+  }
+}
+
+ul.left{
+  direction: ltr !important;
+  text-align: left !important;
+  li{
+    direction: ltr !important;
+    text-align: left !important;
+  }
+}
+
+.thumb{
+  margin-top: -20px;
+}
+
+h2,h3,h4,h5,h6{
+  line-height: 25px;
+}
+
+h2,h3,h4,h5,h6{
+  margin-bottom: 15px !important;
+}
+h2{font-size: 20px  !important;}
+h3{font-size: 18px  !important;}
+h4{font-size: 16px  !important;}
+h5{font-size: 14px  !important;}
+h6{font-size: 12px !important;}
+
   img{
+    margin: 15px auto !important;
     max-width: 100%;
     height: auto !important;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
     border-radius: 15px !important;
   }
 
   p{
     font-size: 16px;
-    line-height: 33px;
+    margin-bottom: 15px !important;
+    line-height: 33px !important;
   }
 
   a{
-    color: #0853d9 !important;
-    font-weight: bold !important;
+    color: #0853d9;
+    font-weight: bold;
 
     &:hover{
-      color: lighten(#0e4098,10%) !important;
+      color: lighten(#0e4098,10%);
     }
+  }
+
+  @media(max-width: 1000px){
+
+    h2{font-size: 17px  !important;}
+    h3{font-size: 15px  !important;}
+    h4{font-size: 13px !important;}
+    h5{font-size: 11px !important;}
+    h6{font-size: 9px !important;}
+
+
+    *{
+      line-height: 22px !important;
+    }
+    p{
+      font-size: 14px;
+    }
+
   }
 }
 
@@ -1039,20 +1097,41 @@ header {
   background: #F3F7FE !important;
   border-radius: 15px !important;
   border:none !important;
-  width: 250px !important;
+  width: 100% !important;
 
-  .ez-toc-title-container {
-    display: none !important;
+  .ez-toc-title{
+    margin: 0 10px !important;
+    font-weight: 900 !important;
   }
 
-  @media (min-width: 1300px) {
-    position: absolute !important;
-    left: -270px !important;
+  .ez-toc-pull-right{
+    margin-left: 0 !important;
   }
 
   .ez-toc-list{
+
+    a{
+      color: #7e7e7e !important;
+
+      &:hover{
+        color: #3377E8 !important;
+        text-decoration: none;
+      }
+    }
+
     li{
       margin: 10px 0 !important;
     }
+  }
+}
+
+
+html{
+  overflow-x: hidden;
+}
+
+body{
+  @media(max-width: 1000px){
+    overflow-x: hidden;
   }
 }

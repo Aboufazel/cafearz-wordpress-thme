@@ -21,7 +21,7 @@
             </a>
         </h1>
 
-        <p class="text-[16px] font-normal lg:text-dataBg text-justify lg:mt-[17px] leading-[35px]">
+        <p class="text-[16px] font-normal lg:text-white text-justify lg:mt-[17px] leading-[35px]">
             <?php echo mb_substr(get_the_excerpt(), 0, 200); ?>
         </p>
 

@@ -129,6 +129,16 @@
             content > yElement - 400
                 ? 0
                 : 1;
+
+
+        doc.getElementById("shareSocial").style.position =
+            htm.scrollTop > 90 ? "sticky" : "";
+
+        doc.getElementById("shareSocial").style.right =
+            htm.scrollTop > 90 ? "0px" : "0px";
+
+        doc.getElementById("shareSocial").style.top =
+            htm.scrollTop > 90 ? "300px" : "";
     })
     <?php endif; ?>
 
@@ -183,15 +193,6 @@
                 doc.getElementById("header").style.borderBottom =
                     htm.scrollTop > 5 ? "1px solid #eeeeee" : "none";
             }
-
-            doc.getElementById("shareSocial").style.position =
-                htm.scrollTop > 90 ? "fixed" : "";
-
-            doc.getElementById("shareSocial").style.right =
-                htm.scrollTop > 90 ? "320px" : "";
-
-            doc.getElementById("shareSocial").style.top =
-                htm.scrollTop > 90 ? "200px" : "";
         });
     });
 </script>
